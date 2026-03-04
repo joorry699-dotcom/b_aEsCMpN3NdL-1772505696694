@@ -86,7 +86,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-gradient-to-b from-[#0b182f] via-[#0d223e] to-[#0b182f] py-24 lg:py-28 text-white"
+      className="relative overflow-hidden bg-gradient-to-b from-[#0d223e] via-[#0b182f] to-[#0d223e] py-24 lg:py-28 text-white"
     >
       <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-[#0ea5e9]/15 blur-[120px]" />
       <div className="absolute -bottom-20 left-10 h-72 w-72 rounded-full bg-[#22d3ee]/10 blur-[110px]" />
@@ -105,7 +105,7 @@ export default function ServicesSection() {
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7ad8ff]">
             {t("nav.services")}
           </div>
-          <h2 className="mt-4 mb-3 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-[42px]">
+          <h2 className="mt-4 mb-3 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-[36px]">
             {t("services.title")}
           </h2>
           <p className="max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">
@@ -122,7 +122,7 @@ export default function ServicesSection() {
               type="button"
               key={service.key}
               onClick={() => setOpenService((prev) => (prev === service.key ? null : service.key))}
-              className="group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 text-left shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.06]"
+              className="group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-left shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.08]"
               aria-expanded={openService === service.key}
             >
               <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle at 20% 20%, rgba(34,211,238,0.12), transparent 40%)" }} />
