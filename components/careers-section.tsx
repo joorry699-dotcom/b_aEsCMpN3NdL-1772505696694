@@ -221,15 +221,15 @@ export function CareersSection() {
               key={job.id}
               className="card-magazine group relative flex flex-col md:flex-row md:items-center justify-between p-7 rounded-[22px] border border-white/10 bg-white/[0.05] backdrop-blur-xl transition-all duration-500 hover:border-[#22d3ee]/30 hover:bg-white/[0.08] hover:shadow-[0_20px_50px_-36px_rgba(0,0,0,0.8)]"
             >
-              <div className="flex items-center gap-6 flex-1">
+              <div className="flex items-center gap-6 flex-1 md:self-stretch md:items-center">
                 <div className="p-4 rounded-2xl bg-[#22d3ee]/15 text-[#7ad8ff]">
                   <Briefcase className="w-7 h-7" />
                 </div>
-                <div className="flex-1 space-y-2 text-center md:text-left" style={{ textAlign: locale === "ar" ? "right" : "left" }}>
+                <div className="flex-1 space-y-2 text-center" style={{ textAlign: locale === "ar" ? "right" : "left" }}>
                   <h3 className="text-xl font-semibold text-white group-hover:text-[#7ad8ff] transition-colors leading-tight">
                     {job.title[locale]}
                   </h3>
-                  <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5 text-xs sm:text-sm text-white/65">
+                  <div className="flex flex-wrap items-center justify-center gap-2.5 text-xs sm:text-sm text-white/65">
                     <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
                       <Clock3 className="w-4 h-4" />
                       {job.type[locale]}

@@ -19,7 +19,7 @@ export default function ServicesSection() {
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
   const [selectedElm, setSelectedElm] = useState<"muqeem" | "masarat">("muqeem")
-  const [expandedElm, setExpandedElm] = useState<"muqeem" | "masarat" | null>("muqeem")
+  const [expandedElm, setExpandedElm] = useState<"muqeem" | "masarat" | null>(null)
   const [openService, setOpenService] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [formData, setFormData] = useState({
@@ -67,8 +67,8 @@ export default function ServicesSection() {
     return ordered
   })()
 
-  const displayElm = expandedElm ?? selectedElm
-  const selectedData = useMemo(() => (displayElm ? elmServices?.[displayElm] : elmServices?.[selectedElm]), [displayElm, elmServices, selectedElm])
+  const displayElm = expandedElm ?? selectedElm ?? "muqeem"
+  const selectedData = useMemo(() => elmServices?.[displayElm], [displayElm, elmServices])
   const elmCards = useMemo(() => (
     (["muqeem", "masarat"] as const).map((key) => ({
       key,
