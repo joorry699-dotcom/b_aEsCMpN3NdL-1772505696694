@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { posts, type BlogPost } from "@/lib/blog"
@@ -47,19 +48,21 @@ export function BlogList() {
               key={post.slug}
               className="card-magazine overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] shadow-[0_20px_50px_-36px_rgba(0,0,0,0.8)] transition-all hover:-translate-y-1 hover:border-[#22d3ee]/25 hover:bg-white/[0.08]"
             >
-              <div className="relative h-44 w-full">
+              <Link href={`/blog/${post.slug}/`} className="relative block h-44 w-full">
                 <Image
                   src={post.image || "/images/partners/Elmam_inf_saudi_man_presenting_white_board_leading_a_meeting_Th_3fa926c9-bd44-4c4d-865b-916ff67c687c.jpg"}
                   alt={locale === "ar" ? post.title_ar : post.title_en}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
                   sizes="(min-width: 1024px) 33vw, 100vw"
                 />
-              </div>
+              </Link>
               <div className="p-5 flex flex-col gap-3">
                 <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#7ad8ff]">{post.date}</div>
                 <h3 className="text-lg font-semibold text-white leading-tight">
-                  {locale === "ar" ? post.title_ar : post.title_en}
+                  <Link href={`/blog/${post.slug}/`} className="hover:text-[#7ad8ff] transition-colors">
+                    {locale === "ar" ? post.title_ar : post.title_en}
+                  </Link>
                 </h3>
                 <p className="text-sm text-white/70 leading-relaxed line-clamp-3">
                   {locale === "ar" ? post.excerpt_ar : post.excerpt_en}
@@ -71,15 +74,23 @@ export function BlogList() {
                     }} />
                   </div>
                 )}
-                <button
-                  type="button"
-                  onClick={() => setOpenSlug(openSlug === post.slug ? null : post.slug)}
-                  className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-[#7ad8ff] hover:text-white"
-                >
-                  {openSlug === post.slug
-                    ? locale === "ar" ? "إخفاء" : "Hide"
-                    : locale === "ar" ? "عرض المزيد" : "Show more"}
-                </button>
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setOpenSlug(openSlug === post.slug ? null : post.slug)}
+                    className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-[#7ad8ff] hover:text-white"
+                  >
+                    {openSlug === post.slug
+                      ? locale === "ar" ? "إخفاء" : "Hide"
+                      : locale === "ar" ? "عرض المزيد" : "Show more"}
+                  </button>
+                  <Link
+                    href={`/blog/${post.slug}/`}
+                    className="inline-flex items-center text-sm font-semibold text-[#7ad8ff] tracking-wide transition-colors hover:text-white"
+                  >
+                    {locale === "ar" ? "افتح المدونة" : "Open post"}
+                  </Link>
+                </div>
               </div>
             </article>
           ))}
