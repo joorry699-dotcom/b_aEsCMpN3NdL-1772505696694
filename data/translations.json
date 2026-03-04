@@ -24,61 +24,67 @@
       }
     },
     "services": {
-      "title": "خدمات مراكز الاتصال",
-      "subtitle": "نقدم مجموعة شاملة من حلول مراكز الاتصال المصممة خصيصا لتلبية احتياجات منشأتك",
+      "title": "خدماتنا",
+      "subtitle": "نقدم مجموعة شاملة من الخدمات المتكاملة لتلبية جميع احتياجات أعمالك",
       "items": {
-        "outsourcing": {
-          "title": "تشغيل خدمات العملاء للغير",
-          "description": "إدارة كاملة لمركز الاتصال وخدمة العملاء نيابة عن منشأتك بأعلى معايير الجودة"
+        "bpo": {
+          "title": "إسناد الأعمال والدعم الإداري (BPO)",
+          "description": "حلول متكاملة لإسناد العمليات الإدارية والتشغيلية لتركّز منشأتك على أعمالها الأساسية"
         },
         "cloud": {
-          "title": "الكلاود كول سنتر",
-          "description": "حلول مراكز اتصال سحابية متطورة تتيح لك إدارة التواصل من أي مكان"
+          "title": "الحلول التقنية والخدمات السحابية",
+          "description": "أنظمة سحابية لإدارة الاتصال والأداء مع بنية تقنية مرنة وآمنة"
         },
-        "chat": {
-          "title": "المحادثة الفورية",
-          "description": "خدمة الدردشة المباشرة للرد السريع على استفسارات العملاء في الوقت الفعلي"
+        "marketing": {
+          "title": "التسويق وتطوير العلامة التجارية",
+          "description": "حملات متكاملة لبناء الهوية وتعزيز النمو عبر القنوات الرقمية"
         },
-        "crm": {
-          "title": "أنظمة إدارة خدمة العملاء",
-          "description": "أنظمة CRM متكاملة لإدارة وتتبع جميع تفاعلات العملاء بكفاءة"
+        "construction": {
+          "title": "خدمات البناء والتصميم",
+          "description": "تصميم وتنفيذ مشاريع متكاملة بمعايير جودة عالية وإدارة مشاريع دقيقة"
         },
-        "telemarketing": {
-          "title": "التسويق عبر الهاتف",
-          "description": "حملات تسويقية هاتفية احترافية لزيادة المبيعات وبناء علاقات مع العملاء"
-        },
-        "iptelephony": {
-          "title": "خدمة IP Telephony",
-          "description": "حلول الاتصال عبر الإنترنت بجودة عالية وتكلفة أقل لمنشأتك"
-        },
-        "unified": {
-          "title": "استضافة الأرقام الموحدة",
-          "description": "رقم موحد يسهل وصول عملائك إليك من أي مكان في المملكة"
-        },
-        "other": {
-          "title": "خدمات أخرى",
-          "description": "مجموعة واسعة من الحلول المخصصة التي تتناسب مع احتياجات منشأتك"
-        },
-        "tamm": {
-          "title": "خدمة تم",
-          "description": "إدارة المركبات وأساطيل النقل من خلال بوابة إلكترونية شاملة"
+        "smart": {
+          "title": "المباني الذكية والأمن",
+          "description": "حلول أمان ومباني ذكية متصلة لرفع الكفاءة والسلامة"
+        }
+      }
+    },
+    "elm": {
+      "heading": "خدمات علم (مقيم ومسارات)",
+      "subheading": "حلول موثوقة لإدارة بيانات المقيمين وتتبع أساطيل المركبات مع نماذج طلب سريعة",
+      "services": {
+        "muqeem": {
+          "title": "خدمة مقيم",
+          "description": "إدارة بيانات المقيمين وإصدار وتجديد الإقامات والتأشيرات إلكترونياً",
+          "features": [
+            "عرض وتحديث بيانات المقيمين عبر بوابة موحدة",
+            "إصدار وتجديد الإقامات والتأشيرات بسرعة",
+            "تنبيهات صلاحيات وإشعارات متابعة آلية",
+            "صلاحيات متعددة للمستخدمين مع سجل تدقيق للعمليات"
+          ]
         },
         "masarat": {
           "title": "خدمة مسارات",
-          "description": "تتبع وإدارة المركبات ومساراتها لحظة بلحظة"
-        },
-        "nabaa": {
-          "title": "خدمة نبأ",
-          "description": "إرسال رسائل نصية للأرقام المسجلة في مركز المعلومات الوطني ومنصة أبشر لضمان وصول الإشعارات للمستخدمين"
-        },
-        "traffic": {
-          "title": "أنظمة إدارة المرور",
-          "description": "تكامل مع أنظمة المرور لمتابعة بيانات المركبات والمخالفات والموافقات لحظياً"
-        },
-        "muqeem": {
-          "title": "خدمة مقيم",
-          "description": "إصدار وتجديد الإقامات والتأشيرات بشكل إلكتروني سريع"
+          "description": "تتبع وإدارة المركبات لحظياً مع خطط صيانة وتشغيل متكاملة",
+          "features": [
+            "تتبع لحظي للمركبات عبر GPS مع تنبيهات السرعة والمسار",
+            "جداول صيانة وتشغيل للأسطول مع مهام موثقة",
+            "تقارير استخدام السائقين والمخالفات",
+            "لوحات متابعة لحظية للأسطول وحالة المركبات"
+          ]
         }
+      },
+      "form": {
+        "title": "اطلب الخدمة الآن",
+        "subtitle": "عبئ بيانات منشأتك وسنعاود الاتصال بك لتفعيل الخدمة",
+        "name": "الاسم",
+        "phone": "رقم الجوال",
+        "email": "البريد الإلكتروني",
+        "company": "اسم الشركة",
+        "account": "رقم حساب المنشأة / السجل التجاري",
+        "notes": "ملاحظات إضافية",
+        "submit": "إرسال الطلب",
+        "success": "تم استلام طلبك وسنتواصل خلال وقت قصير"
       }
     },
     "faq": {
@@ -170,61 +176,67 @@
       }
     },
     "services": {
-      "title": "Call Center Services",
-      "subtitle": "We provide a comprehensive suite of call center solutions tailored to your business needs",
+      "title": "Our Services",
+      "subtitle": "We deliver a full spectrum of integrated services to meet all your business needs",
       "items": {
-        "outsourcing": {
-          "title": "Customer Service Outsourcing",
-          "description": "Full management of call centers and customer service on behalf of your establishment with the highest quality standards"
+        "bpo": {
+          "title": "Business Process Outsourcing (BPO)",
+          "description": "End-to-end administrative and operational outsourcing so you stay focused on your core business"
         },
         "cloud": {
-          "title": "Cloud Call Center",
-          "description": "Advanced cloud call center solutions allowing you to manage communication from anywhere"
+          "title": "Tech & Cloud Solutions",
+          "description": "Cloud-native contact and performance platforms with secure, flexible infrastructure"
         },
-        "chat": {
-          "title": "Live Chat",
-          "description": "Live chat service for fast response to customer inquiries in real-time"
+        "marketing": {
+          "title": "Marketing & Brand Growth",
+          "description": "Integrated campaigns to build brand equity and drive growth across digital channels"
         },
-        "crm": {
-          "title": "Customer Service Management Systems",
-          "description": "Integrated CRM systems to efficiently manage and track all customer interactions"
+        "construction": {
+          "title": "Construction & Design Services",
+          "description": "Design and build projects with rigorous quality standards and precise project management"
         },
-        "telemarketing": {
-          "title": "Telemarketing",
-          "description": "Professional telemarketing campaigns to increase sales and build customer relationships"
-        },
-        "iptelephony": {
-          "title": "IP Telephony Service",
-          "description": "High-quality internet calling solutions at a lower cost for your establishment"
-        },
-        "unified": {
-          "title": "Unified Number Hosting",
-          "description": "A unified number that makes it easier for your customers to reach you from anywhere in the Kingdom"
-        },
-        "other": {
-          "title": "Other Services",
-          "description": "A wide range of customized solutions tailored to your establishment's needs"
-        },
-        "tamm": {
-          "title": "Tamm Service",
-          "description": "Management of vehicles and transport fleets through a comprehensive portal"
+        "smart": {
+          "title": "Smart Buildings & Security",
+          "description": "Connected smart-building and security solutions to improve efficiency and safety"
+        }
+      }
+    },
+    "elm": {
+      "heading": "ELM Services (Muqeem & Masarat)",
+      "subheading": "Trusted platforms for resident management and fleet tracking with a quick intake form",
+      "services": {
+        "muqeem": {
+          "title": "Muqeem Service",
+          "description": "Manage resident data and issue/renew iqama and visas online",
+          "features": [
+            "View and update resident records from one portal",
+            "Issue and renew iqama and visas quickly",
+            "Automated validity alerts and follow-up notifications",
+            "Role-based permissions with action audit trails"
+          ]
         },
         "masarat": {
           "title": "Masarat Service",
-          "description": "Real-time tracking and management of vehicles and their routes"
-        },
-        "nabaa": {
-          "title": "Nabaa Service",
-          "description": "Sends text messages to NIC and Absher-registered numbers to ensure delivery of critical notifications"
-        },
-        "traffic": {
-          "title": "Traffic Management Systems",
-          "description": "Integration with traffic platforms to monitor vehicle data, violations, and approvals in real time"
-        },
-        "muqeem": {
-          "title": "Muqeem Service",
-          "description": "Fast electronic issuance and renewal of residencies and visas"
+          "description": "Real-time vehicle tracking and fleet operations with maintenance plans",
+          "features": [
+            "Live GPS tracking with speed and route alerts",
+            "Fleet maintenance and operations schedules",
+            "Driver usage and violations reporting",
+            "Live dashboards for fleet status and health"
+          ]
         }
+      },
+      "form": {
+        "title": "Request the Service",
+        "subtitle": "Fill your company details and we will activate the service for you",
+        "name": "Full Name",
+        "phone": "Mobile Number",
+        "email": "Email",
+        "company": "Company Name",
+        "account": "Establishment Account / CR Number",
+        "notes": "Additional Notes",
+        "submit": "Send Request",
+        "success": "We received your request and will contact you shortly"
       }
     },
     "faq": {
