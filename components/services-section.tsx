@@ -8,6 +8,7 @@ import {
   Briefcase,
   Building2,
   ShieldCheck,
+  ChevronDown,
 } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { useLanguage } from "./language-provider"
@@ -18,6 +19,7 @@ export default function ServicesSection() {
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
   const [selectedElm, setSelectedElm] = useState<"muqeem" | "masarat">("muqeem")
+  const [openService, setOpenService] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
@@ -116,19 +118,33 @@ export default function ServicesSection() {
           className={`stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${gridVisible ? "visible" : ""}`}
         >
           {services.map((service) => (
-            <div
+            <button
+              type="button"
               key={service.key}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.06]"
+              onClick={() => setOpenService((prev) => (prev === service.key ? null : service.key))}
+              className="group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 text-left shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.06]"
+              aria-expanded={openService === service.key}
             >
               <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle at 20% 20%, rgba(34,211,238,0.12), transparent 40%)" }} />
               <div className="relative z-10 space-y-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff]">
-                  <service.icon className="h-6 w-6" />
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff]">
+                    <service.icon className="h-6 w-6" />
+                  </div>
+                  <ChevronDown
+                    className={`h-5 w-5 text-white/60 transition-transform duration-300 ${openService === service.key ? "rotate-180 text-[#7ad8ff]" : ""}`}
+                  />
                 </div>
                 <h3 className="text-lg font-semibold text-white">{service.title}</h3>
-                <p className="text-sm leading-relaxed text-white/65">{service.description}</p>
+                <div
+                  className={`overflow-hidden text-sm leading-relaxed text-white/70 transition-all duration-300 ${
+                    openService === service.key ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  {service.description}
+                </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
