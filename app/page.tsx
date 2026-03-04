@@ -17,7 +17,7 @@ import FloatingActions from "@/components/floating-actions"
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-[#0b182f]">
       <Navbar />
       <HeroSection />
       <VideoSection />

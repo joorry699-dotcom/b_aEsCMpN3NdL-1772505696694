@@ -86,13 +86,14 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-gradient-to-b from-[#0d223e] via-[#0b182f] to-[#0d223e] py-24 lg:py-28 text-white"
+      className="relative overflow-hidden bg-[#0b182f] py-24 lg:py-28 text-white"
     >
-      <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-[#0ea5e9]/15 blur-[120px]" />
-      <div className="absolute -bottom-20 left-10 h-72 w-72 rounded-full bg-[#22d3ee]/10 blur-[110px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0d223e] via-[#0b182f] to-[#0d223e]" />
+      <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-[#0ea5e9]/18 blur-[140px]" />
+      <div className="absolute -bottom-20 left-10 h-72 w-72 rounded-full bg-[#22d3ee]/14 blur-[130px]" />
       <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "34px 34px" }}
+        className="absolute inset-0 opacity-[0.05]"
+        style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "32px 32px" }}
       />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
