@@ -88,6 +88,82 @@ export default function ServicesSection() {
     setTimeout(() => {
       setSubmitted(false)
       setFormData({ name: "", phone: "", email: "", account: "", company: "", notes: "" })
+    }, 3000)
+  }
+
+  return (
+    <section
+      id="services"
+      className="relative overflow-hidden bg-[#0b182f] py-24 lg:py-28 text-white"
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0d223e] via-[#0b182f] to-[#0d223e]" />
+      <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-[#0ea5e9]/18 blur-[140px]" />
+      <div className="absolute -bottom-20 left-10 h-72 w-72 rounded-full bg-[#22d3ee]/14 blur-[130px]" />
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "32px 32px" }}
+      />
+
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+        <div
+          ref={headerRef}
+          className={`mb-14 sm:mb-16 transition-all duration-1000 ${
+            headerVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+          }`}
+        >
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7ad8ff]">
+            {t("nav.services")}
+          </div>
+          <h2 className="mt-4 mb-3 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-[36px]">
+            {t("services.title")}
+          </h2>
+          <p className="max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">
+            {t("services.subtitle")}
+          </p>
+        </div>
+
+        <div
+          ref={gridRef}
+          className={`stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${gridVisible ? "visible" : ""}`}
+        >
+          {services.map((service) => (
+            <button
+              type="button"
+              key={service.key}
+              onClick={() => setOpenService((prev) => (prev === service.key ? null : service.key))}
+              className="group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-left shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.08]"
+              aria-expanded={openService === service.key}
+            >
+              <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle at 20% 20%, rgba(34,211,238,0.12), transparent 40%)" }} />
+              <div className="relative z-10 space-y-3">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff]">
+                    <service.icon className="h-6 w-6" />
+                  </div>
+                  <ChevronDown
+                    className={`h-5 w-5 text-white/60 transition-transform duration-300 ${openService === service.key ? "rotate-180 text-[#7ad8ff]" : ""}`}
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-white">{service.title}</h3>
+                <div
+                  className={`overflow-hidden text-sm leading-relaxed text-white/70 transition-all duration-300 ${
+                    openService === service.key ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  {service.description}
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <div
+          id="elm-services"
+          ref={elmRef}
+          className={`mt-16 transition-all duration-1000 ${
+            elmVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+          }`}
+        >
           <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 lg:p-8 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] backdrop-blur-xl space-y-8">
             <div className="flex flex-col gap-3 text-center sm:text-right">
               <div className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
@@ -234,82 +310,6 @@ export default function ServicesSection() {
                   )}
                 </div>
               </form>
-            </div>
-          </div>
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className={inputClass}
-                        placeholder={elmForm?.name}
-                      />
-                    </label>
-                    <label className="space-y-1 text-sm text-white/80">
-                      <span className="font-semibold text-white">{elmForm?.phone}</span>
-                      <input
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className={inputClass}
-                        placeholder="05xxxxxxxx"
-                        dir="ltr"
-                      />
-                    </label>
-                    <label className="space-y-1 text-sm text-white/80">
-                      <span className="font-semibold text-white">{elmForm?.email}</span>
-                      <input
-                        required
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className={inputClass}
-                        placeholder="email@example.com"
-                        dir="ltr"
-                      />
-                    </label>
-                    <label className="space-y-1 text-sm text-white/80">
-                      <span className="font-semibold text-white">{elmForm?.company}</span>
-                      <input
-                        required
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className={inputClass}
-                        placeholder={elmForm?.company}
-                      />
-                    </label>
-                    <label className="space-y-1 text-sm text-white/80 md:col-span-2">
-                      <span className="font-semibold text-white">{elmForm?.account}</span>
-                      <input
-                        required
-                        value={formData.account}
-                        onChange={(e) => setFormData({ ...formData, account: e.target.value })}
-                        className={inputClass}
-                        placeholder={elmForm?.account}
-                      />
-                    </label>
-                    <label className="space-y-1 text-sm text-white/80 md:col-span-2">
-                      <span className="font-semibold text-white">{elmForm?.notes}</span>
-                      <textarea
-                        value={formData.notes}
-                        onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                        className={`${inputClass} min-h-[120px] resize-none`}
-                        placeholder={elmForm?.notes}
-                      />
-                    </label>
-                  </div>
-
-                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                    <button
-                      type="submit"
-                      disabled={submitted}
-                      className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-6 py-3 text-sm font-semibold text-[#0b182f] transition hover:shadow-[0_18px_40px_-28px_rgba(34,211,238,0.8)] disabled:opacity-70"
-                    >
-                      {submitted ? "✓" : "→"} {elmForm?.submit}
-                    </button>
-                    {submitted && (
-                      <span className="text-sm font-semibold text-[#6ee7b7]">{elmForm?.success}</span>
-                    )}
-                  </div>
-                </form>
-              </div>
             </div>
           </div>
         </div>
