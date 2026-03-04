@@ -44,26 +44,22 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 right-0 left-0 z-50 border-b border-white/5 transition-all duration-500 ${
           scrolled
-            ? "bg-[#0c1e3c]/95 shadow-2xl shadow-black/10 backdrop-blur-xl"
-            : "bg-[#0c1e3c]/95 lg:bg-transparent"
+            ? "bg-gradient-to-r from-[#0b182f]/95 via-[#0d223e]/90 to-[#0b182f]/95 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.6)] backdrop-blur-xl"
+            : "bg-gradient-to-r from-[#0b182f]/85 via-[#0d223e]/80 to-[#0b182f]/85"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex h-20 items-center justify-between">
+        <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between sm:h-18">
             <Link href="#hero" className="group flex items-center gap-3">
-              <div className="relative flex h-12 w-32 sm:w-40 items-center justify-start overflow-hidden">
+              <div className="relative flex h-10 w-28 sm:w-32 items-center justify-start overflow-hidden">
                 <Image
                   src="/images/logo-white.png"
                   alt="شركة انتشار"
-                  width={160}
-                  height={48}
+                  width={150}
+                  height={44}
                   priority
                   className="object-contain object-right sm:object-center transition-transform duration-300 group-hover:scale-105"
                 />
-              </div>
-              <div className="hidden">
-                <span className="text-lg font-bold tracking-tight text-white">انتشار</span>
-                <span className="text-[10px] font-medium tracking-widest text-white/40 uppercase">ENTSHAAR</span>
               </div>
             </Link>
 
@@ -75,32 +71,30 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                      isActive
-                        ? "text-[#06b6d4]"
-                        : "text-white/60 hover:text-white"
+                    className={`relative px-3 py-2 text-[13px] font-medium transition-all duration-300 ${
+                      isActive ? "text-[#7ad8ff]" : "text-white/65 hover:text-white"
                     }`}
                   >
                     {link.label}
                     {isActive && (
-                      <span className="absolute bottom-0 right-0 left-0 mx-auto h-0.5 w-4 rounded-full bg-[#06b6d4]" />
+                      <span className="absolute bottom-1 right-0 left-0 mx-auto h-0.5 w-6 rounded-full bg-[#22d3ee]" />
                     )}
                   </Link>
                 )
               })}
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <button
                 onClick={() => setLocale(locale === "ar" ? "en" : "ar")}
-                className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-xs font-medium text-white/80 hover:bg-white/5"
+                className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[12px] font-semibold text-white/80 transition hover:border-[#22d3ee]/50 hover:text-white"
               >
                 <Globe className="h-3.5 w-3.5" />
                 {locale === "ar" ? "English" : "عربي"}
               </button>
               <Link
                 href="#contact"
-                className="group hidden items-center gap-2 rounded-full border border-[#0891b2]/40 bg-[#0891b2]/10 px-5 py-2.5 text-sm font-semibold text-[#06b6d4] backdrop-blur-sm transition-all duration-300 hover:border-[#06b6d4] hover:bg-[#0891b2] hover:text-white sm:flex"
+                className="group hidden items-center gap-2 rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#22d3ee] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_14px_36px_-22px_rgba(34,211,238,0.9)] transition hover:shadow-[0_16px_40px_-20px_rgba(34,211,238,1)] sm:flex"
               >
                 <Phone className="h-4 w-4" />
                 <span>{t("nav.contact")}</span>
@@ -108,7 +102,7 @@ export default function Navbar() {
               </Link>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white/80 transition-all hover:border-white/20 hover:text-white lg:hidden"
+                className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition-all hover:border-[#22d3ee]/50 hover:text-white lg:hidden"
                 aria-label="القائمة"
               >
                 {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -128,7 +122,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 z-50 flex h-full w-80 flex-col bg-[#0c1e3c] shadow-2xl transition-transform duration-500 ease-out lg:hidden ${
+        className={`fixed top-0 right-0 z-50 flex h-full w-80 flex-col bg-gradient-to-b from-[#0b182f] via-[#0d223e] to-[#0b182f] shadow-2xl transition-transform duration-500 ease-out lg:hidden ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -164,7 +158,7 @@ export default function Navbar() {
           <Link
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center gap-2 rounded-xl bg-[#0891b2] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#06b6d4]"
+            className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0ea5e9] to-[#22d3ee] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_12px_32px_-18px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_36px_-16px_rgba(34,211,238,1)]"
           >
             <Phone className="h-4 w-4" />
             {t("nav.contact")}

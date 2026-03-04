@@ -13,39 +13,41 @@ export default function StrategiesSection() {
   const strategies = (t("strategies.items") as Array<{ number: string; title: string; description: string }>) || []
 
   return (
-    <section id="strategies" className="magazine-section relative bg-[#fafbfc] py-28 lg:py-36">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Editorial header */}
+    <section
+      id="strategies"
+      className="magazine-section relative overflow-hidden bg-gradient-to-b from-[#0d223e] via-[#0b182f] to-[#0d223e] py-24 lg:py-30 text-white"
+    >
+      <div className="absolute -top-10 right-1/4 h-80 w-80 rounded-full bg-[#22d3ee]/12 blur-[130px]" />
+      <div className="absolute bottom-0 left-16 h-72 w-72 rounded-full bg-[#0ea5e9]/10 blur-[120px]" />
+      <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "34px 34px" }} />
+
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <div
           ref={headerRef}
-          className={`mb-20 text-center transition-all duration-1000 ${
+          className={`mb-14 text-center transition-all duration-1000 ${
             headerVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="mb-6 flex items-center justify-center gap-4">
-            <span className="h-px w-12 bg-[#0891b2]" />
-            <span className="text-xs font-bold tracking-[0.2em] text-[#0891b2] uppercase">{t("strategies.label")}</span>
-            <span className="h-px w-12 bg-[#0891b2]" />
+          <div className="mb-4 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
+            {t("strategies.label")}
           </div>
-          <h2 className="mb-6 text-3xl font-bold text-[#0c1e3c] sm:text-4xl lg:text-5xl">
+          <h2 className="mb-3 text-3xl font-bold sm:text-4xl lg:text-[40px]">
             {t("strategies.title")}
           </h2>
-          <p className="mx-auto max-w-xl text-base leading-relaxed text-[#64748b]">
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-white/70">
             {t("strategies.subtitle")}
           </p>
         </div>
 
-        {/* Timeline steps - editorial */}
         <div
           ref={stepsRef}
           className={`relative transition-all duration-1000 ${
             stepsVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          {/* Connecting line */}
-          <div className="absolute top-0 bottom-0 right-[calc(50%-1px)] hidden w-px bg-gradient-to-b from-transparent via-[#0891b2]/20 to-transparent lg:block" />
+          <div className="absolute top-0 bottom-0 right-[calc(50%-1px)] hidden w-px bg-gradient-to-b from-transparent via-white/10 to-transparent lg:block" />
 
-          <div className="flex flex-col gap-16 lg:gap-0">
+          <div className="flex flex-col gap-12 lg:gap-0">
             {strategies.map((strategy, i) => {
               const isEven = i % 2 === 0
               const Icon = iconMap[i]
@@ -57,27 +59,25 @@ export default function StrategiesSection() {
                   }`}
                   style={{ animationDelay: `${i * 0.15}s` }}
                 >
-                  {/* Content side */}
                   <div className={`flex-1 ${isEven ? "lg:text-left" : "lg:text-right"}`}>
-                    <div className={`card-magazine max-w-md rounded-3xl border border-[#e8ecf0] bg-white p-8 lg:p-10 ${isEven ? "lg:mr-auto" : "lg:ml-auto"}`}>
-                      {/* Number */}
-                      <span className="mb-4 inline-block text-6xl font-black text-[#0891b2]/10">
-                        {strategy.number}
-                      </span>
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#f0fdfa]">
-                        {Icon ? <Icon className="h-6 w-6 text-[#0891b2]" /> : null}
+                    <div
+                      className={`card-magazine max-w-md rounded-2xl border border-white/10 bg-white/[0.05] p-7 lg:p-8 shadow-[0_20px_50px_-36px_rgba(0,0,0,0.8)] ${
+                        isEven ? "lg:mr-auto" : "lg:ml-auto"
+                      }`}
+                    >
+                      <span className="mb-3 inline-block text-5xl font-black text-white/10">{strategy.number}</span>
+                      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff]">
+                        {Icon ? <Icon className="h-5 w-5" /> : null}
                       </div>
-                      <h3 className="mb-3 text-xl font-bold text-[#0c1e3c]">{strategy.title}</h3>
-                      <p className="text-base leading-relaxed text-[#64748b]">{strategy.description}</p>
+                      <h3 className="mb-2 text-lg font-semibold text-white">{strategy.title}</h3>
+                      <p className="text-sm leading-relaxed text-white/70">{strategy.description}</p>
                     </div>
                   </div>
 
-                  {/* Center node */}
-                  <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-4 border-[#fafbfc] bg-[#0891b2] shadow-lg shadow-[#0891b2]/20">
-                    <span className="text-sm font-bold text-white">{strategy.number}</span>
+                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-[#0d223e] bg-[#22d3ee] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)]">
+                    <span className="text-xs font-bold text-[#0b182f]">{strategy.number}</span>
                   </div>
 
-                  {/* Empty side */}
                   <div className="hidden flex-1 lg:block" />
                 </div>
               )

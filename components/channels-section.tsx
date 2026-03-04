@@ -27,46 +27,37 @@ export default function ChannelsSection() {
   }
 
   return (
-    <section id="channels" className="noise relative overflow-hidden bg-[#0c1e3c] py-28 lg:py-36">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/channels-unified.jpg"
-          alt="منصة الاتصال الموحدة"
-          fill
-          className="object-cover opacity-8"
-        />
-      </div>
+    <section
+      id="channels"
+      className="noise relative overflow-hidden bg-gradient-to-b from-[#0b182f] via-[#0d223e] to-[#0b182f] py-24 lg:py-32 text-white"
+    >
+      <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "34px 34px" }} />
+      <div className="absolute -top-10 right-10 h-80 w-80 rounded-full bg-[#0ea5e9]/12 blur-[120px]" />
+      <div className="absolute bottom-0 left-12 h-72 w-72 rounded-full bg-[#22d3ee]/10 blur-[110px]" />
 
-      {/* Ambient glow */}
-      <div className="absolute top-0 right-1/3 h-[500px] w-[500px] rounded-full bg-[#0891b2]/5 blur-[150px]" />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Split header - magazine editorial */}
+      <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <div
           ref={headerRef}
-          className={`mb-20 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-end transition-all duration-1000 ${
+          className={`mb-14 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-end transition-all duration-1000 ${
             headerVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
           <div>
-            <div className="mb-6 flex items-center gap-4">
-              <span className="h-px w-12 bg-[#06b6d4]" />
-              <span className="text-xs font-bold tracking-[0.2em] text-[#06b6d4] uppercase">{t("channels.label")}</span>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
+              {t("channels.label")}
             </div>
-            <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl text-balance">
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-[40px] text-balance">
               {t("channels.title")}
             </h2>
           </div>
-          <p className="max-w-md text-base leading-relaxed text-white/60 lg:text-left">
+          <p className="max-w-xl text-base leading-relaxed text-white/70 lg:text-left">
             {t("channels.subtitle")}
           </p>
         </div>
 
-        {/* Channel Cards - staggered magazine layout */}
         <div
           ref={cardsRef}
-          className={`stagger-children mb-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 ${cardsVisible ? "visible" : ""}`}
+          className={`stagger-children mb-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 ${cardsVisible ? "visible" : ""}`}
         >
           {order.map((key) => {
             const channel = items?.[key as keyof typeof items]
@@ -75,29 +66,19 @@ export default function ChannelsSection() {
             return (
               <div
                 key={key as string}
-                className="card-magazine glass group relative overflow-hidden rounded-3xl p-8"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_20px_60px_-32px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/60 hover:bg-white/[0.06]"
               >
-                {/* Top accent line */}
-                <div
-                  className="absolute top-0 right-0 left-0 h-1 transition-all duration-500 group-hover:h-1.5"
-                  style={{ backgroundColor: accent[key] }}
-                />
-
-                <div
-                  className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-110"
-                  style={{ backgroundColor: `${accent[key]}20` }}
-                >
-                  {Icon ? <Icon className="h-7 w-7" style={{ color: accent[key] }} /> : null}
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle at 18% 18%, rgba(34,211,238,0.12), transparent 40%)" }} />
+                <div className="relative z-10 space-y-3">
+                  <div
+                    className="flex h-12 w-12 items-center justify-center rounded-xl"
+                    style={{ backgroundColor: `${accent[key]}25`, color: accent[key] }}
+                  >
+                    {Icon ? <Icon className="h-6 w-6" /> : null}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">{channel.title}</h3>
+                  <p className="text-sm leading-relaxed text-white/70">{channel.description}</p>
                 </div>
-
-                <h3 className="mb-3 text-xl font-bold text-white">{channel.title}</h3>
-                <p className="text-sm leading-relaxed text-white/70">{channel.description}</p>
-
-                {/* Hover glow */}
-                <div
-                  className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full opacity-0 blur-[80px] transition-opacity duration-700 group-hover:opacity-20"
-                  style={{ backgroundColor: accent[key] }}
-                />
               </div>
             )
           })}
@@ -106,7 +87,7 @@ export default function ChannelsSection() {
         <div className="text-center">
           <Link
             href="#contact"
-            className="group inline-flex items-center gap-3 rounded-full border border-[#0891b2]/30 bg-[#0891b2]/10 px-8 py-4 text-base font-semibold text-[#06b6d4] backdrop-blur-sm transition-all duration-300 hover:border-[#06b6d4] hover:bg-[#0891b2] hover:text-white"
+            className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#22d3ee] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_40px_-22px_rgba(34,211,238,0.95)] transition hover:shadow-[0_18px_46px_-20px_rgba(34,211,238,1)]"
           >
             {t("channels.cta")}
             <ArrowLeft className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-1" />
@@ -114,8 +95,7 @@ export default function ChannelsSection() {
         </div>
       </div>
 
-      {/* Bottom separator */}
-      <div className="absolute bottom-0 right-0 left-0 h-px bg-gradient-to-l from-transparent via-[#0891b2]/20 to-transparent" />
+      <div className="absolute bottom-0 right-0 left-0 h-px bg-gradient-to-l from-transparent via-[#0891b2]/25 to-transparent" />
     </section>
   )
 }
