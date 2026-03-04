@@ -62,86 +62,80 @@ export default function HeroSection() {
   ]
 
   return (
-    <section id="hero" className="noise relative min-h-screen overflow-hidden bg-[#0c1e3c]">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-full w-full object-cover opacity-20"
-          >
-            <source src="/images/hero-video.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0c1e3c]/80 via-[#0c1e3c]/60 to-[#0c1e3c]" />
-        </div>
+    <section
+      id="hero"
+      className="noise relative overflow-hidden bg-gradient-to-b from-[#0b182f] via-[#0d223e] to-[#0b182f]"
+    >
+      <div className="absolute inset-0 z-0">
+        <video autoPlay loop muted playsInline className="h-full w-full object-cover opacity-15">
+          <source src="/images/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b182f]/92 via-[#0d223e]/88 to-[#0b182f]" />
+      </div>
 
-        {/* Ambient glow */}
-      <div className="absolute top-1/4 left-1/4 h-[500px] w-[500px] rounded-full bg-[#0891b2]/8 blur-[120px]" />
-      <div className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-[#06b6d4]/6 blur-[100px]" />
+      <div className="absolute -top-24 -left-10 h-72 w-72 rounded-full bg-[#22d3ee]/12 blur-[120px]" />
+      <div className="absolute top-10 right-0 h-80 w-80 rounded-full bg-[#0ea5e9]/12 blur-[120px]" />
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "36px 36px" }}
+      />
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-center px-6 pt-36 pb-24 lg:px-8">
-        {/* Badge */}
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center px-5 sm:px-6 lg:px-8 pt-28 pb-24 sm:pt-32 lg:pt-36">
         <div
-          className={`mb-10 transition-all duration-700 ${
-            loaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
+          className={`mb-8 transition-all duration-700 ${loaded ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}
         >
-          <div className="glass inline-flex items-center gap-3 rounded-full px-5 py-2.5">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#06b6d4] opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#06b6d4]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22d3ee] opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#22d3ee]" />
             </span>
-            <span className="text-sm font-medium text-white/70">
-              شركة انتشار لحلول تعهيد وإسناد الأعمال
-            </span>
+            <span className="text-white/80">شركة انتشار لحلول تعهيد وإسناد الأعمال</span>
           </div>
         </div>
 
-        {/* Main Heading - Editorial large */}
         <h1
-          className={`mb-8 max-w-5xl text-center text-5xl font-bold leading-[1.15] tracking-tight text-white text-balance transition-all delay-200 duration-1000 sm:text-6xl lg:text-7xl xl:text-8xl ${
-            loaded ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+          className={`mb-6 max-w-4xl text-center text-4xl font-bold leading-[1.2] tracking-tight text-white text-balance transition-all delay-150 duration-900 sm:text-5xl lg:text-6xl ${
+            loaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
           {t("hero.title")}
         </h1>
 
-        {/* Subtitle */}
         <p
-          className={`mb-12 max-w-2xl text-center text-lg leading-relaxed text-white/50 text-pretty transition-all delay-400 duration-1000 sm:text-xl ${
+          className={`mb-10 max-w-2xl text-center text-base leading-relaxed text-white/70 transition-all delay-250 duration-900 sm:text-lg ${
             loaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
           {t("hero.subtitle")}
         </p>
 
-        {/* CTA */}
         <div
-          className={`mb-20 flex flex-col items-center gap-4 transition-all delay-500 duration-1000 sm:flex-row ${
-            loaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          className={`mb-14 flex w-full max-w-xl flex-col items-stretch gap-3 transition-all delay-350 duration-900 sm:flex-row sm:items-center sm:justify-center ${
+            loaded ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
           <Link
             href="#contact"
-            className="group flex items-center gap-3 rounded-full bg-[#0891b2] px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-[#06b6d4] hover:shadow-2xl hover:shadow-[#0891b2]/30"
+            className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#22d3ee] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_18px_40px_-24px_rgba(34,211,238,0.9)] transition hover:shadow-[0_20px_46px_-22px_rgba(34,211,238,1)]"
           >
             {t("hero.ctaPrimary")}
-            {locale === 'ar' ? <ArrowLeft className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-1" /> : <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />}
+            {locale === "ar" ? (
+              <ArrowLeft className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-1" />
+            ) : (
+              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+            )}
           </Link>
           <Link
             href="#services"
-            className="group rounded-full border border-white/10 px-8 py-4 text-base font-medium text-white/70 transition-all duration-300 hover:border-white/30 hover:text-white"
+            className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white/80 transition hover:border-[#22d3ee] hover:text-white"
           >
             {t("hero.ctaSecondary")}
           </Link>
         </div>
 
-        {/* Feature pills */}
         <div
-          className={`mb-20 flex flex-wrap items-center justify-center gap-4 transition-all delay-600 duration-1000 ${
-            loaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          className={`mb-14 flex w-full flex-wrap items-center justify-center gap-3 transition-all delay-450 duration-900 ${
+            loaded ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
           {[
@@ -151,30 +145,30 @@ export default function HeroSection() {
           ].map((item) => (
             <div
               key={item.text}
-              className="glass group flex items-center gap-3 rounded-2xl px-6 py-4 transition-all duration-500 hover:border-[#06b6d4]/20 hover:bg-white/[0.08]"
+              className="group flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/75 transition hover:border-[#22d3ee]/60 hover:text-white"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0891b2]/15">
-                <item.icon className="h-5 w-5 text-[#06b6d4]" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#22d3ee]/12 text-[#7ad8ff]">
+                <item.icon className="h-5 w-5" />
               </div>
-              <span className="text-sm font-medium text-white/70 group-hover:text-white/90">
-                {item.text}
-              </span>
+              <span className="font-medium">{item.text}</span>
             </div>
           ))}
         </div>
 
-        {/* Stats - editorial style */}
         <div
-          className={`grid w-full max-w-3xl grid-cols-2 gap-8 sm:grid-cols-4 transition-all delay-700 duration-1000 ${
-            loaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          className={`grid w-full max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4 transition-all delay-550 duration-900 ${
+            loaded ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-4xl font-bold text-white sm:text-5xl">
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-white/10 bg-white/5 px-4 py-5 text-center shadow-[0_14px_36px_-26px_rgba(0,0,0,0.8)]"
+            >
+              <div className="text-3xl font-bold text-white sm:text-4xl">
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="mt-2 text-sm font-medium tracking-wide text-white/40">{stat.label}</div>
+              <div className="mt-2 text-xs font-semibold uppercase tracking-wide text-white/50">{stat.label}</div>
             </div>
           ))}
         </div>

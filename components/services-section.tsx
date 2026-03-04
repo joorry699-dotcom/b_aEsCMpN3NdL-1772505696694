@@ -37,6 +37,8 @@ export default function ServicesSection() {
     { title: string; description: string; features: string[] }
   >
   const elmForm = t("elm.form") as Record<string, string>
+  const inputClass =
+    "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-[#22d3ee] focus:ring-1 focus:ring-[#22d3ee]/40"
 
   const iconMap: Record<string, LucideIcon> = {
     bpo: Briefcase,
@@ -80,50 +82,51 @@ export default function ServicesSection() {
   }
 
   return (
-    <section id="services" className="relative overflow-hidden bg-[#f6f8fb] py-24 lg:py-28">
-      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0ea5e9 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+    <section
+      id="services"
+      className="relative overflow-hidden bg-gradient-to-b from-[#0b182f] via-[#0d223e] to-[#0b182f] py-24 lg:py-28 text-white"
+    >
+      <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-[#0ea5e9]/15 blur-[120px]" />
+      <div className="absolute -bottom-20 left-10 h-72 w-72 rounded-full bg-[#22d3ee]/10 blur-[110px]" />
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "34px 34px" }}
+      />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <div
           ref={headerRef}
-          className={`mb-16 transition-all duration-1000 ${
+          className={`mb-14 sm:mb-16 transition-all duration-1000 ${
             headerVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="flex items-center gap-3 mb-5">
-            <span className="h-px flex-1 max-w-16 bg-[#0ea5e9]" />
-            <span className="text-[11px] font-semibold tracking-[0.18em] text-[#0ea5e9] uppercase">{t("nav.services")}</span>
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7ad8ff]">
+            {t("nav.services")}
           </div>
-          <h2 className="mb-3 max-w-2xl text-4xl font-bold leading-tight text-[#0c1e3c] sm:text-5xl">
+          <h2 className="mt-4 mb-3 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl lg:text-[42px]">
             {t("services.title")}
           </h2>
-          <p className="max-w-2xl text-base leading-relaxed text-[#475569]">
+          <p className="max-w-3xl text-base leading-relaxed text-white/70 sm:text-lg">
             {t("services.subtitle")}
           </p>
         </div>
 
-        {/* Bento Grid */}
         <div
           ref={gridRef}
-          className={`stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 ${gridVisible ? "visible" : ""}`}
+          className={`stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${gridVisible ? "visible" : ""}`}
         >
-          {services.map((service, i) => (
+          {services.map((service) => (
             <div
               key={service.key}
-              className={`group relative overflow-hidden rounded-2xl border border-[#dbeafe] bg-white p-6 shadow-sm transition-all duration-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0ea5e9]/10 ${
-                i === 0 ? "sm:col-span-2 sm:row-span-2 sm:p-8" : ""
-              }`}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.06]"
             >
-              <div className="relative z-10">
-                <div className={`mb-4 flex items-center justify-center rounded-xl bg-[#e0f2fe] text-[#0e7490] transition-colors duration-400 group-hover:bg-[#0ea5e9]/15 ${i === 0 ? "h-14 w-14" : "h-12 w-12"}`}>
-                  <service.icon className={`${i === 0 ? "h-7 w-7" : "h-6 w-6"}`} />
+              <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle at 20% 20%, rgba(34,211,238,0.12), transparent 40%)" }} />
+              <div className="relative z-10 space-y-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff]">
+                  <service.icon className="h-6 w-6" />
                 </div>
-                <h3 className={`mb-2 font-semibold text-[#0c1e3c] ${i === 0 ? "text-xl" : "text-base"}`}>
-                  {service.title}
-                </h3>
-                <p className={`leading-relaxed text-[#475569] ${i === 0 ? "text-sm" : "text-sm"}`}>
-                  {service.description}
-                </p>
+                <h3 className="text-lg font-semibold text-white">{service.title}</h3>
+                <p className="text-sm leading-relaxed text-white/65">{service.description}</p>
               </div>
             </div>
           ))}
@@ -132,135 +135,138 @@ export default function ServicesSection() {
         <div
           id="elm-services"
           ref={elmRef}
-          className={`mt-16 grid gap-8 lg:grid-cols-5 transition-all duration-1000 ${
+          className={`mt-16 transition-all duration-1000 ${
             elmVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="lg:col-span-2 space-y-5">
-            <div className="inline-flex rounded-full bg-[#e0f2fe] px-3 py-1 text-[11px] font-semibold text-[#0369a1]">
-              {t("elm.heading")}
-            </div>
-            <h3 className="text-2xl font-bold text-[#0c1e3c] lg:text-3xl">
-              {selectedData?.title}
-            </h3>
-            <p className="text-base text-[#475569] leading-relaxed">
-              {selectedData?.description}
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              {(["muqeem", "masarat"] as const).map((key) => (
-                <button
-                  key={key}
-                  type="button"
-                  onClick={() => handleSelectElm(key)}
-                  className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all ${
-                    selectedElm === key
-                      ? "border-[#0891b2] bg-[#0891b2]/10 text-[#0c1e3c]"
-                      : "border-[#e2e8f0] text-[#475569] hover:border-[#0891b2]/60"
-                  }`}
-                >
-                  {elmServices?.[key]?.title}
-                </button>
-              ))}
-            </div>
-
-            <div className="rounded-2xl border border-[#dbeafe] bg-white p-5 shadow-sm">
-              <h4 className="mb-3 text-base font-semibold text-[#0c1e3c]">{t("elm.subheading")}</h4>
-              <ul className="space-y-2.5 text-sm text-[#475569]">
-                {selectedData?.features?.map((feat) => (
-                  <li key={feat} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-[#0ea5e9]" />
-                    <span>{feat}</span>
-                  </li>
+          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 lg:p-8 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] backdrop-blur-xl">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div className="space-y-2">
+                <div className="inline-flex items-center gap-2 rounded-full bg-[#22d3ee]/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
+                  {t("elm.heading")}
+                </div>
+                <h3 className="text-2xl font-bold lg:text-3xl">{selectedData?.title}</h3>
+                <p className="text-sm sm:text-base text-white/70 leading-relaxed">{selectedData?.description}</p>
+              </div>
+              <div className="flex w-full flex-wrap gap-2 md:w-auto md:justify-end">
+                {(["muqeem", "masarat"] as const).map((key) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => handleSelectElm(key)}
+                    className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all ${
+                      selectedElm === key
+                        ? "border-[#22d3ee] bg-[#22d3ee]/20 text-white shadow-[0_10px_30px_-16px_rgba(34,211,238,0.8)]"
+                        : "border-white/15 text-white/70 hover:border-[#22d3ee]/60 hover:text-white"
+                    }`}
+                  >
+                    {elmServices?.[key]?.title}
+                  </button>
                 ))}
-              </ul>
+              </div>
             </div>
-          </div>
 
-          <div className="lg:col-span-3" id="elm-form">
-            <form onSubmit={handleElmSubmit} className="rounded-2xl border border-[#dbeafe] bg-white p-6 shadow-sm lg:p-7">
-              <div className="mb-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#0ea5e9]">{elmServices?.[selectedElm]?.title}</p>
-                <h4 className="mt-1 text-xl font-bold text-[#0c1e3c]">{elmForm?.title}</h4>
-                <p className="mt-1 text-sm text-[#475569]">{elmForm?.subtitle}</p>
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <h4 className="mb-3 text-base font-semibold text-white">{t("elm.subheading")}</h4>
+                <ul className="space-y-2.5 text-sm text-white/70">
+                  {selectedData?.features?.map((feat) => (
+                    <li key={feat} className="flex items-start gap-3">
+                      <span className="mt-1 h-2 w-2 rounded-full bg-[#22d3ee]" />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <label className="space-y-1 text-sm text-[#0f172a]">
-                  <span className="font-semibold">{elmForm?.name}</span>
-                  <input
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full rounded-xl border border-[#e2e8f0] px-4 py-3 text-sm outline-none transition focus:border-[#0891b2]"
-                    placeholder={elmForm?.name}
-                  />
-                </label>
-                <label className="space-y-1 text-sm text-[#0f172a]">
-                  <span className="font-semibold">{elmForm?.phone}</span>
-                  <input
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full rounded-xl border border-[#e2e8f0] px-4 py-3 text-sm outline-none transition focus:border-[#0891b2]"
-                    placeholder="05xxxxxxxx"
-                    dir="ltr"
-                  />
-                </label>
-                <label className="space-y-1 text-sm text-[#0f172a]">
-                  <span className="font-semibold">{elmForm?.email}</span>
-                  <input
-                    required
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full rounded-xl border border-[#e2e8f0] px-4 py-3 text-sm outline-none transition focus:border-[#0891b2]"
-                    placeholder="email@example.com"
-                    dir="ltr"
-                  />
-                </label>
-                <label className="space-y-1 text-sm text-[#0f172a]">
-                  <span className="font-semibold">{elmForm?.company}</span>
-                  <input
-                    required
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full rounded-xl border border-[#e2e8f0] px-4 py-3 text-sm outline-none transition focus:border-[#0891b2]"
-                    placeholder={elmForm?.company}
-                  />
-                </label>
-                <label className="space-y-1 text-sm text-[#0f172a] md:col-span-2">
-                  <span className="font-semibold">{elmForm?.account}</span>
-                  <input
-                    required
-                    value={formData.account}
-                    onChange={(e) => setFormData({ ...formData, account: e.target.value })}
-                    className="w-full rounded-xl border border-[#e2e8f0] px-4 py-3 text-sm outline-none transition focus:border-[#0891b2]"
-                    placeholder={elmForm?.account}
-                  />
-                </label>
-                <label className="space-y-1 text-sm text-[#0f172a] md:col-span-2">
-                  <span className="font-semibold">{elmForm?.notes}</span>
-                  <textarea
-                    value={formData.notes}
-                    onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    className="w-full rounded-xl border border-[#e2e8f0] px-4 py-3 text-sm outline-none transition focus:border-[#0891b2] min-h-[120px]"
-                    placeholder={elmForm?.notes}
-                  />
-                </label>
-              </div>
+              <div className="rounded-2xl border border-white/10 bg-[#0f1f36]/70 p-5 lg:p-6" id="elm-form">
+                <form onSubmit={handleElmSubmit} className="space-y-4">
+                  <div className="space-y-1">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-[#7ad8ff]">{elmServices?.[selectedElm]?.title}</p>
+                    <h4 className="text-xl font-bold text-white">{elmForm?.title}</h4>
+                    <p className="text-sm text-white/60">{elmForm?.subtitle}</p>
+                  </div>
 
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <button
-                  type="submit"
-                  disabled={submitted}
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0891b2] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0ea5e9] disabled:opacity-70"
-                >
-                  {submitted ? "✓" : "→"} {elmForm?.submit}
-                </button>
-                {submitted && <span className="text-sm font-semibold text-[#16a34a]">{elmForm?.success}</span>}
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <label className="space-y-1 text-sm text-white/80">
+                      <span className="font-semibold text-white">{elmForm?.name}</span>
+                      <input
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className={inputClass}
+                        placeholder={elmForm?.name}
+                      />
+                    </label>
+                    <label className="space-y-1 text-sm text-white/80">
+                      <span className="font-semibold text-white">{elmForm?.phone}</span>
+                      <input
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className={inputClass}
+                        placeholder="05xxxxxxxx"
+                        dir="ltr"
+                      />
+                    </label>
+                    <label className="space-y-1 text-sm text-white/80">
+                      <span className="font-semibold text-white">{elmForm?.email}</span>
+                      <input
+                        required
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className={inputClass}
+                        placeholder="email@example.com"
+                        dir="ltr"
+                      />
+                    </label>
+                    <label className="space-y-1 text-sm text-white/80">
+                      <span className="font-semibold text-white">{elmForm?.company}</span>
+                      <input
+                        required
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        className={inputClass}
+                        placeholder={elmForm?.company}
+                      />
+                    </label>
+                    <label className="space-y-1 text-sm text-white/80 md:col-span-2">
+                      <span className="font-semibold text-white">{elmForm?.account}</span>
+                      <input
+                        required
+                        value={formData.account}
+                        onChange={(e) => setFormData({ ...formData, account: e.target.value })}
+                        className={inputClass}
+                        placeholder={elmForm?.account}
+                      />
+                    </label>
+                    <label className="space-y-1 text-sm text-white/80 md:col-span-2">
+                      <span className="font-semibold text-white">{elmForm?.notes}</span>
+                      <textarea
+                        value={formData.notes}
+                        onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                        className={`${inputClass} min-h-[120px] resize-none`}
+                        placeholder={elmForm?.notes}
+                      />
+                    </label>
+                  </div>
+
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <button
+                      type="submit"
+                      disabled={submitted}
+                      className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[#0ea5e9] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#22d3ee] disabled:opacity-70"
+                    >
+                      {submitted ? "✓" : "→"} {elmForm?.submit}
+                    </button>
+                    {submitted && (
+                      <span className="text-sm font-semibold text-[#6ee7b7]">{elmForm?.success}</span>
+                    )}
+                  </div>
+                </form>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
