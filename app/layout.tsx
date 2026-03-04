@@ -28,6 +28,10 @@ export const metadata: Metadata = {
         url: '/icon.svg',
         type: 'image/svg+xml',
       },
+      {
+        url: '/icon-light-32x32.png',
+        rel: 'shortcut icon',
+      },
     ],
     apple: '/apple-icon.png',
   },
