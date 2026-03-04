@@ -10,14 +10,14 @@ export default function Footer() {
   
   const footerLinks = {
     support: [
-      { label: t("nav.contact"), href: "#contact" },
-      { label: t("nav.careers"), href: "#careers" },
+      { label: t("nav.contact"), href: "/#contact" },
+      { label: t("nav.careers"), href: "/#careers" },
     ],
     entshaar: [
-      { label: t("nav.home"), href: "#hero" },
-      { label: t("nav.clients"), href: "#clients" },
-      { label: t("nav.services"), href: "#services" },
-      { label: t("nav.blog"), href: "/blog/" },
+      { label: t("nav.home"), href: "/#hero" },
+      { label: t("nav.clients"), href: "/#clients" },
+      { label: t("nav.services"), href: "/#services" },
+      { label: t("nav.blog"), href: "/#latest-news" },
     ],
   }
   return (
