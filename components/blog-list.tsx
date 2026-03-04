@@ -31,7 +31,7 @@ export function BlogList() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((post) => (
             <Link
-              href={`/blog/${post.slug}`}
+              href={`/blog/${post.slug}/`}
               key={post.slug}
               className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-all hover:shadow-xl"
             >

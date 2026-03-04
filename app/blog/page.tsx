@@ -42,7 +42,7 @@ export default function BlogPage() {
             return (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.slug}/`}
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-lg transition-all hover:-translate-y-1 hover:border-teal-400/60 hover:shadow-2xl hover:shadow-teal-500/10"
               >
                 <div className="relative h-52 w-full overflow-hidden">
