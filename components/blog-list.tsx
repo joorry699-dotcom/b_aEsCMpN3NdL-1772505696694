@@ -37,7 +37,7 @@ export function BlogList() {
             >
               <div className="relative h-48 w-full">
                 <Image
-                  src={post.image}
+                  src={post.image ?? "/images/partners/Elmam_inf_saudi_man_presenting_white_board_leading_a_meeting_Th_3fa926c9-bd44-4c4d-865b-916ff67c687c.jpg"}
                   alt={locale === "ar" ? post.title_ar : post.title_en}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"

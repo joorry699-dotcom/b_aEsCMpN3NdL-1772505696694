@@ -7,7 +7,7 @@ export interface BlogPost {
   date: string
   excerpt_ar: string
   excerpt_en: string
-  image?: string
+  image: string
   content_ar: string
   content_en: string
 }

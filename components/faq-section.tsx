@@ -32,10 +32,10 @@ export function FAQSection() {
                 value={`item-${index}`}
                 className="border border-white/10 rounded-2xl px-6 bg-[#0c1e3c]/50 backdrop-blur-sm overflow-hidden"
               >
-                <AccordionTrigger className="text-lg text-white hover:text-[#06b6d4] hover:no-underline py-6">
+                <AccordionTrigger className="text-start text-lg text-white hover:text-[#06b6d4] hover:no-underline py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-white/60 text-base pb-6 leading-relaxed">
+                <AccordionContent className="text-start text-white/60 text-base pb-6 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

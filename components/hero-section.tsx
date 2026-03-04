@@ -50,6 +50,10 @@ export default function HeroSection() {
   const { t, locale } = useLanguage()
   const [loaded, setLoaded] = useState(false)
 
+  useEffect(() => {
+    setLoaded(true)
+  }, [])
+
   const stats = [
     { value: 15, suffix: "+", label: locale === 'ar' ? "سنة خبرة" : "Years Experience" },
     { value: 200, suffix: "+", label: locale === 'ar' ? "عميل" : "Clients" },

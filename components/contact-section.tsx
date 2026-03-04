@@ -65,6 +65,16 @@ export default function ContactSection() {
           isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
         }`}
       >
+        <div className="mb-6 flex justify-start">
+          <button
+            type="button"
+            onClick={() => window.history.back()}
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-white/30 hover:text-white"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            رجوع
+          </button>
+        </div>
         {/* Editorial header */}
         <div className="mb-20 text-center">
           <div className="mb-6 flex items-center justify-center gap-4">

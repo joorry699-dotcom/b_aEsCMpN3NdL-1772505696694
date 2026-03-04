@@ -27,7 +27,9 @@ export default function BlogPage() {
             {locale === "ar" ? "اكتشف أحدث الرؤى والاستراتيجيات" : "Discover fresh insights and strategies"}
           </h1>
           <p className="mt-4 text-lg text-slate-300">
-            {locale === "ar" ? "محتوى مختصر وواضح من خبراء انتشار في التسويق، الموارد البشرية، ومراكز الاتصال." : "Bite-sized guidance from Entishar experts across marketing, HR, and contact centers."}
+            {locale === "ar"
+              ? "محتوى مختصر وواضح من خبراء انتشار في التسويق، الموارد البشرية، ومراكز الاتصال."
+              : "Bite-sized guidance from Entishar experts across marketing, HR, and contact centers."}
           </p>
         </div>
 
@@ -45,7 +47,7 @@ export default function BlogPage() {
               >
                 <div className="relative h-52 w-full overflow-hidden">
                   <Image
-                    src={post.image || "/images/placeholder.png"}
+                    src={post.image ?? "/images/partners/Elmam_inf_saudi_man_presenting_white_board_leading_a_meeting_Th_3fa926c9-bd44-4c4d-865b-916ff67c687c.jpg"}
                     alt={title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
