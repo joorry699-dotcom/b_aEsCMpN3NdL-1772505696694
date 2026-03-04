@@ -4,77 +4,81 @@ import Link from "next/link"
 import Image from "next/image"
 import { posts } from "../../lib/blog"
 import { useLanguage } from "../../components/language-provider"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
 
 export default function BlogPage() {
   const { locale } = useLanguage()
 
   const categoryMap: Record<string, string> = {
-    "digital-marketing-trends-2026": "التسويق الرقمي",
-    "call-center-efficiency": "مراكز الاتصال",
-    "hr-recruitment-strategies": "الموارد البشرية",
-    "hr-solutions-saudi": "حلول الموارد البشرية",
-    "saudi-market-expansion": "تطوير الأعمال",
+    "digital-marketing-trends-2026": locale === "ar" ? "التسويق الرقمي" : "Digital Marketing",
+    "call-center-efficiency": locale === "ar" ? "مراكز الاتصال" : "Call Centers",
+    "hr-recruitment-strategies": locale === "ar" ? "الموارد البشرية" : "Human Resources",
+    "hr-solutions-saudi": locale === "ar" ? "حلول الموارد البشرية" : "HR Solutions",
+    "saudi-market-expansion": locale === "ar" ? "تطوير الأعمال" : "Business Expansion",
   }
 
   const sortedPosts = [...posts].sort((a, b) => (a.date > b.date ? -1 : 1))
 
   return (
-    <main className="bg-slate-950 text-white">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-        <div className="mb-14 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-teal-300/80">{locale === "ar" ? "المدونات والمقالات" : "Blogs & Articles"}</p>
-          <h1 className="text-4xl font-extrabold leading-tight md:text-5xl">
-            {locale === "ar" ? "اكتشف أحدث الرؤى والاستراتيجيات" : "Discover fresh insights and strategies"}
-          </h1>
-          <p className="mt-4 text-lg text-slate-300">
-            {locale === "ar"
-              ? "محتوى مختصر وواضح من خبراء انتشار في التسويق، الموارد البشرية، ومراكز الاتصال."
-              : "Bite-sized guidance from Entishar experts across marketing, HR, and contact centers."}
-          </p>
-        </div>
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-[#f8fafc] text-slate-800 pt-32 pb-20">
+        <div className="mx-auto max-w-7xl px-6 md:px-8">
+          <div className="mb-16">
+            <h1 className="text-4xl font-extrabold text-[#0c1e3c] md:text-5xl mb-6">
+              {locale === "ar" ? "المدونات" : "Blogs"}
+            </h1>
+            <p className="max-w-3xl text-lg text-slate-600 leading-relaxed">
+              {locale === "ar"
+                ? "تعمق في عالم التعهيد وحلول مراكز الاتصال وإدارة الموارد البشرية. ابق على اطلاع بأحدث الاتجاهات والرؤى والاستراتيجيات المبتكرة لتعزيز كفاءة أعمالك."
+                : "Dive deep into the world of business outsourcing, call center services, and HR solutions. Stay updated with the latest trends, insights, and innovative strategies to boost your business efficiency."}
+            </p>
+          </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {sortedPosts.map((post) => {
-            const title = locale === "ar" ? post.title_ar : post.title_en
-            const excerpt = locale === "ar" ? post.excerpt_ar : post.excerpt_en
-            const tag = categoryMap[post.slug] ?? (locale === "ar" ? "مقال" : "Article")
+          <div className="flex flex-col gap-16">
+            {sortedPosts.map((post) => {
+              const title = locale === "ar" ? post.title_ar : post.title_en
+              const excerpt = locale === "ar" ? post.excerpt_ar : post.excerpt_en
+              const tag = categoryMap[post.slug] ?? (locale === "ar" ? "مقال" : "Article")
 
-            return (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}/`}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-lg transition-all hover:-translate-y-1 hover:border-teal-400/60 hover:shadow-2xl hover:shadow-teal-500/10"
-              >
-                <div className="relative h-52 w-full overflow-hidden">
-                  <Image
-                    src={post.image ?? "/images/partners/Elmam_inf_saudi_man_presenting_white_board_leading_a_meeting_Th_3fa926c9-bd44-4c4d-865b-916ff67c687c.jpg"}
-                    alt={title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute left-4 bottom-4 flex items-center gap-2 text-xs font-semibold text-white">
-                    <span className="rounded-full bg-teal-500/90 px-3 py-1 text-[11px]">{tag}</span>
-                    <span className="rounded-full bg-white/15 px-3 py-1">{post.date}</span>
+              return (
+                <div key={post.slug} className="group grid gap-8 bg-white border border-slate-200 p-6 md:p-8 rounded-2xl shadow-sm transition-shadow hover:shadow-md md:grid-cols-[1fr_2fr] items-center">
+                  <Link href={`/blog/${post.slug}/`} className="relative h-64 md:h-full min-h-[240px] w-full overflow-hidden rounded-xl">
+                    <Image
+                      src={post.image ?? "/images/partners/Elmam_inf_saudi_man_presenting_white_board_leading_a_meeting_Th_3fa926c9-bd44-4c4d-865b-916ff67c687c.jpg"}
+                      alt={title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                    />
+                  </Link>
+
+                  <div className="flex flex-col justify-center">
+                    <h2 className="mb-4 text-2xl md:text-3xl font-bold leading-tight text-[#0c1e3c]">
+                      <Link href={`/blog/${post.slug}/`} className="hover:text-cyan-600 transition-colors">
+                        {title}
+                      </Link>
+                    </h2>
+                    <p className="mb-8 text-base text-slate-600 leading-relaxed md:line-clamp-4 line-clamp-3">
+                      {excerpt}
+                    </p>
+                    <div className="mt-auto">
+                      <Link 
+                        href={`/blog/${post.slug}/`}
+                        className="inline-flex items-center text-sm font-bold text-[#0c1e3c] tracking-wide hover:text-cyan-600 transition-colors uppercase"
+                      >
+                        {locale === "ar" ? "اقرأ المزيد <<" : "Read More >>"}
+                      </Link>
+                    </div>
                   </div>
                 </div>
-
-                <div className="flex flex-1 flex-col p-5">
-                  <h2 className="mb-2 text-xl font-bold leading-7 text-white group-hover:text-teal-200">{title}</h2>
-                  <p className="line-clamp-3 text-sm text-slate-300 leading-6">{excerpt}</p>
-                  <div className="mt-auto pt-5 text-sm font-semibold text-teal-300 group-hover:text-white">
-                    {locale === "ar" ? "اقرأ المزيد" : "Read more"}
-                    <span className="mr-2 inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5">
-                      {locale === "ar" ? "←" : "→"}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   )
 }
