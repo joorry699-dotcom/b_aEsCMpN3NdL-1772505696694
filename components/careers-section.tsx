@@ -177,7 +177,7 @@ export function CareersSection() {
   })
 
   const inputClass =
-    "w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-all focus:border-[#06b6d4]/60 focus:ring-1 focus:ring-[#06b6d4]/30"
+    "w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-all focus:border-[#22d3ee]/60 focus:ring-1 focus:ring-[#22d3ee]/25"
 
   const openApply = (job: (typeof jobs)[number]) => {
     setSelectedJob(job)
@@ -192,17 +192,24 @@ export function CareersSection() {
   }
 
   return (
-    <section id="careers" className="py-24 bg-[#0c1e3c]">
-      <div className="container mx-auto px-6">
+    <section
+      id="careers"
+      className="magazine-section relative overflow-hidden bg-gradient-to-b from-[#0d223e] via-[#0b182f] to-[#0d223e] py-24 lg:py-30 text-white"
+    >
+      <div className="absolute -top-10 right-10 h-72 w-72 rounded-full bg-[#22d3ee]/12 blur-[120px]" />
+      <div className="absolute bottom-0 left-12 h-80 w-80 rounded-full bg-[#0ea5e9]/10 blur-[120px]" />
+      <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "34px 34px" }} />
+
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <Badge className="bg-[#06b6d4]/10 text-[#06b6d4] hover:bg-[#06b6d4]/20 mb-4 border-none px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase">
+            <Badge className="bg-white/5 text-[#7ad8ff] hover:bg-white/10 mb-4 border border-white/10 px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-[0.18em] uppercase">
               {t("nav.careers")}
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white mb-4">
               {t("careers.title")}
             </h2>
-            <p className="text-xl text-white/60">
+            <p className="text-base text-white/70 max-w-xl">
               {t("careers.subtitle")}
             </p>
           </div>
@@ -212,22 +219,22 @@ export function CareersSection() {
           {jobs.map((job) => (
             <div 
               key={job.id} 
-              className="group relative flex flex-col md:flex-row md:items-center justify-between p-8 rounded-[2rem] border border-white/5 bg-[#112a52]/40 backdrop-blur-xl transition-all duration-500 hover:border-[#06b6d4]/30 hover:bg-[#112a52]/60 hover:shadow-2xl hover:shadow-[#06b6d4]/10"
+              className="card-magazine group relative flex flex-col md:flex-row md:items-center justify-between p-7 rounded-[22px] border border-white/10 bg-white/[0.05] backdrop-blur-xl transition-all duration-500 hover:border-[#22d3ee]/30 hover:bg-white/[0.08] hover:shadow-[0_20px_50px_-36px_rgba(0,0,0,0.8)]"
             >
               <div className="flex items-start gap-6">
-                <div className="p-4 rounded-2xl bg-[#06b6d4]/10 text-[#06b6d4]">
-                  <Briefcase className="w-8 h-8" />
+                <div className="p-4 rounded-2xl bg-[#22d3ee]/15 text-[#7ad8ff]">
+                  <Briefcase className="w-7 h-7" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#06b6d4] transition-colors">
+                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#7ad8ff] transition-colors">
                     {job.title[locale]}
                   </h3>
-                  <div className="flex flex-wrap gap-4 text-sm text-white/50">
-                    <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                  <div className="flex flex-wrap gap-3 text-sm text-white/60">
+                    <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
                       <Clock3 className="w-4 h-4" />
                       {job.type[locale]}
                     </span>
-                    <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                    <span className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
                       <MapPin className="w-4 h-4" />
                       {job.location[locale]}
                     </span>
@@ -246,7 +253,7 @@ export function CareersSection() {
                 </div>
                 <Button
                   onClick={() => openApply(job)}
-                  className="rounded-full bg-[#06b6d4] hover:bg-[#0891b2] text-white px-8 py-6 text-base font-bold shadow-lg shadow-[#06b6d4]/20 transition-all duration-300 hover:scale-105 active:scale-95 flex gap-2"
+                  className="rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] text-[#0b182f] px-7 py-3 text-sm font-semibold shadow-[0_18px_40px_-28px_rgba(34,211,238,0.8)] transition-all duration-300 hover:scale-[1.02] active:scale-95 flex gap-2"
                 >
                   {t("careers.apply")}
                   <ChevronLeft className={`w-4 h-4 ${locale === 'ar' ? '' : 'rotate-180'}`} />
@@ -294,7 +301,7 @@ export function CareersSection() {
                 </ul>
               </div>
 
-              <form onSubmit={handleSubmit} className="grid gap-4">
+              <form onSubmit={handleSubmit} className="grid gap-4" encType="multipart/form-data">
                 <div className="grid gap-3 sm:grid-cols-2">
                   <div>
                     <label className="mb-2 block text-xs font-semibold uppercase text-white/60">{locale === "ar" ? "الاسم الكامل" : "Full name"}</label>
@@ -329,13 +336,13 @@ export function CareersSection() {
                 <div>
                   <label className="mb-2 block text-xs font-semibold uppercase text-white/60">{locale === "ar" ? "أرفق السيرة الذاتية" : "Attach CV"}</label>
                   <div className="flex items-center gap-3 rounded-2xl border border-dashed border-white/15 bg-white/5 px-4 py-3">
-                    <FileText className="h-5 w-5 text-[#06b6d4]" />
+                    <FileText className="h-5 w-5 text-[#7ad8ff]" />
                     <input
                       required
                       type="file"
                       accept=".pdf,.doc,.docx"
                       onChange={(e) => setForm({ ...form, cv: e.target.files?.[0]?.name || "" })}
-                      className="text-sm text-white/80"
+                      className="flex-1 cursor-pointer text-sm text-white/85 file:mr-3 file:cursor-pointer file:rounded-xl file:border-0 file:bg-[#22d3ee]/18 file:px-3 file:py-1.5 file:text-[#0b182f] file:font-semibold"
                     />
                     {form.cv && <span className="text-xs text-white/60">{form.cv}</span>}
                   </div>
@@ -345,7 +352,7 @@ export function CareersSection() {
                   <Button
                     type="submit"
                     disabled={submitted}
-                    className="rounded-full bg-[#06b6d4] px-6 py-3 text-white shadow-lg shadow-[#06b6d4]/20 transition-all hover:bg-[#0891b2]"
+                    className="rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-6 py-3 text-[#0b182f] font-semibold shadow-[0_18px_40px_-28px_rgba(34,211,238,0.8)] transition-all hover:scale-[1.01]"
                   >
                     <Send className="h-4 w-4" />
                     {submitted ? (locale === "ar" ? "تم الإرسال" : "Submitted") : t("careers.apply")}

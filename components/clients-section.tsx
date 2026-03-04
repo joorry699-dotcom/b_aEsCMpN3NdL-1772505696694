@@ -87,7 +87,7 @@ export default function ClientsSection() {
               {[...clients, ...clients].map((client, index) => (
                 <div
                   key={`${client.src}-${index}`}
-                  className="flex h-24 w-48 shrink-0 snap-start items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] px-6 transition-all duration-500 hover:border-[#22d3ee]/25 hover:bg-white/[0.08] hover:shadow-[0_18px_40px_-28px_rgba(34,211,238,0.5)]"
+                  className="flex h-24 w-48 shrink-0 snap-start items-center justify-center rounded-2xl border border-white/10 bg-white/[0.02] px-6 transition-all duration-500 hover:border-[#22d3ee]/25 hover:bg-white/[0.05] hover:shadow-[0_18px_40px_-28px_rgba(34,211,238,0.5)]"
                 >
                   <div className="relative h-14 w-28">
                     <Image
