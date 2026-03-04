@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import Image from "next/image"
 import { posts } from "../../lib/blog"
 import { useLanguage } from "../../components/language-provider"
@@ -51,34 +50,24 @@ export default function BlogPage() {
 
               return (
                 <div key={post.slug} className="card-magazine group grid gap-6 rounded-2xl border border-white/10 bg-white/[0.05] p-6 md:p-7 shadow-[0_20px_50px_-36px_rgba(0,0,0,0.8)] transition-all hover:border-[#22d3ee]/25 hover:bg-white/[0.08] md:grid-cols-[1fr_2fr] items-center">
-                  <Link href={`/blog/${post.slug}/`} className="relative h-60 md:h-full min-h-[220px] w-full overflow-hidden rounded-xl">
+                  <div className="relative h-60 md:h-full min-h-[220px] w-full overflow-hidden rounded-xl">
                     <Image
                       src={post.image ?? "/images/partners/Elmam_inf_saudi_man_presenting_white_board_leading_a_meeting_Th_3fa926c9-bd44-4c4d-865b-916ff67c687c.jpg"}
                       alt={title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover"
                       sizes="(min-width: 768px) 33vw, 100vw"
                     />
-                  </Link>
+                  </div>
 
                   <div className="flex flex-col justify-center">
                     <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#7ad8ff]">{tag}</div>
                     <h2 className="mb-3 text-2xl md:text-3xl font-semibold leading-tight text-white">
-                      <Link href={`/blog/${post.slug}/`} className="hover:text-[#7ad8ff] transition-colors">
-                        {title}
-                      </Link>
+                      {title}
                     </h2>
                     <p className="mb-6 text-sm text-white/70 leading-relaxed md:line-clamp-4 line-clamp-3">
                       {excerpt}
                     </p>
-                    <div className="mt-auto">
-                      <Link 
-                        href={`/blog/${post.slug}/`}
-                        className="inline-flex items-center text-sm font-semibold text-[#7ad8ff] tracking-wide transition-colors hover:text-white"
-                      >
-                        {locale === "ar" ? "اقرأ المزيد" : "Read More"}
-                      </Link>
-                    </div>
                   </div>
                 </div>
               )

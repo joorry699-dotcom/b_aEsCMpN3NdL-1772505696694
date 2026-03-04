@@ -13,20 +13,20 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero")
 
   const navLinks = [
-    { label: t("nav.home"), href: "#hero" },
-    { label: t("nav.services"), href: "#services" },
-    { label: t("nav.channels"), href: "#channels" },
-    { label: t("nav.benefits"), href: "#benefits" },
-    { label: t("nav.strategies"), href: "#strategies" },
-    { label: t("nav.clients"), href: "#clients" },
-    { label: t("nav.blog"), href: "#latest-news" },
+    { label: t("nav.home"), id: "hero" },
+    { label: t("nav.services"), id: "services" },
+    { label: t("nav.channels"), id: "channels" },
+    { label: t("nav.benefits"), id: "benefits" },
+    { label: t("nav.strategies"), id: "strategies" },
+    { label: t("nav.clients"), id: "clients" },
+    { label: t("nav.blog"), id: "latest-news" },
   ]
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
 
-      const sections = navLinks.map((l) => l.href.replace("#", ""))
+      const sections = navLinks.map((l) => l.id)
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i])
         if (el && el.getBoundingClientRect().top <= 120) {
@@ -50,7 +50,7 @@ export default function Navbar() {
       >
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between sm:h-18">
-            <Link href="#hero" className="group flex items-center gap-3">
+            <Link href="/#hero" className="group flex items-center gap-3">
               <div className="relative flex h-10 w-28 sm:w-32 items-center justify-start overflow-hidden">
                 <Image
                   src="/images/logo-white.png"
@@ -65,12 +65,12 @@ export default function Navbar() {
 
             <div className="hidden items-center gap-1 lg:flex">
               {navLinks.map((link) => {
-                const section = link.href.replace("#", "")
-                const isActive = activeSection === section
+                const isActive = activeSection === link.id
+                const href = `/#${link.id}`
                 return (
                   <Link
-                    key={link.href}
-                    href={link.href}
+                    key={link.id}
+                    href={href}
                     className={`relative px-3 py-2 text-[13px] font-medium transition-all duration-300 ${
                       isActive ? "text-[#7ad8ff]" : "text-white/65 hover:text-white"
                     }`}
@@ -93,7 +93,7 @@ export default function Navbar() {
                 {locale === "ar" ? "English" : "عربي"}
               </button>
               <Link
-                href="#contact"
+                href="/#contact"
                 className="group hidden items-center gap-2 rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#22d3ee] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_14px_36px_-22px_rgba(34,211,238,0.9)] transition hover:shadow-[0_16px_40px_-20px_rgba(34,211,238,1)] sm:flex"
               >
                 <Phone className="h-4 w-4" />
@@ -127,7 +127,7 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between border-b border-white/5 px-6 py-5">
-          <Link href="#hero" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
+          <Link href="/#hero" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
             <Image
               src="/images/logo-white.png"
               alt="Entshaar"
@@ -144,8 +144,8 @@ export default function Navbar() {
         <div className="flex flex-1 flex-col gap-1 px-4 py-6">
           {navLinks.map((link, i) => (
             <Link
-              key={link.href}
-              href={link.href}
+              key={link.id}
+              href={`/#${link.id}`}
               onClick={() => setMobileOpen(false)}
               className="rounded-xl px-4 py-3.5 text-base font-medium text-white/70 transition-all hover:bg-white/5 hover:text-[#06b6d4]"
               style={{ animationDelay: `${i * 0.05}s` }}
@@ -156,7 +156,7 @@ export default function Navbar() {
         </div>
         <div className="border-t border-white/5 p-4">
           <Link
-            href="#contact"
+            href="/#contact"
             onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0ea5e9] to-[#22d3ee] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_12px_32px_-18px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_36px_-16px_rgba(34,211,238,1)]"
           >
