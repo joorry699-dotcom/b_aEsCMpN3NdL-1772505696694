@@ -6,7 +6,7 @@ const normalizedBase = repoBasePath
 
 const nextConfig = {
   // Enable static export for GitHub Pages
-  output: "export",
+  // output: "export",
   trailingSlash: true,
   basePath: normalizedBase || undefined,
   assetPrefix: normalizedBase || undefined,

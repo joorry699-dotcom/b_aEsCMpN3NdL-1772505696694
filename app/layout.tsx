@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/images/logo-icon.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/images/logo-icon.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
@@ -29,11 +29,11 @@ export const metadata: Metadata = {
         type: 'image/svg+xml',
       },
       {
-        url: '/icon-light-32x32.png',
+        url: '/images/logo-icon.png',
         rel: 'shortcut icon',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/images/logo-icon.png',
   },
 }
 

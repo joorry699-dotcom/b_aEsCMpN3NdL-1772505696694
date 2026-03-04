@@ -51,17 +51,17 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             <Link href="#hero" className="group flex items-center gap-3">
-              <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden">
+              <div className="relative flex h-12 w-32 sm:w-40 items-center justify-start overflow-hidden">
                 <Image
-                  src="/images/logo-icon.png"
+                  src="/images/logo-white.png"
                   alt="شركة انتشار"
-                  width={40}
-                  height={40}
+                  width={160}
+                  height={48}
                   priority
-                  className="object-contain transition-transform duration-300 group-hover:scale-110"
+                  className="object-contain object-right sm:object-center transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <div className="flex flex-col">
+              <div className="hidden">
                 <span className="text-lg font-bold tracking-tight text-white">انتشار</span>
                 <span className="text-[10px] font-medium tracking-widest text-white/40 uppercase">ENTSHAAR</span>
               </div>
