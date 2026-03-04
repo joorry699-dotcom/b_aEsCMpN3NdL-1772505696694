@@ -179,12 +179,12 @@ export default function ServicesSection() {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-[#0f1f36]/70 p-5 lg:p-6" id="elm-form">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 lg:p-6" id="elm-form">
                 <form onSubmit={handleElmSubmit} className="space-y-4">
                   <div className="space-y-1">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-[#7ad8ff]">{elmServices?.[selectedElm]?.title}</p>
-                    <h4 className="text-xl font-bold text-white">{elmForm?.title}</h4>
-                    <p className="text-sm text-white/60">{elmForm?.subtitle}</p>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">{elmServices?.[selectedElm]?.title}</p>
+                    <h4 className="text-lg font-semibold text-white">{elmForm?.title}</h4>
+                    <p className="text-sm text-white/70">{elmForm?.subtitle}</p>
                   </div>
 
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -256,7 +256,7 @@ export default function ServicesSection() {
                     <button
                       type="submit"
                       disabled={submitted}
-                      className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[#0ea5e9] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#22d3ee] disabled:opacity-70"
+                      className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-6 py-3 text-sm font-semibold text-[#0b182f] transition hover:shadow-[0_18px_40px_-28px_rgba(34,211,238,0.8)] disabled:opacity-70"
                     >
                       {submitted ? "✓" : "→"} {elmForm?.submit}
                     </button>

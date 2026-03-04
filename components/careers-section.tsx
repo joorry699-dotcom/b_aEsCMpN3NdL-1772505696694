@@ -206,10 +206,10 @@ export function CareersSection() {
             <Badge className="bg-white/5 text-[#7ad8ff] hover:bg-white/10 mb-4 border border-white/10 px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-[0.18em] uppercase">
               {t("nav.careers")}
             </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white mb-3 leading-tight">
               {t("careers.title")}
             </h2>
-            <p className="text-base text-white/70 max-w-xl">
+            <p className="text-sm sm:text-base text-white/70 max-w-xl leading-relaxed">
               {t("careers.subtitle")}
             </p>
           </div>
@@ -335,16 +335,25 @@ export function CareersSection() {
 
                 <div>
                   <label className="mb-2 block text-xs font-semibold uppercase text-white/60">{locale === "ar" ? "أرفق السيرة الذاتية" : "Attach CV"}</label>
-                  <div className="flex items-center gap-3 rounded-2xl border border-dashed border-white/15 bg-white/5 px-4 py-3">
-                    <FileText className="h-5 w-5 text-[#7ad8ff]" />
-                    <input
-                      required
-                      type="file"
-                      accept=".pdf,.doc,.docx"
-                      onChange={(e) => setForm({ ...form, cv: e.target.files?.[0]?.name || "" })}
-                      className="flex-1 cursor-pointer text-sm text-white/85 file:mr-3 file:cursor-pointer file:rounded-xl file:border-0 file:bg-[#22d3ee]/18 file:px-3 file:py-1.5 file:text-[#0b182f] file:font-semibold"
-                    />
-                    {form.cv && <span className="text-xs text-white/60">{form.cv}</span>}
+                  <div className="flex flex-col gap-3 rounded-2xl border border-dashed border-white/15 bg-white/5 px-4 py-4">
+                    <div className="flex items-center gap-3">
+                      <FileText className="h-5 w-5 text-[#7ad8ff]" />
+                      <span className="text-sm text-white/70">{form.cv || (locale === "ar" ? "PDF أو DOC" : "PDF or DOC")}</span>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <label htmlFor="cv-upload" className="cursor-pointer rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_18px_40px_-28px_rgba(34,211,238,0.8)] transition hover:scale-[1.02]">
+                        {locale === "ar" ? "اختيار ملف" : "Choose file"}
+                      </label>
+                      <input
+                        id="cv-upload"
+                        required
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        onChange={(e) => setForm({ ...form, cv: e.target.files?.[0]?.name || "" })}
+                        className="sr-only"
+                      />
+                      {form.cv && <span className="text-xs text-white/60">{form.cv}</span>}
+                    </div>
                   </div>
                 </div>
 
