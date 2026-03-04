@@ -22,10 +22,9 @@ export default function ServicesSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal()
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
 
-  const servicesItems = t("services.items") as Record<
-    string,
-    { title: string; description: string }
-  >
+  const servicesItems = t("services.items") as
+    | Record<string, { title: string; description: string }>
+    | string
 
   const iconMap: Record<string, LucideIcon> = {
     outsourcing: Headphones,
@@ -41,12 +40,30 @@ export default function ServicesSection() {
     other: MoreHorizontal,
   }
 
-  const services = Object.entries(servicesItems).map(([key, value]) => ({
-    key,
-    icon: iconMap[key] ?? MoreHorizontal,
-    title: value.title,
-    description: value.description,
-  }))
+  const services = (() => {
+    if (!servicesItems || typeof servicesItems !== "object") return []
+
+    const orderedKeys = Object.keys(iconMap)
+    const ordered = orderedKeys
+      .filter((key) => servicesItems[key])
+      .map((key) => ({
+        key,
+        icon: iconMap[key] ?? MoreHorizontal,
+        title: servicesItems[key].title,
+        description: servicesItems[key].description,
+      }))
+
+    const extras = Object.entries(servicesItems)
+      .filter(([key]) => !iconMap[key])
+      .map(([key, value]) => ({
+        key,
+        icon: MoreHorizontal,
+        title: value.title,
+        description: value.description,
+      }))
+
+    return [...ordered, ...extras]
+  })()
 
   return (
     <section id="services" className="magazine-section relative overflow-hidden bg-[#fafbfc] py-28 lg:py-36">
