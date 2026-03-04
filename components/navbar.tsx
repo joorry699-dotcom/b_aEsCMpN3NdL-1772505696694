@@ -133,7 +133,16 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between border-b border-white/5 px-6 py-5">
-          <span className="text-lg font-bold text-white">القائمة</span>
+          <Link href="#hero" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
+            <Image
+              src="/images/logo-white.png"
+              alt="Entshaar"
+              width={140}
+              height={40}
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
+          <span className="text-sm font-semibold text-white/70">{t("nav.home")}</span>
           <button onClick={() => setMobileOpen(false)} className="text-white/60 hover:text-white" aria-label="إغلاق">
             <X className="h-5 w-5" />
           </button>
@@ -158,7 +167,7 @@ export default function Navbar() {
             className="flex items-center justify-center gap-2 rounded-xl bg-[#0891b2] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#06b6d4]"
           >
             <Phone className="h-4 w-4" />
-            تواصل معنا
+            {t("nav.contact")}
           </Link>
         </div>
       </div>

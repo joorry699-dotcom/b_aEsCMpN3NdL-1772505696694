@@ -100,7 +100,7 @@ export default function ServicesSection() {
             {t("services.title")}
           </h2>
           <p className="max-w-xl text-lg leading-relaxed text-[#64748b]">
-            نقدم مجموعة شاملة من حلول مراكز الاتصال المصممة خصيصا لتلبية احتياجات منشأتك
+            {t("services.subtitle")}
           </p>
         </div>
 

@@ -25,6 +25,7 @@
     },
     "services": {
       "title": "خدمات مراكز الاتصال",
+      "subtitle": "نقدم مجموعة شاملة من حلول مراكز الاتصال المصممة خصيصا لتلبية احتياجات منشأتك",
       "items": {
         "outsourcing": {
           "title": "تشغيل خدمات العملاء للغير",
@@ -162,6 +163,7 @@
     },
     "services": {
       "title": "Call Center Services",
+      "subtitle": "We provide a comprehensive suite of call center solutions tailored to your business needs",
       "items": {
         "outsourcing": {
           "title": "Customer Service Outsourcing",

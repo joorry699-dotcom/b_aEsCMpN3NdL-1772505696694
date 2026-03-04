@@ -24,6 +24,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }, [])
 
+  useEffect(() => {
+    document.documentElement.lang = locale
+    document.documentElement.dir = locale === "ar" ? "rtl" : "ltr"
+  }, [locale])
+
   const t = (key: string) => {
     const keys = key.split(".")
     let val: any = (translations as any)[locale]
