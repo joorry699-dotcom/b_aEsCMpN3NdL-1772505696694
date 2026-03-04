@@ -226,7 +226,7 @@ export default function ServicesSection() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 lg:p-6" id="elm-form">
               <form onSubmit={handleElmSubmit} className="space-y-4">
                 <div className="space-y-1">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">{elmServices?.[selectedElm]?.title}</p>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">{elmServices?.[displayElm]?.title}</p>
                   <h4 className="text-lg font-semibold text-white">{elmForm?.title}</h4>
                   <p className="text-sm text-white/70">{elmForm?.subtitle}</p>
                 </div>
