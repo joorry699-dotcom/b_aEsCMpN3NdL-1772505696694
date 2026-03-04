@@ -162,14 +162,6 @@ export default function Footer() {
           <p className="text-xs text-white/25">
             {"جميع الحقوق محفوظة لشركة انتشار الجودة"} &copy; {new Date().getFullYear()}
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="#" className="text-xs text-white/25 transition-colors hover:text-white/50">
-              سياسة الخصوصية
-            </Link>
-            <Link href="#" className="text-xs text-white/25 transition-colors hover:text-white/50">
-              الشروط والأحكام
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
