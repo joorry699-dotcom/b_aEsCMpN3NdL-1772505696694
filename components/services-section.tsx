@@ -158,10 +158,10 @@ export default function ServicesSection() {
           <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 lg:p-8 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] backdrop-blur-xl">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 rounded-full bg-[#22d3ee]/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
                   {t("elm.heading")}
                 </div>
-                <h3 className="text-2xl font-bold lg:text-3xl">{selectedData?.title}</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-white">{selectedData?.title}</h3>
                 <p className="text-sm sm:text-base text-white/70 leading-relaxed">{selectedData?.description}</p>
               </div>
               <div className="flex w-full flex-wrap gap-2 md:w-auto md:justify-end">
@@ -184,8 +184,8 @@ export default function ServicesSection() {
 
             <div className="mt-8 grid gap-6 lg:grid-cols-2">
               <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <h4 className="mb-3 text-base font-semibold text-white">{t("elm.subheading")}</h4>
-                <ul className="space-y-2.5 text-sm text-white/70">
+                <h4 className="mb-2 text-lg font-semibold text-white">{t("elm.subheading")}</h4>
+                <ul className="space-y-2.5 text-sm text-white/75">
                   {selectedData?.features?.map((feat) => (
                     <li key={feat} className="flex items-start gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-[#22d3ee]" />
