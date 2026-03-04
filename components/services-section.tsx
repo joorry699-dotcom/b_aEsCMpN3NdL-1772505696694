@@ -1,5 +1,6 @@
 "use client"
 
+import type { LucideIcon } from "lucide-react"
 import {
   Headphones,
   Cloud,
@@ -21,63 +22,31 @@ export default function ServicesSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal()
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
 
-  const services = [
-    {
-      icon: Headphones,
-      title: t("services.items.outsourcing.title"),
-      description: t("services.items.outsourcing.description"),
-    },
-    {
-      icon: Cloud,
-      title: t("services.items.cloud.title"),
-      description: t("services.items.cloud.description"),
-    },
-    {
-      icon: MessageSquare,
-      title: t("services.items.chat.title"),
-      description: t("services.items.chat.description"),
-    },
-    {
-      icon: Settings,
-      title: t("services.items.crm.title"),
-      description: t("services.items.crm.description"),
-    },
-    {
-      icon: PhoneCall,
-      title: t("services.items.telemarketing.title"),
-      description: t("services.items.telemarketing.description"),
-    },
-    {
-      icon: Globe,
-      title: t("services.items.iptelephony.title"),
-      description: t("services.items.iptelephony.description"),
-    },
-    {
-      icon: Server,
-      title: t("services.items.unified.title"),
-      description: t("services.items.unified.description"),
-    },
-    {
-      icon: Car,
-      title: t("services.items.tamm.title"),
-      description: t("services.items.tamm.description"),
-    },
-    {
-      icon: Map,
-      title: t("services.items.masarat.title"),
-      description: t("services.items.masarat.description"),
-    },
-    {
-      icon: Briefcase,
-      title: t("services.items.muqeem.title"),
-      description: t("services.items.muqeem.description"),
-    },
-    {
-      icon: MoreHorizontal,
-      title: t("services.items.other.title"),
-      description: t("services.items.other.description"),
-    },
-  ]
+  const servicesItems = t("services.items") as Record<
+    string,
+    { title: string; description: string }
+  >
+
+  const iconMap: Record<string, LucideIcon> = {
+    outsourcing: Headphones,
+    cloud: Cloud,
+    chat: MessageSquare,
+    crm: Settings,
+    telemarketing: PhoneCall,
+    iptelephony: Globe,
+    unified: Server,
+    tamm: Car,
+    masarat: Map,
+    muqeem: Briefcase,
+    other: MoreHorizontal,
+  }
+
+  const services = Object.entries(servicesItems).map(([key, value]) => ({
+    key,
+    icon: iconMap[key] ?? MoreHorizontal,
+    title: value.title,
+    description: value.description,
+  }))
 
   return (
     <section id="services" className="magazine-section relative overflow-hidden bg-[#fafbfc] py-28 lg:py-36">
@@ -111,7 +80,7 @@ export default function ServicesSection() {
         >
           {services.map((service, i) => (
             <div
-              key={service.title}
+              key={service.key}
               className={`card-magazine group relative overflow-hidden rounded-3xl border border-[#e8ecf0] bg-white p-7 ${
                 i === 0 ? "sm:col-span-2 sm:row-span-2 sm:p-10" : ""
               }`}
