@@ -19,7 +19,7 @@ export default function Navbar() {
     { label: t("nav.benefits"), href: "#benefits" },
     { label: t("nav.strategies"), href: "#strategies" },
     { label: t("nav.clients"), href: "#clients" },
-    { label: t("nav.blog"), href: "/blog/" },
+    { label: t("nav.blog"), href: "#latest-news" },
   ]
 
   useEffect(() => {

@@ -12,6 +12,8 @@ import {
   Car,
   Map,
   Briefcase,
+  Bell,
+  TrafficCone,
   MoreHorizontal,
 } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
@@ -36,6 +38,8 @@ export default function ServicesSection() {
     unified: Server,
     tamm: Car,
     masarat: Map,
+    nabaa: Bell,
+    traffic: TrafficCone,
     muqeem: Briefcase,
     other: MoreHorizontal,
   }

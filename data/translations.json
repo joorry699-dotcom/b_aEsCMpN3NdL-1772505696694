@@ -67,6 +67,14 @@
           "title": "خدمة مسارات",
           "description": "تتبع وإدارة المركبات ومساراتها لحظة بلحظة"
         },
+        "nabaa": {
+          "title": "خدمة نبأ",
+          "description": "إرسال رسائل نصية للأرقام المسجلة في مركز المعلومات الوطني ومنصة أبشر لضمان وصول الإشعارات للمستخدمين"
+        },
+        "traffic": {
+          "title": "أنظمة إدارة المرور",
+          "description": "تكامل مع أنظمة المرور لمتابعة بيانات المركبات والمخالفات والموافقات لحظياً"
+        },
         "muqeem": {
           "title": "خدمة مقيم",
           "description": "إصدار وتجديد الإقامات والتأشيرات بشكل إلكتروني سريع"
@@ -204,6 +212,14 @@
         "masarat": {
           "title": "Masarat Service",
           "description": "Real-time tracking and management of vehicles and their routes"
+        },
+        "nabaa": {
+          "title": "Nabaa Service",
+          "description": "Sends text messages to NIC and Absher-registered numbers to ensure delivery of critical notifications"
+        },
+        "traffic": {
+          "title": "Traffic Management Systems",
+          "description": "Integration with traffic platforms to monitor vehicle data, violations, and approvals in real time"
         },
         "muqeem": {
           "title": "Muqeem Service",
