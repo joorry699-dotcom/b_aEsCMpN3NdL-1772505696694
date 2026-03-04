@@ -3,6 +3,38 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Acumin Bold';
+  src: url('/fonts/Acumin-Bold.woff2') format('woff2'), url('/fonts/Acumin-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Acumin Regular';
+  src: url('/fonts/Acumin-Regular.woff2') format('woff2'), url('/fonts/Acumin-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GE SND Book';
+  src: url('/fonts/GE-SND-Book.woff2') format('woff2'), url('/fonts/GE-SND-Book.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GE SS Two';
+  src: url('/fonts/GE-SS-Two.woff2') format('woff2'), url('/fonts/GE-SS-Two.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
@@ -79,7 +111,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-grotesk), var(--font-cairo), 'Geist', sans-serif;
+  --font-sans: 'GE SS Two', 'Acumin Regular', 'GE SND Book', 'Acumin Bold', var(--font-grotesk), var(--font-cairo), 'Geist', sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-entshaar-dark: var(--entshaar-dark);
   --color-entshaar-teal: var(--entshaar-teal);
@@ -129,11 +161,12 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-grotesk), var(--font-cairo), 'Geist', sans-serif;
+    font-family: 'GE SS Two', 'Acumin Regular', 'GE SND Book', 'Acumin Bold', var(--font-grotesk), var(--font-cairo), 'Geist', sans-serif;
     letter-spacing: -0.01em;
   }
   h1, h2, h3, h4 {
     letter-spacing: -0.02em;
+    font-family: 'GE SND Book', 'Acumin Bold', 'GE SS Two', 'Acumin Regular', var(--font-grotesk), var(--font-cairo), 'Geist', sans-serif;
   }
   html {
     scroll-behavior: smooth;

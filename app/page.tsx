@@ -7,7 +7,6 @@ import BenefitsSection from "@/components/benefits-section"
 import StrategiesSection from "@/components/strategies-section"
 import ContactSection from "@/components/contact-section"
 import ClientsSection from "@/components/clients-section"
-import TestimonialsSection from "@/components/testimonials-section"
 import { BlogList } from "@/components/blog-list"
 import { FAQSection } from "@/components/faq-section"
 import { CareersSection } from "@/components/careers-section"
@@ -28,7 +27,6 @@ export default function Home() {
       <StrategiesSection />
       <ContactSection />
       <ClientsSection />
-      <TestimonialsSection />
       <BlogList />
       <FAQSection />
       <CareersSection />
