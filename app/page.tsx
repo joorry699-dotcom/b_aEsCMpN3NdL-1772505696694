@@ -5,6 +5,7 @@ import { SolutionsSection } from "@/components/solutions-section"
 import ChannelsSection from "@/components/channels-section"
 import BenefitsSection from "@/components/benefits-section"
 import StrategiesSection from "@/components/strategies-section"
+import { AchievementsSection } from "@/components/achievements-section"
 import ContactSection from "@/components/contact-section"
 import ClientsSection from "@/components/clients-section"
 import { BlogList } from "@/components/blog-list"
@@ -25,6 +26,7 @@ export default function Home() {
       <ChannelsSection />
       <BenefitsSection />
       <StrategiesSection />
+      <AchievementsSection />
       <ContactSection />
       <ClientsSection />
       <BlogList />

@@ -164,6 +164,17 @@
         }
       ]
     },
+    "achievements": {
+      "label": "إنجازاتنا",
+      "title": "بعض الإنجازات التي حققناها",
+      "subtitle": "نفخر بنتائج عملياتنا المدارة وشراكاتنا، ونعكسها بشفافية عبر أرقام واضحة.",
+      "stats": {
+        "operations": { "value": "1M+", "label": "عدد العمليات المدارة" },
+        "employees": { "value": "2,000+", "label": "عدد الموظفين تم إدارتهم" },
+        "services": { "value": "25+", "label": "عدد الخدمات المقدمة" },
+        "clients": { "value": "30+", "label": "عدد العملاء" }
+      }
+    },
     "contact": {
       "back": "رجوع",
       "label": "تواصل معنا",
@@ -196,6 +207,17 @@
           "phone": "05xxxxxxxx",
           "email": "email@example.com",
           "company": "اسم شركتك أو منشأتك",
+      "achievements": {
+        "label": "Achievements",
+        "title": "Key wins we are proud of",
+        "subtitle": "Transparent numbers that reflect our managed operations and trusted partnerships.",
+        "stats": {
+          "operations": { "value": "1M+", "label": "Managed operations" },
+          "employees": { "value": "2,000+", "label": "Employees managed" },
+          "services": { "value": "25+", "label": "Services delivered" },
+          "clients": { "value": "30+", "label": "Active clients" }
+        }
+      },
           "details": "اكتب تفاصيل طلبك هنا... (25 حرف على الاقل)"
         },
         "serviceOptions": {
