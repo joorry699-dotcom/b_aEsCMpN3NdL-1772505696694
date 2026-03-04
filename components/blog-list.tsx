@@ -2,30 +2,14 @@
 
 import { useLanguage } from "@/components/language-provider"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
+import { posts, type BlogPost } from "@/lib/blog"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react"
-
-interface BlogPost {
-  slug: string
-  title_ar: string
-  title_en: string
-  date: string
-  excerpt_ar: string
-  excerpt_en: string
-  image: string
-}
 
 export function BlogList() {
   const { locale } = useLanguage()
   const { ref, isVisible } = useScrollReveal()
-  const [blogs, setBlogs] = useState<BlogPost[]>([])
-
-  useEffect(() => {
-    fetch("/api/blog")
-      .then((res) => res.json())
-      .then((data) => setBlogs(data.slice(0, 3)))
-  }, [])
+  const blogs: BlogPost[] = posts.slice(0, 3)
 
   if (blogs.length === 0) return null
 
