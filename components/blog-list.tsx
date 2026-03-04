@@ -64,7 +64,7 @@ export function BlogList() {
 
         <div className="mt-12 text-center">
           <Link
-            href="/blog"
+            href="/blog/"
             className="inline-flex items-center rounded-full bg-[#0c1e3c] px-8 py-3 font-semibold text-white transition-all hover:bg-cyan-700"
           >
             {locale === "ar" ? "مشاهدة كافة المقالات" : "View All Articles"}

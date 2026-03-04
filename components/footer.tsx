@@ -17,7 +17,7 @@ export default function Footer() {
       { label: t("nav.home"), href: "#hero" },
       { label: t("nav.clients"), href: "#clients" },
       { label: t("nav.services"), href: "#services" },
-      { label: t("nav.blog"), href: "/blog" },
+      { label: t("nav.blog"), href: "/blog/" },
     ],
   }
   return (
