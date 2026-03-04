@@ -3,20 +3,10 @@
 import { useMemo, useState } from "react"
 import { Send, Phone, Mail, MapPin, ArrowLeft, CheckCircle2, CalendarClock } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-
-const serviceOptions = [
-  { value: "", label: "اختر الخدمة" },
-  { value: "customer-service", label: "تشغيل خدمات العملاء للغير" },
-  { value: "cloud", label: "الكلاود كول سنتر" },
-  { value: "chat", label: "المحادثة الفورية" },
-  { value: "crm", label: "أنظمة إدارة خدمة العملاء" },
-  { value: "telemarketing", label: "التسويق عبر الهاتف" },
-  { value: "ip", label: "خدمة IP Telephony" },
-  { value: "unified", label: "استضافة الأرقام الموحدة" },
-  { value: "other", label: "أخرى" },
-]
+import { useLanguage } from "./language-provider"
 
 export default function ContactSection() {
+  const { t, dir } = useLanguage()
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -30,6 +20,11 @@ export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false)
   const [detailsError, setDetailsError] = useState("")
   const { ref: sectionRef, isVisible } = useScrollReveal()
+  const serviceOptionsDict = t("contact.form.serviceOptions") as Record<string, string>
+  const serviceOptions = Object.entries(serviceOptionsDict || {})
+    .filter(([key]) => key !== "placeholder")
+    .map(([value, label]) => ({ value, label }))
+  const servicePlaceholder = serviceOptionsDict?.placeholder || ""
 
   const minDate = useMemo(() => new Date().toISOString().split("T")[0], [])
   const timeSlots = ["10:00", "12:00", "14:30", "16:00", "18:30", "20:00"]
@@ -37,11 +32,11 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (formData.details.length < 25) {
-      setDetailsError("التفاصيل يجب ان تكون 25 حرف على الاقل")
+      setDetailsError(t("contact.form.detailsError"))
       return
     }
     if (!formData.slotDate || !formData.slotTime) {
-      setDetailsError("اختر تاريخ ووقت الاستشارة")
+      setDetailsError(t("contact.form.slotError"))
       return
     }
     setDetailsError("")
@@ -72,23 +67,21 @@ export default function ContactSection() {
             className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-white/30 hover:text-white"
           >
             <ArrowLeft className="h-4 w-4" />
-            رجوع
+            {t("contact.back")}
           </button>
         </div>
         {/* Editorial header */}
         <div className="mb-20 text-center">
           <div className="mb-6 flex items-center justify-center gap-4">
             <span className="h-px w-12 bg-[#06b6d4]" />
-            <span className="text-xs font-bold tracking-[0.2em] text-[#06b6d4] uppercase">تواصل معنا</span>
+            <span className="text-xs font-bold tracking-[0.2em] text-[#06b6d4] uppercase">{t("contact.label")}</span>
             <span className="h-px w-12 bg-[#06b6d4]" />
           </div>
-          <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl lg:text-6xl text-balance">
-            هل ترغب في تطوير
-            <br />
-            <span className="text-gradient">مركز الاتصال لديك؟</span>
+          <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl lg:text-5xl text-balance">
+            {t("contact.title")}
           </h2>
-          <p className="mx-auto max-w-lg text-lg text-white/40">
-            اتصل بنا اليوم ودع انتشار يكون شريكك في النجاح
+          <p className="mx-auto max-w-lg text-base text-white/60">
+            {t("contact.subtitle")}
           </p>
         </div>
 
@@ -96,16 +89,16 @@ export default function ContactSection() {
           {/* Contact Info */}
           <div className="flex flex-col gap-6 lg:col-span-2">
             <div className="glass rounded-3xl p-8">
-              <h3 className="mb-8 text-xl font-bold text-white">معلومات التواصل</h3>
+              <h3 className="mb-8 text-xl font-bold text-white">{t("contact.label")}</h3>
               <div className="flex flex-col gap-8">
                 {[
-                  { icon: Phone, label: "اتصل بنا", value: "920026002", dir: "ltr", href: "tel:920026002" },
-                  { icon: Mail, label: "البريد الإلكتروني", value: "info@entshaar.com", dir: "ltr", href: "mailto:info@entshaar.com" },
+                  { icon: Phone, label: t("contact.info.phone.label"), value: t("contact.info.phone.value"), dir: "ltr", href: "tel:920026002" },
+                  { icon: Mail, label: t("contact.info.email.label"), value: t("contact.info.email.value"), dir: "ltr", href: "mailto:info@entshaar.com" },
                   {
                     icon: MapPin,
-                    label: "الموقع",
-                    value: "المملكة العربية السعودية",
-                    dir: "rtl",
+                    label: t("contact.info.location.label"),
+                    value: t("contact.info.location.value"),
+                    dir,
                     href: "https://www.google.com/maps/place/Al+Urubah+Branch+Rd,+Al+Raed,+Riyadh+12352",
                   },
                 ].map((item) => (
@@ -129,14 +122,9 @@ export default function ContactSection() {
             </div>
 
             <div className="glass rounded-3xl p-8">
-              <h4 className="mb-5 text-lg font-bold text-white">خدمات متوفرة</h4>
+              <h4 className="mb-5 text-lg font-bold text-white">{t("contact.servicesTitle")}</h4>
               <ul className="flex flex-col gap-4">
-                {[
-                  "إدارة وتشغيل مركز التواصل",
-                  "استضافة الأرقام الموحدة",
-                  "إدارة التواصل في مختلف المنصات",
-                  "بناء مركز الاتصال",
-                ].map((item) => (
+                {(t("contact.services") as string[]).map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-white/60">
                     <ArrowLeft className="h-3.5 w-3.5 shrink-0 text-[#06b6d4]" />
                     {item}
@@ -150,37 +138,37 @@ export default function ContactSection() {
           <div className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="glass rounded-3xl p-8 lg:p-10">
               <h3 className="mb-8 text-xl font-bold text-white">
-                احجز استشارة واكتب تفاصيل احتياجك
+                {t("contact.form.heading")}
               </h3>
 
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="mb-2 block text-xs font-semibold tracking-wide text-white/50 uppercase">
-                    الاسم <span className="text-[#06b6d4]">*</span>
+                    {t("contact.form.fields.name")} <span className="text-[#06b6d4]">*</span>
                   </label>
-                  <input id="name" type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className={inputClass} placeholder="اسمك الكامل" />
+                  <input id="name" type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className={inputClass} placeholder={t("contact.form.placeholders.name") as string} />
                 </div>
                 <div>
                   <label htmlFor="phone" className="mb-2 block text-xs font-semibold tracking-wide text-white/50 uppercase">
-                    رقم الجوال <span className="text-[#06b6d4]">*</span>
+                    {t("contact.form.fields.phone")} <span className="text-[#06b6d4]">*</span>
                   </label>
-                  <input id="phone" type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className={inputClass} placeholder="05xxxxxxxx" dir="ltr" />
+                  <input id="phone" type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className={inputClass} placeholder={t("contact.form.placeholders.phone") as string} dir="ltr" />
                 </div>
                 <div>
                   <label htmlFor="email" className="mb-2 block text-xs font-semibold tracking-wide text-white/50 uppercase">
-                    البريد الإلكتروني <span className="text-[#06b6d4]">*</span>
+                    {t("contact.form.fields.email")} <span className="text-[#06b6d4]">*</span>
                   </label>
-                  <input id="email" type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className={inputClass} placeholder="email@example.com" dir="ltr" />
+                  <input id="email" type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className={inputClass} placeholder={t("contact.form.placeholders.email") as string} dir="ltr" />
                 </div>
                 <div>
                   <label htmlFor="company" className="mb-2 block text-xs font-semibold tracking-wide text-white/50 uppercase">
-                    اسم المنشأة <span className="text-[#06b6d4]">*</span>
+                    {t("contact.form.fields.company")} <span className="text-[#06b6d4]">*</span>
                   </label>
-                  <input id="company" type="text" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} className={inputClass} placeholder="اسم شركتك أو منشأتك" />
+                  <input id="company" type="text" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} className={inputClass} placeholder={t("contact.form.placeholders.company") as string} />
                 </div>
                 <div className="sm:col-span-2">
                   <label htmlFor="service" className="mb-2 block text-xs font-semibold tracking-wide text-white/50 uppercase">
-                    الخدمة المطلوبة <span className="text-[#06b6d4]">*</span>
+                    {t("contact.form.fields.service")} <span className="text-[#06b6d4]">*</span>
                   </label>
                   <select
                     id="service"
@@ -189,6 +177,9 @@ export default function ContactSection() {
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className={inputClass}
                   >
+                    <option value="" className="bg-[#0c1e3c] text-white">
+                      {servicePlaceholder}
+                    </option>
                     {serviceOptions.map((opt) => (
                       <option key={opt.value} value={opt.value} className="bg-[#0c1e3c] text-white">
                         {opt.label}
@@ -198,7 +189,7 @@ export default function ContactSection() {
                 </div>
                 <div className="sm:col-span-2">
                   <label htmlFor="details" className="mb-2 block text-xs font-semibold tracking-wide text-white/50 uppercase">
-                    التفاصيل <span className="text-[#06b6d4]">*</span>
+                    {t("contact.form.fields.details")} <span className="text-[#06b6d4]">*</span>
                   </label>
                   <textarea
                     id="details"
@@ -211,7 +202,7 @@ export default function ContactSection() {
                       if (e.target.value.length >= 25) setDetailsError("")
                     }}
                     className={`${inputClass} resize-none ${detailsError ? "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/20" : ""}`}
-                    placeholder="اكتب تفاصيل طلبك هنا... (25 حرف على الاقل)"
+                    placeholder={t("contact.form.placeholders.details") as string}
                   />
                   <div className="mt-2 flex items-center justify-between">
                     {detailsError ? (
@@ -227,7 +218,7 @@ export default function ContactSection() {
 
                 <div className="sm:col-span-2">
                   <label className="mb-2 block text-xs font-semibold tracking-wide text-white/50 uppercase">
-                    حدد تاريخ ووقت الاستشارة <span className="text-[#06b6d4]">*</span>
+                    {t("contact.form.slotsLabel")} <span className="text-[#06b6d4]">*</span>
                   </label>
                   <div className="grid gap-3 sm:grid-cols-2">
                     <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
@@ -268,12 +259,12 @@ export default function ContactSection() {
                 {submitted ? (
                   <>
                     <CheckCircle2 className="h-5 w-5" />
-                    تم الإرسال بنجاح!
+                    {t("contact.form.submitted")}
                   </>
                 ) : (
                   <>
                     <Send className="h-5 w-5" />
-                    إرسال
+                    {t("contact.form.submit")}
                   </>
                 )}
               </button>

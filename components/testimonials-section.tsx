@@ -1,29 +1,12 @@
 "use client"
 
 import { Star, Quote } from "lucide-react"
-
-const testimonials = [
-  {
-    name: "أحمد عبدالله",
-    role: "المدير التنفيذي لشركة تقنية",
-    content: "خدمات انتشار في إدارة مركز الاتصال أحدثت نقلة نوعية في مستوى رضا عملائنا. احترافية عالية واستجابة سريعة تجعلهم الشريك المثالي لأي منشأة.",
-    rating: 5,
-  },
-  {
-    name: "سارة خالد",
-    role: "مديرة عمليات التجارة الإلكترونية",
-    content: "منذ تعاقدنا مع انتشار لتعهيد مركز الاتصال، شهدنا انخفاضاً ملحوظاً في أوقات الانتظار وتحسناً في جودة الردود. فريق مدرب ومهني يستحق الثقة.",
-    rating: 5,
-  },
-  {
-    name: "محمد العمر",
-    role: "مؤسس تطبيق خدمات",
-    content: "الدقة في التقارير والتحليلات التي يقدمونها ساعدتنا على فهم احتياجات عملائنا بشكل أفضل. هم ليسوا مجرد مزود خدمة بل شركاء نجاح.",
-    rating: 5,
-  },
-]
+import { useLanguage } from "./language-provider"
 
 export default function TestimonialsSection() {
+  const { t } = useLanguage()
+  const testimonials = (t("testimonials.items") as Array<{ name: string; role: string; content: string; rating: number }>) || []
+
   return (
     <section id="testimonials" className="relative bg-[#0a1526] py-24 sm:py-32 overflow-hidden noise">
       {/* Background elements */}
@@ -33,12 +16,12 @@ export default function TestimonialsSection() {
       
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-sm font-semibold leading-7 tracking-wide text-[#06b6d4]">آراء شركاء النجاح</h2>
+          <h2 className="text-sm font-semibold leading-7 tracking-wide text-[#06b6d4]">{t("testimonials.label")}</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl text-balance">
-            ماذا يقول عملاؤنا عن خدمات <span className="text-gradient">انتشار</span>
+            {t("testimonials.title")}
           </p>
-          <p className="mt-6 text-lg leading-8 text-white/50 text-pretty">
-            نعتز بثقة عملائنا ونعتبر نجاحهم هو المقياس الحقيقي لجودة خدماتنا في مراكز الاتصال.
+          <p className="mt-6 text-base leading-8 text-white/60 text-pretty">
+            {t("testimonials.subtitle")}
           </p>
         </div>
         

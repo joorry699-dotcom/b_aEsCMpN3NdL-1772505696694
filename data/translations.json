@@ -113,6 +113,134 @@
         }
       ]
     },
+    "channels": {
+      "label": "قنوات التواصل",
+      "title": "جميع قنوات الاتصال في مكان واحد",
+      "subtitle": "أزل تعقيد التعامل مع عملائك ووفر جهدك ومواردك وانطلق مع منصة واحدة تلبي احتياجات عملك",
+      "cta": "ابدأ الآن",
+      "items": {
+        "phone": {
+          "title": "مكالمات الهاتف",
+          "description": "استقبال وتحويل المكالمات عبر الرقم الموحد مع تسجيل ومراقبة الجودة"
+        },
+        "whatsapp": {
+          "title": "واتساب للأعمال",
+          "description": "إدارة محادثات واتساب الرسمية مع قوالب ردود وتقارير الأداء"
+        },
+        "social": {
+          "title": "التواصل الاجتماعي",
+          "description": "متابعة استفسارات العملاء عبر تويتر، إنستغرام، فيسبوك والبريد في صندوق موحد"
+        },
+        "bot": {
+          "title": "روبوتات المحادثة",
+          "description": "أتمتة الردود مع تصعيد سلس للبشر وتكامل مع الـCRM"
+        }
+      }
+    },
+    "strategies": {
+      "label": "منهجيتنا",
+      "title": "نتبع 4 استراتيجيات",
+      "subtitle": "منهجية عمل مدروسة تضمن تحقيق أفضل النتائج لمنشأتك",
+      "items": [
+        {
+          "number": "01",
+          "title": "فهم الاحتياجات",
+          "description": "نفهم احتياجات العميل وطبيعة العمل وترتيب أولوياته ثم التغلب على المخاوف والصعوبات"
+        },
+        {
+          "number": "02",
+          "title": "بنك المعرفة",
+          "description": "ننشئ مكتبة أعمال وبنك معرفة لتدريب وكلائنا على التعامل مع شركاء الشركة"
+        },
+        {
+          "number": "03",
+          "title": "قيادة الفريق",
+          "description": "تعيين قائد لفريق العمل لضمان جودة تسليم المهام مع ضمان استمرارية تدريب وتطوير الموظفين"
+        },
+        {
+          "number": "04",
+          "title": "التقارير والتحليلات",
+          "description": "نوظف مختص لمتابعة التقارير والتحليلات التي تساعد في التعامل مع عملائهم"
+        }
+      ]
+    },
+    "contact": {
+      "back": "رجوع",
+      "label": "تواصل معنا",
+      "title": "هل ترغب في تطوير مركز الاتصال لديك؟",
+      "subtitle": "اتصل بنا اليوم ودع انتشار يكون شريكك في النجاح",
+      "info": {
+        "phone": { "label": "اتصل بنا", "value": "920026002" },
+        "email": { "label": "البريد الإلكتروني", "value": "info@entshaar.com" },
+        "location": { "label": "الموقع", "value": "المملكة العربية السعودية" }
+      },
+      "servicesTitle": "خدمات متوفرة",
+      "services": [
+        "إدارة وتشغيل مركز التواصل",
+        "استضافة الأرقام الموحدة",
+        "إدارة التواصل في مختلف المنصات",
+        "بناء مركز الاتصال"
+      ],
+      "form": {
+        "heading": "احجز استشارة واكتب تفاصيل احتياجك",
+        "fields": {
+          "name": "الاسم",
+          "phone": "رقم الجوال",
+          "email": "البريد الإلكتروني",
+          "company": "اسم المنشأة",
+          "service": "الخدمة المطلوبة",
+          "details": "التفاصيل"
+        },
+        "placeholders": {
+          "name": "اسمك الكامل",
+          "phone": "05xxxxxxxx",
+          "email": "email@example.com",
+          "company": "اسم شركتك أو منشأتك",
+          "details": "اكتب تفاصيل طلبك هنا... (25 حرف على الاقل)"
+        },
+        "serviceOptions": {
+          "placeholder": "اختر الخدمة",
+          "customer-service": "تشغيل خدمات العملاء للغير",
+          "cloud": "الكلاود كول سنتر",
+          "chat": "المحادثة الفورية",
+          "crm": "أنظمة إدارة خدمة العملاء",
+          "telemarketing": "التسويق عبر الهاتف",
+          "ip": "خدمة IP Telephony",
+          "unified": "استضافة الأرقام الموحدة",
+          "other": "أخرى"
+        },
+        "slotsLabel": "حدد تاريخ ووقت الاستشارة",
+        "detailsError": "التفاصيل يجب ان تكون 25 حرف على الاقل",
+        "slotError": "اختر تاريخ ووقت الاستشارة",
+        "submit": "إرسال",
+        "submitted": "تم الإرسال بنجاح!"
+      }
+    },
+    "testimonials": {
+      "label": "آراء شركاء النجاح",
+      "title": "ماذا يقول عملاؤنا عن خدمات انتشار",
+      "subtitle": "نعتز بثقة عملائنا ونعتبر نجاحهم هو المقياس الحقيقي لجودة خدماتنا في مراكز الاتصال.",
+      "items": [
+        {
+          "name": "أحمد عبدالله",
+          "role": "المدير التنفيذي لشركة تقنية",
+          "content": "خدمات انتشار في إدارة مركز الاتصال أحدثت نقلة نوعية في مستوى رضا عملائنا. احترافية عالية واستجابة سريعة تجعلهم الشريك المثالي لأي منشأة.",
+          "rating": 5
+        },
+        {
+          "name": "سارة خالد",
+          "role": "مديرة عمليات التجارة الإلكترونية",
+          "content": "منذ تعاقدنا مع انتشار لتعهيد مركز الاتصال، شهدنا انخفاضاً ملحوظاً في أوقات الانتظار وتحسناً في جودة الردود. فريق مدرب ومهني يستحق الثقة.",
+          "rating": 5
+        },
+        {
+          "name": "محمد العمر",
+          "role": "مؤسس تطبيق خدمات",
+          "content": "الدقة في التقارير والتحليلات التي يقدمونها ساعدتنا على فهم احتياجات عملائنا بشكل أفضل. هم ليسوا مجرد مزود خدمة بل شركاء نجاح.",
+          "rating": 5
+        }
+      ]
+    },
     "faq": {
       "title": "الأسئلة الشائعة",
       "subtitle": "كل ما تود معرفته عن خدمات انتشار",
@@ -288,6 +416,134 @@
           "title": "Digital Transformation",
           "description": "Process automation, CRM/ERP integrations, and live BI for faster decisions",
           "pill": "Digital"
+        }
+      ]
+    },
+    "channels": {
+      "label": "Channels",
+      "title": "All customer channels in one place",
+      "subtitle": "Remove the complexity of handling customers and save your effort with one platform for every channel",
+      "cta": "Start Now",
+      "items": {
+        "phone": {
+          "title": "Voice Calls",
+          "description": "Receive and route calls via your unified number with recording and quality monitoring"
+        },
+        "whatsapp": {
+          "title": "WhatsApp Business",
+          "description": "Manage official WhatsApp chats with templates, quick replies, and performance reports"
+        },
+        "social": {
+          "title": "Social & Email",
+          "description": "Handle customer messages on Twitter, Instagram, Facebook, and email from one inbox"
+        },
+        "bot": {
+          "title": "Chatbots",
+          "description": "Automate replies with smooth human escalation and CRM integration"
+        }
+      }
+    },
+    "strategies": {
+      "label": "Our Method",
+      "title": "We follow 4 strategies",
+      "subtitle": "A deliberate operating model that ensures the best outcomes for your business",
+      "items": [
+        {
+          "number": "01",
+          "title": "Understand needs",
+          "description": "We capture business goals and priorities, then overcome concerns and blockers"
+        },
+        {
+          "number": "02",
+          "title": "Knowledge base",
+          "description": "We build a knowledge library to train agents to serve your partners and customers"
+        },
+        {
+          "number": "03",
+          "title": "Team leadership",
+          "description": "Assign a team lead to ensure delivery quality with ongoing training and coaching"
+        },
+        {
+          "number": "04",
+          "title": "Reports & analytics",
+          "description": "A dedicated analyst follows up on reports and insights to improve customer handling"
+        }
+      ]
+    },
+    "contact": {
+      "back": "Back",
+      "label": "Contact Us",
+      "title": "Ready to level up your contact center?",
+      "subtitle": "Talk to us today and let Entishar be your success partner",
+      "info": {
+        "phone": { "label": "Call us", "value": "920026002" },
+        "email": { "label": "Email", "value": "info@entshaar.com" },
+        "location": { "label": "Location", "value": "Kingdom of Saudi Arabia" }
+      },
+      "servicesTitle": "Available services",
+      "services": [
+        "Operate and manage contact centers",
+        "Host unified numbers",
+        "Manage communication across channels",
+        "Build and launch a contact center"
+      ],
+      "form": {
+        "heading": "Book a consultation and share your needs",
+        "fields": {
+          "name": "Name",
+          "phone": "Mobile number",
+          "email": "Email",
+          "company": "Company",
+          "service": "Requested service",
+          "details": "Details"
+        },
+        "placeholders": {
+          "name": "Your full name",
+          "phone": "05xxxxxxxx",
+          "email": "email@example.com",
+          "company": "Your company",
+          "details": "Describe your request... (min 25 characters)"
+        },
+        "serviceOptions": {
+          "placeholder": "Select a service",
+          "customer-service": "Customer service operations",
+          "cloud": "Cloud call center",
+          "chat": "Live chat",
+          "crm": "Customer service platforms",
+          "telemarketing": "Telemarketing",
+          "ip": "IP Telephony",
+          "unified": "Unified number hosting",
+          "other": "Other"
+        },
+        "slotsLabel": "Select consultation date & time",
+        "detailsError": "Details must be at least 25 characters",
+        "slotError": "Pick a date and time",
+        "submit": "Send",
+        "submitted": "Sent successfully!"
+      }
+    },
+    "testimonials": {
+      "label": "Partners' Voices",
+      "title": "What clients say about Entishar",
+      "subtitle": "We value our clients' trust and see their success as the true measure of our contact center quality.",
+      "items": [
+        {
+          "name": "Ahmed Abdullah",
+          "role": "CEO, Tech Company",
+          "content": "Entishar's contact center management transformed our customer satisfaction. Professional, fast, and the right partner for any business.",
+          "rating": 5
+        },
+        {
+          "name": "Sarah Khaled",
+          "role": "Head of E-commerce Operations",
+          "content": "After outsourcing to Entishar we saw shorter wait times and stronger response quality. A well-trained, trustworthy team.",
+          "rating": 5
+        },
+        {
+          "name": "Mohammed Al Omar",
+          "role": "Founder, Services App",
+          "content": "Their precise reports and analytics help us understand customers better. They are not just a vendor—they are success partners.",
+          "rating": 5
         }
       ]
     },
