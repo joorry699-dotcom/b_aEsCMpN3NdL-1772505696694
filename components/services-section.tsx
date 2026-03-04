@@ -8,6 +8,9 @@ import {
   PhoneCall,
   Globe,
   Server,
+  Car,
+  Map,
+  Briefcase,
   MoreHorizontal,
 } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
@@ -53,6 +56,21 @@ export default function ServicesSection() {
       icon: Server,
       title: t("services.items.unified.title"),
       description: t("services.items.unified.description"),
+    },
+    {
+      icon: Car,
+      title: t("services.items.tamm.title"),
+      description: t("services.items.tamm.description"),
+    },
+    {
+      icon: Map,
+      title: t("services.items.masarat.title"),
+      description: t("services.items.masarat.description"),
+    },
+    {
+      icon: Briefcase,
+      title: t("services.items.muqeem.title"),
+      description: t("services.items.muqeem.description"),
     },
     {
       icon: MoreHorizontal,

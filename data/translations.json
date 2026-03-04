@@ -57,6 +57,18 @@
         "other": {
           "title": "خدمات أخرى",
           "description": "مجموعة واسعة من الحلول المخصصة التي تتناسب مع احتياجات منشأتك"
+        },
+        "tamm": {
+          "title": "خدمة تم",
+          "description": "إدارة المركبات وأساطيل النقل من خلال بوابة إلكترونية شاملة"
+        },
+        "masarat": {
+          "title": "خدمة مسارات",
+          "description": "تتبع وإدارة المركبات ومساراتها لحظة بلحظة"
+        },
+        "muqeem": {
+          "title": "خدمة مقيم",
+          "description": "إصدار وتجديد الإقامات والتأشيرات بشكل إلكتروني سريع"
         }
       }
     },
@@ -66,55 +78,55 @@
       "questions": [
         {
           "question": "ما هي خدمات مركز الاتصال التي تقدمها انتشار؟",
-          "answer": "ندير مراكز الاتصال بشكل كامل: استقبال وارسال المكالمات، دعم متعدد القنوات (هاتف، واتساب، بريد، سوشيال)، إدارة الحملات البيعية، والدعم الفني." 
+          "answer": "ندير مراكز الاتصال بشكل كامل: استقبال وارسال المكالمات، دعم متعدد القنوات (هاتف، واتساب، بريد، سوشيال)، إدارة الحملات البيعية، والدعم الفني."
         },
         {
           "question": "ما خطوات إنشاء مركز اتصال مع انتشار؟",
-          "answer": "نبدأ بجلسة فهم للأهداف وقياس مؤشرات الأداء، نضع خطة القوى العاملة والحوكمة، نصمم الاسكربتات والتدريب، ثم نطلق المركز مع متابعة لصيقة للأداء." 
+          "answer": "نبدأ بجلسة فهم للأهداف وقياس مؤشرات الأداء، نضع خطة القوى العاملة والحوكمة، نصمم الاسكربتات والتدريب، ثم نطلق المركز مع متابعة لصيقة للأداء."
         },
         {
           "question": "هل توفر انتشار حلول عمل عن بعد لمركز الاتصال؟",
-          "answer": "نعم، ندير مراكز اتصال هجينة أو عن بُعد بالكامل عبر بنية سحابية آمنة وأدوات مراقبة لحظية للجودة والإنتاجية." 
+          "answer": "نعم، ندير مراكز اتصال هجينة أو عن بُعد بالكامل عبر بنية سحابية آمنة وأدوات مراقبة لحظية للجودة والإنتاجية."
         },
         {
           "question": "ما اللغات وساعات العمل المتاحة؟",
-          "answer": "ندعم العربية والإنجليزية، ويمكن تشغيل فرق 24/7 أو على جداول مرنة حسب احتياجك." 
+          "answer": "ندعم العربية والإنجليزية، ويمكن تشغيل فرق 24/7 أو على جداول مرنة حسب احتياجك."
         },
         {
           "question": "هل تديرون تواصل العملاء على شبكات التواصل الاجتماعي؟",
-          "answer": "نعم، ندير استفسارات وشكاوى العملاء عبر تويتر، إنستغرام، فيسبوك، والبريد، مع توحيد التذاكر في نظام واحد." 
+          "answer": "نعم، ندير استفسارات وشكاوى العملاء عبر تويتر، إنستغرام، فيسبوك، والبريد، مع توحيد التذاكر في نظام واحد."
         },
         {
           "question": "كيف يعمل التسعير في انتشار؟",
-          "answer": "خيارات مرنة: باقات مقعد/ساعة، أو تسعير بالنتائج للحملات البيعية، مع تقارير شفافة للجهد والنتائج." 
+          "answer": "خيارات مرنة: باقات مقعد/ساعة، أو تسعير بالنتائج للحملات البيعية، مع تقارير شفافة للجهد والنتائج."
         },
         {
           "question": "كيف تساعدون في خفض التكاليف التشغيلية؟",
-          "answer": "نحسّن توزيع القوى العاملة، نستخدم الأتمتة والردود الجاهزة، ونقلل الإحالات بتدريب مستمر، ما يخفض تكلفة المكالمة والوحدة." 
+          "answer": "نحسّن توزيع القوى العاملة، نستخدم الأتمتة والردود الجاهزة، ونقلل الإحالات بتدريب مستمر، ما يخفض تكلفة المكالمة والوحدة."
         },
         {
           "question": "هل يمكنكم التكامل مع أنظمة الـCRM الحالية؟",
-          "answer": "نعم، نتكامل مع الأنظمة الشائعة عبر واجهات API أو موصلات جاهزة لضمان ظهور التذاكر والبيانات في نظامك الرئيسي." 
+          "answer": "نعم، نتكامل مع الأنظمة الشائعة عبر واجهات API أو موصلات جاهزة لضمان ظهور التذاكر والبيانات في نظامك الرئيسي."
         },
         {
           "question": "ما التقنيات التي تستخدمونها في التشغيل؟",
-          "answer": "منصات CCaaS سحابية، IVR تفاعلي، تسجيل وتحليل صوت، أنظمة مراقبة الجودة، وأدوات تخطيط القوى العاملة والتنبؤ بالأحمال." 
+          "answer": "منصات CCaaS سحابية، IVR تفاعلي، تسجيل وتحليل صوت، أنظمة مراقبة الجودة، وأدوات تخطيط القوى العاملة والتنبؤ بالأحمال."
         },
         {
           "question": "كيف تتعاملون مع شكاوى العملاء وملاحظاتهم؟",
-          "answer": "نفتح تذكرة موحدة، نحلل السبب الجذري، نرسل ردوداً موحدة ضمن SLA متفق، ونشاركك بتقارير أسبوعية للشكاوى المتكررة." 
+          "answer": "نفتح تذكرة موحدة، نحلل السبب الجذري، نرسل ردوداً موحدة ضمن SLA متفق، ونشاركك بتقارير أسبوعية للشكاوى المتكررة."
         },
         {
           "question": "كيف تقيس انتشار رضا العملاء؟",
-          "answer": "نقيس CSAT وNPS وFCR، ونشارك لوحات تحكم لحظية وتقارير شهرية توضح التحسن في الحل من أول مكالمة وجودة الخدمة." 
+          "answer": "نقيس CSAT وNPS وFCR، ونشارك لوحات تحكم لحظية وتقارير شهرية توضح التحسن في الحل من أول مكالمة وجودة الخدمة."
         },
         {
           "question": "كيف تتعاملون مع فترات الذروة والضغط العالي؟",
-          "answer": "نستخدم التنبؤ بالأحمال وتخطيط الجداول، فرق احتياطية، وقنوات بديلة مثل الرد الآلي والدردشة لتخفيف الضغط على الطوابير." 
+          "answer": "نستخدم التنبؤ بالأحمال وتخطيط الجداول، فرق احتياطية، وقنوات بديلة مثل الرد الآلي والدردشة لتخفيف الضغط على الطوابير."
         },
         {
           "question": "هل تقدمون تقارير وذكاء أعمال؟",
-          "answer": "نقدم لوحات BI تبين حجم الاتصالات، أوقات الذروة، أداء الوكلاء، العائد لكل حملة، وتوصيات تحسين مستمرة." 
+          "answer": "نقدم لوحات BI تبين حجم الاتصالات، أوقات الذروة، أداء الوكلاء، العائد لكل حملة، وتوصيات تحسين مستمرة."
         }
       ]
     },
@@ -182,6 +194,18 @@
         "other": {
           "title": "Other Services",
           "description": "A wide range of customized solutions tailored to your establishment's needs"
+        },
+        "tamm": {
+          "title": "Tamm Service",
+          "description": "Management of vehicles and transport fleets through a comprehensive portal"
+        },
+        "masarat": {
+          "title": "Masarat Service",
+          "description": "Real-time tracking and management of vehicles and their routes"
+        },
+        "muqeem": {
+          "title": "Muqeem Service",
+          "description": "Fast electronic issuance and renewal of residencies and visas"
         }
       }
     },
@@ -191,55 +215,55 @@
       "questions": [
         {
           "question": "What call center services does Entishar provide?",
-          "answer": "Full-service call center operations: inbound/outbound, omnichannel (voice, WhatsApp, email, social), sales campaigns, and tech support." 
+          "answer": "Full-service call center operations: inbound/outbound, omnichannel (voice, WhatsApp, email, social), sales campaigns, and tech support."
         },
         {
           "question": "What is the process for setting up a call center with Entishar?",
-          "answer": "Discovery to align on KPIs, workforce and governance plan, scripts and training, pilot launch, then continuous performance tuning." 
+          "answer": "Discovery to align on KPIs, workforce and governance plan, scripts and training, pilot launch, then continuous performance tuning."
         },
         {
           "question": "Can Entishar provide remote call center solutions?",
-          "answer": "Yes—hybrid or fully remote via secure cloud stack with live quality and productivity monitoring." 
+          "answer": "Yes—hybrid or fully remote via secure cloud stack with live quality and productivity monitoring."
         },
         {
           "question": "What languages and hours do you support?",
-          "answer": "Arabic and English with 24/7 coverage or tailored schedules based on your demand patterns." 
+          "answer": "Arabic and English with 24/7 coverage or tailored schedules based on your demand patterns."
         },
         {
           "question": "Do you handle customer communication on social media?",
-          "answer": "Yes, we manage inquiries and complaints on Twitter, Instagram, Facebook, and email with unified ticketing." 
+          "answer": "Yes, we manage inquiries and complaints on Twitter, Instagram, Facebook, and email with unified ticketing."
         },
         {
           "question": "How does your pricing structure work?",
-          "answer": "Flexible models: seat/hour packages or outcome-based for sales campaigns, with transparent effort and results reporting." 
+          "answer": "Flexible models: seat/hour packages or outcome-based for sales campaigns, with transparent effort and results reporting."
         },
         {
           "question": "How can partnering with Entishar reduce costs?",
-          "answer": "Better workforce allocation, automation, knowledge bases, and fewer escalations cut your cost per contact." 
+          "answer": "Better workforce allocation, automation, knowledge bases, and fewer escalations cut your cost per contact."
         },
         {
           "question": "Can you integrate with our existing CRM?",
-          "answer": "Yes, via APIs or ready-made connectors so tickets and data stay in your primary system." 
+          "answer": "Yes, via APIs or ready-made connectors so tickets and data stay in your primary system."
         },
         {
           "question": "What technologies do you use in operations?",
-          "answer": "Cloud CCaaS platforms, IVR, call recording and analytics, quality monitoring, and workforce management/forecasting tools." 
+          "answer": "Cloud CCaaS platforms, IVR, call recording and analytics, quality monitoring, and workforce management/forecasting tools."
         },
         {
           "question": "How do you handle customer feedback and complaints?",
-          "answer": "Unified tickets, root-cause analysis, standardized responses under agreed SLAs, and weekly recurrence reports." 
+          "answer": "Unified tickets, root-cause analysis, standardized responses under agreed SLAs, and weekly recurrence reports."
         },
         {
           "question": "How do you measure and report customer satisfaction?",
-          "answer": "CSAT, NPS, and FCR with live dashboards and monthly reports highlighting first-call resolution and quality trends." 
+          "answer": "CSAT, NPS, and FCR with live dashboards and monthly reports highlighting first-call resolution and quality trends."
         },
         {
           "question": "How do you handle high call volume periods?",
-          "answer": "Forecasting, dynamic scheduling, surge teams, and deflection via IVR/chat to stabilize queues." 
+          "answer": "Forecasting, dynamic scheduling, surge teams, and deflection via IVR/chat to stabilize queues."
         },
         {
           "question": "Do you provide BI reports and insights?",
-          "answer": "Yes—BI dashboards covering volume, peak times, agent performance, campaign ROI, plus continuous improvement advice." 
+          "answer": "Yes—BI dashboards covering volume, peak times, agent performance, campaign ROI, plus continuous improvement advice."
         }
       ]
     },
