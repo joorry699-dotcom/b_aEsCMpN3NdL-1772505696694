@@ -18,8 +18,7 @@ export default function ServicesSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal()
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
-  const [selectedElm, setSelectedElm] = useState<"muqeem" | "masarat">("muqeem")
-  const [expandedElm, setExpandedElm] = useState<"muqeem" | "masarat" | null>(null)
+  const [openElm, setOpenElm] = useState<"muqeem" | "masarat" | null>("muqeem")
   const [openService, setOpenService] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [formData, setFormData] = useState({
@@ -67,7 +66,7 @@ export default function ServicesSection() {
     return ordered
   })()
 
-  const displayElm = expandedElm ?? selectedElm ?? "muqeem"
+  const displayElm = openElm ?? "muqeem"
   const selectedData = useMemo(() => elmServices?.[displayElm], [displayElm, elmServices])
   const elmCards = useMemo(() => (
     (["muqeem", "masarat"] as const).map((key) => ({
@@ -79,8 +78,7 @@ export default function ServicesSection() {
   ), [elmServices])
 
   const handleSelectElm = (key: "muqeem" | "masarat") => {
-    setExpandedElm((prev) => (prev === key ? null : key))
-    setSelectedElm(key)
+    setOpenElm((prev) => (prev === key ? null : key))
   }
 
   const handleElmSubmit = (e: React.FormEvent) => {
@@ -176,7 +174,7 @@ export default function ServicesSection() {
 
             <div className="grid gap-4 md:grid-cols-2">
               {elmCards.map((card) => {
-                const active = expandedElm === card.key
+                const active = openElm === card.key
                 return (
                   <button
                     key={card.key}

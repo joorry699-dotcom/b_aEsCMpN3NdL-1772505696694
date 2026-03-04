@@ -143,7 +143,7 @@ const jobs = [
   },
   {
     id: 8,
-    title: { ar: "أخصائي خدمة عملاء عبر السوشيال", en: "Social Care Specialist" },
+    title: { ar: "أخصائي خدمة عملاء عبر مواقع التواصل الاجتماعي", en: "Social Care Specialist" },
     type: { ar: "دوام كامل", en: "Full-time" },
     location: { ar: "عن بعد", en: "Remote" },
     salary: { ar: "بناءً على الخبرة", en: "Based on Experience" },
@@ -201,18 +201,16 @@ export function CareersSection() {
       <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "34px 34px" }} />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-14 gap-6">
-          <div className="max-w-2xl">
-            <Badge className="bg-white/5 text-[#7ad8ff] hover:bg-white/10 mb-3 border border-white/10 px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-[0.18em] uppercase">
-              {t("nav.careers")}
-            </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white mb-3 leading-tight tracking-tight">
-              {t("careers.title")}
-            </h2>
-            <p className="text-sm sm:text-base text-white/70 max-w-xl leading-relaxed">
-              {t("careers.subtitle")}
-            </p>
-          </div>
+        <div className="flex flex-col items-center text-center mb-14 gap-4">
+          <Badge className="bg-white/5 text-[#7ad8ff] hover:bg-white/10 border border-white/10 px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-[0.18em] uppercase">
+            {t("nav.careers")}
+          </Badge>
+          <h2 className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white leading-tight tracking-tight">
+            {t("careers.title")}
+          </h2>
+          <p className="text-sm sm:text-base text-white/70 max-w-2xl leading-relaxed">
+            {t("careers.subtitle")}
+          </p>
         </div>
 
         <div className="grid gap-4">

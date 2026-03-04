@@ -266,6 +266,7 @@
     "faq": {
       "title": "الأسئلة الشائعة",
       "subtitle": "كل ما تود معرفته عن خدمات انتشار",
+      "description": "أبرز الأسئلة عن التشغيل، الأسعار، والقنوات المتعددة بخلاصة سريعة.",
       "questions": [
         {
           "question": "ما هي خدمات مركز الاتصال التي تقدمها انتشار؟",
@@ -572,6 +573,7 @@
     "faq": {
       "title": "Frequently Asked Questions",
       "subtitle": "Everything you need to know about Entishar services",
+      "description": "Quick answers about operations, pricing, and omnichannel support in one place.",
       "questions": [
         {
           "question": "What call center services does Entishar provide?",
