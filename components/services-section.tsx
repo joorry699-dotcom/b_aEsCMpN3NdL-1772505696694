@@ -80,26 +80,24 @@ export default function ServicesSection() {
   }
 
   return (
-    <section id="services" className="magazine-section relative overflow-hidden bg-[#fafbfc] py-28 lg:py-36">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0891b2 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+    <section id="services" className="relative overflow-hidden bg-[#f6f8fb] py-24 lg:py-28">
+      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0ea5e9 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Editorial header */}
         <div
           ref={headerRef}
-          className={`mb-20 transition-all duration-1000 ${
+          className={`mb-16 transition-all duration-1000 ${
             headerVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="flex items-center gap-4 mb-6">
-            <span className="h-px flex-1 max-w-16 bg-[#0891b2]" />
-            <span className="text-xs font-bold tracking-[0.2em] text-[#0891b2] uppercase">{t("nav.services")}</span>
+          <div className="flex items-center gap-3 mb-5">
+            <span className="h-px flex-1 max-w-16 bg-[#0ea5e9]" />
+            <span className="text-[11px] font-semibold tracking-[0.18em] text-[#0ea5e9] uppercase">{t("nav.services")}</span>
           </div>
-          <h2 className="mb-6 max-w-2xl text-4xl font-bold leading-tight text-[#0c1e3c] sm:text-5xl lg:text-6xl">
+          <h2 className="mb-3 max-w-2xl text-4xl font-bold leading-tight text-[#0c1e3c] sm:text-5xl">
             {t("services.title")}
           </h2>
-          <p className="max-w-xl text-lg leading-relaxed text-[#64748b]">
+          <p className="max-w-2xl text-base leading-relaxed text-[#475569]">
             {t("services.subtitle")}
           </p>
         </div>
@@ -107,52 +105,45 @@ export default function ServicesSection() {
         {/* Bento Grid */}
         <div
           ref={gridRef}
-          className={`stagger-children grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 ${gridVisible ? "visible" : ""}`}
+          className={`stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 ${gridVisible ? "visible" : ""}`}
         >
           {services.map((service, i) => (
             <div
               key={service.key}
-              className={`card-magazine group relative overflow-hidden rounded-3xl border border-[#e8ecf0] bg-white p-7 ${
-                i === 0 ? "sm:col-span-2 sm:row-span-2 sm:p-10" : ""
+              className={`group relative overflow-hidden rounded-2xl border border-[#dbeafe] bg-white p-6 shadow-sm transition-all duration-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0ea5e9]/10 ${
+                i === 0 ? "sm:col-span-2 sm:row-span-2 sm:p-8" : ""
               }`}
             >
-              {/* Hover gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0891b2]/0 to-[#06b6d4]/0 transition-all duration-500 group-hover:from-[#0891b2]/[0.03] group-hover:to-[#06b6d4]/[0.06]" />
-
               <div className="relative z-10">
-                <div className={`mb-5 flex items-center justify-center rounded-2xl bg-[#f0fdfa] transition-colors duration-500 group-hover:bg-[#0891b2] ${i === 0 ? "h-16 w-16" : "h-12 w-12"}`}>
-                  <service.icon className={`text-[#0891b2] transition-colors duration-500 group-hover:text-white ${i === 0 ? "h-8 w-8" : "h-6 w-6"}`} />
+                <div className={`mb-4 flex items-center justify-center rounded-xl bg-[#e0f2fe] text-[#0e7490] transition-colors duration-400 group-hover:bg-[#0ea5e9]/15 ${i === 0 ? "h-14 w-14" : "h-12 w-12"}`}>
+                  <service.icon className={`${i === 0 ? "h-7 w-7" : "h-6 w-6"}`} />
                 </div>
-                <h3 className={`mb-3 font-bold text-[#0c1e3c] ${i === 0 ? "text-2xl" : "text-lg"}`}>
+                <h3 className={`mb-2 font-semibold text-[#0c1e3c] ${i === 0 ? "text-xl" : "text-base"}`}>
                   {service.title}
                 </h3>
-                <p className={`leading-relaxed text-[#64748b] ${i === 0 ? "text-base" : "text-sm"}`}>
+                <p className={`leading-relaxed text-[#475569] ${i === 0 ? "text-sm" : "text-sm"}`}>
                   {service.description}
                 </p>
               </div>
-
-              {/* Corner accent */}
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-l from-[#06b6d4] to-[#0891b2] transition-all duration-500 group-hover:w-full" />
             </div>
           ))}
         </div>
 
-        {/* Elm Services & Intake */}
         <div
           id="elm-services"
           ref={elmRef}
-          className={`mt-24 grid gap-10 lg:grid-cols-5 transition-all duration-1000 ${
+          className={`mt-16 grid gap-8 lg:grid-cols-5 transition-all duration-1000 ${
             elmVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="lg:col-span-2 space-y-6">
-            <div className="inline-flex rounded-full bg-[#e0f2fe] px-3 py-1 text-xs font-semibold text-[#0369a1]">
+          <div className="lg:col-span-2 space-y-5">
+            <div className="inline-flex rounded-full bg-[#e0f2fe] px-3 py-1 text-[11px] font-semibold text-[#0369a1]">
               {t("elm.heading")}
             </div>
-            <h3 className="text-3xl font-bold text-[#0c1e3c] lg:text-4xl">
+            <h3 className="text-2xl font-bold text-[#0c1e3c] lg:text-3xl">
               {selectedData?.title}
             </h3>
-            <p className="text-lg text-[#475569] leading-relaxed">
+            <p className="text-base text-[#475569] leading-relaxed">
               {selectedData?.description}
             </p>
 
@@ -173,12 +164,12 @@ export default function ServicesSection() {
               ))}
             </div>
 
-            <div className="rounded-3xl border border-[#e2e8f0] bg-white p-6 shadow-sm">
-              <h4 className="mb-4 text-lg font-semibold text-[#0c1e3c]">{t("elm.subheading")}</h4>
-              <ul className="space-y-3 text-sm text-[#475569]">
+            <div className="rounded-2xl border border-[#dbeafe] bg-white p-5 shadow-sm">
+              <h4 className="mb-3 text-base font-semibold text-[#0c1e3c]">{t("elm.subheading")}</h4>
+              <ul className="space-y-2.5 text-sm text-[#475569]">
                 {selectedData?.features?.map((feat) => (
                   <li key={feat} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-[#0891b2]" />
+                    <span className="mt-1 h-2 w-2 rounded-full bg-[#0ea5e9]" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -187,11 +178,11 @@ export default function ServicesSection() {
           </div>
 
           <div className="lg:col-span-3" id="elm-form">
-            <form onSubmit={handleElmSubmit} className="rounded-3xl border border-[#e2e8f0] bg-white p-6 shadow-sm lg:p-8">
+            <form onSubmit={handleElmSubmit} className="rounded-2xl border border-[#dbeafe] bg-white p-6 shadow-sm lg:p-7">
               <div className="mb-6">
-                <p className="text-sm font-semibold text-[#0891b2]">{elmServices?.[selectedElm]?.title}</p>
-                <h4 className="text-2xl font-bold text-[#0c1e3c]">{elmForm?.title}</h4>
-                <p className="mt-2 text-sm text-[#475569]">{elmForm?.subtitle}</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#0ea5e9]">{elmServices?.[selectedElm]?.title}</p>
+                <h4 className="mt-1 text-xl font-bold text-[#0c1e3c]">{elmForm?.title}</h4>
+                <p className="mt-1 text-sm text-[#475569]">{elmForm?.subtitle}</p>
               </div>
 
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

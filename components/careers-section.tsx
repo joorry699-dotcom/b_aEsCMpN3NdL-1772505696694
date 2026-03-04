@@ -258,8 +258,8 @@ export function CareersSection() {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl border border-white/10 bg-[#0f2748]/95 text-white">
-          <div className="mb-2 flex items-center justify-between">
+        <DialogContent className="max-w-2xl border border-white/10 bg-[#0f2748]/95 text-white max-h-[90vh] overflow-y-auto p-5 sm:p-6">
+          <div className="mb-3 flex items-center justify-between sticky top-0 z-10 bg-[#0f2748]/95">
             <button
               onClick={() => setOpen(false)}
               className="flex w-full items-center justify-center gap-2 rounded-2xl bg-white/10 px-4 py-3 text-sm font-semibold text-white hover:bg-white/20 md:w-auto"
@@ -280,7 +280,7 @@ export function CareersSection() {
           </DialogHeader>
 
           {selectedJob && (
-            <div className="space-y-6">
+            <div className="space-y-5">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="flex flex-wrap gap-3 text-sm text-white/70">
                   <span className="flex items-center gap-2"><Clock3 className="h-4 w-4" /> {selectedJob.type[locale]}</span>
@@ -295,7 +295,7 @@ export function CareersSection() {
               </div>
 
               <form onSubmit={handleSubmit} className="grid gap-4">
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-3 sm:grid-cols-2">
                   <div>
                     <label className="mb-2 block text-xs font-semibold uppercase text-white/60">{locale === "ar" ? "الاسم الكامل" : "Full name"}</label>
                     <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputClass} placeholder={locale === "ar" ? "اسمك" : "Your name"} />

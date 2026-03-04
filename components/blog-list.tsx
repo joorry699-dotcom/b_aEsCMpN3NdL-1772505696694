@@ -15,7 +15,7 @@ export function BlogList() {
   if (blogs.length === 0) return null
 
   return (
-    <section id="latest-news" className="bg-slate-50 py-24">
+    <section id="latest-news" className="bg-[#f6f8fb] py-20">
       <div className="container mx-auto px-6">
         <div
           ref={ref}
@@ -29,11 +29,11 @@ export function BlogList() {
           <div className="mx-auto h-1 w-20 bg-cyan-600"></div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((post) => (
             <article
               key={post.slug}
-              className="overflow-hidden rounded-2xl bg-white shadow-sm transition-all hover:shadow-md"
+              className="overflow-hidden rounded-2xl border border-[#dbeafe] bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-[#0ea5e9]/10"
             >
               <div className="relative h-44 w-full">
                 <Image
@@ -53,12 +53,11 @@ export function BlogList() {
                   {locale === "ar" ? post.excerpt_ar : post.excerpt_en}
                 </p>
                 {openSlug === post.slug && (
-                  <div
-                    className="prose prose-sm max-w-none text-[#334155] prose-headings:text-[#0c1e3c]"
-                    dangerouslySetInnerHTML={{
+                  <div className="prose prose-sm max-w-none text-[#334155] prose-headings:text-[#0c1e3c]">
+                    <div dangerouslySetInnerHTML={{
                       __html: locale === "ar" ? post.content_ar : post.content_en,
-                    }}
-                  />
+                    }} />
+                  </div>
                 )}
                 <button
                   type="button"
