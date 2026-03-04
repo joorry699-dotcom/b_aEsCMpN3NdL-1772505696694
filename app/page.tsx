@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar"
 import HeroSection from "@/components/hero-section"
 import ServicesSection from "@/components/services-section"
+import { SolutionsSection } from "@/components/solutions-section"
 import ChannelsSection from "@/components/channels-section"
 import BenefitsSection from "@/components/benefits-section"
 import StrategiesSection from "@/components/strategies-section"
@@ -21,6 +22,7 @@ export default function Home() {
       <HeroSection />
       <VideoSection />
       <ServicesSection />
+      <SolutionsSection />
       <ChannelsSection />
       <BenefitsSection />
       <StrategiesSection />

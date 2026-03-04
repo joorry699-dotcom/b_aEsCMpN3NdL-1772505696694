@@ -238,7 +238,7 @@ export function CareersSection() {
               <div className="mt-8 md:mt-0 flex items-center justify-between md:justify-end gap-6 w-full md:w-auto">
                 <div className="text-right hidden md:block">
                   <p className="text-xs text-white/30 uppercase tracking-widest font-bold mb-1">
-                    Salary
+                    {locale === 'ar' ? "المزايا" : "Compensation"}
                   </p>
                   <p className="text-white/80 font-medium">
                     {job.salary[locale]}
@@ -262,10 +262,10 @@ export function CareersSection() {
           <div className="mb-2 flex items-center justify-between">
             <button
               onClick={() => setOpen(false)}
-              className="flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-sm font-semibold text-white hover:bg-white/20"
+              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-white/10 px-4 py-3 text-sm font-semibold text-white hover:bg-white/20 md:w-auto"
             >
               <ChevronLeft className={`h-4 w-4 ${locale === 'ar' ? '' : 'rotate-180'}`} />
-              {locale === "ar" ? "رجوع لقائمة الوظائف" : "Back to jobs"}
+              {locale === "ar" ? "رجوع للوظائف" : "Back to jobs"}
             </button>
           </div>
           <DialogHeader>

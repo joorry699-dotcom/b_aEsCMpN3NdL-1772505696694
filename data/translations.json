@@ -87,6 +87,32 @@
         "success": "تم استلام طلبك وسنتواصل خلال وقت قصير"
       }
     },
+    "solutions": {
+      "title": "حلول الأعمال (إسناد)",
+      "subtitle": "حزمة متكاملة لتشغيل أعمالك: مراكز الاتصال، الموارد البشرية، الدعم التشغيلي، والتحول الرقمي",
+      "items": [
+        {
+          "title": "تشغيل مراكز الاتصال",
+          "description": "إنشاء وتشغيل مراكز اتصال متعددة القنوات مع استضافة الرقم الموحد وعمليات ضمان الجودة",
+          "pill": "اتصال"
+        },
+        {
+          "title": "حلول الموارد البشرية والتوظيف",
+          "description": "استقطاب وتشغيل الرواتب والحضور والإجازات وفق اللوائح السعودية مع لوحات متابعة تنفيذية",
+          "pill": "موارد بشرية"
+        },
+        {
+          "title": "الدعم التشغيلي والميداني",
+          "description": "إدارة مهام الميدان، تتبع الطلبات، وجدولة الطواقم لتقليل زمن الإنجاز وتحسين الجودة",
+          "pill": "تشغيلي"
+        },
+        {
+          "title": "التحول الرقمي والتكامل",
+          "description": "أتمتة العمليات، تكامل الأنظمة والـCRM، ولوحات بيانات لحظية لاتخاذ القرار",
+          "pill": "رقمي"
+        }
+      ]
+    },
     "faq": {
       "title": "الأسئلة الشائعة",
       "subtitle": "كل ما تود معرفته عن خدمات انتشار",
@@ -238,6 +264,32 @@
         "submit": "Send Request",
         "success": "We received your request and will contact you shortly"
       }
+    },
+    "solutions": {
+      "title": "Business Solutions (Isnad)",
+      "subtitle": "An integrated bundle: contact centers, HR, field ops, and digital transformation",
+      "items": [
+        {
+          "title": "Contact Center Operations",
+          "description": "Build and run omnichannel contact centers with unified number hosting and quality ops",
+          "pill": "Contact"
+        },
+        {
+          "title": "HR & Talent Solutions",
+          "description": "Recruitment, payroll, attendance, and leave compliant with KSA labor rules plus exec dashboards",
+          "pill": "HR"
+        },
+        {
+          "title": "Operational & Field Support",
+          "description": "Manage field tasks, orders, and crew scheduling to cut turnaround time and lift quality",
+          "pill": "Ops"
+        },
+        {
+          "title": "Digital Transformation",
+          "description": "Process automation, CRM/ERP integrations, and live BI for faster decisions",
+          "pill": "Digital"
+        }
+      ]
     },
     "faq": {
       "title": "Frequently Asked Questions",
