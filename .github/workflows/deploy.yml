@@ -44,6 +44,8 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: production
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
