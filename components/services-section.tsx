@@ -2,14 +2,7 @@
 
 import { useMemo, useState } from "react"
 import type { LucideIcon } from "lucide-react"
-import {
-  Cloud,
-  Megaphone,
-  Briefcase,
-  Building2,
-  ShieldCheck,
-  ChevronDown,
-} from "lucide-react"
+import { Cloud, Megaphone, Briefcase, ShieldCheck, ChevronDown } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { useLanguage } from "./language-provider"
 
@@ -31,7 +24,7 @@ export default function ServicesSection() {
   })
 
   const servicesItems = t("services.items") as
-    | Record<string, { title: string; description: string }>
+    | Record<string, { title: string; description: string; features?: string[] }>
     | string
 
   const elmServices = t("elm.services") as Record<
@@ -46,7 +39,6 @@ export default function ServicesSection() {
     bpo: Briefcase,
     cloud: Cloud,
     marketing: Megaphone,
-    construction: Building2,
     smart: ShieldCheck,
   }
 
@@ -61,6 +53,7 @@ export default function ServicesSection() {
         icon: iconMap[key],
         title: servicesItems[key].title,
         description: servicesItems[key].description,
+        features: servicesItems[key].features ?? [],
       }))
 
     return ordered
@@ -145,11 +138,23 @@ export default function ServicesSection() {
                 </div>
                 <h3 className="text-lg font-semibold text-white">{service.title}</h3>
                 <div
-                  className={`overflow-hidden text-sm leading-relaxed text-white/70 transition-all duration-300 ${
-                    openService === service.key ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  className={`overflow-hidden text-sm text-white/70 transition-all duration-300 ${
+                    openService === service.key ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
-                  {service.description}
+                  <div className="space-y-3 leading-relaxed">
+                    <p>{service.description}</p>
+                    {service.features?.length ? (
+                      <ul className="space-y-2">
+                        {service.features.map((feat) => (
+                          <li key={feat} className="flex items-start gap-2 text-white/80">
+                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             </button>

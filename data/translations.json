@@ -34,7 +34,17 @@
         },
         "cloud": {
           "title": "خدمة الموارد البشرية",
-          "description": "نظام إدارة الموارد البشرية، تقييم الأداء، الرواتب، ملفات الموظفين، التأمين الصحي، الحضور والانصراف، الإجراءات الداخلية، والمنصات الحكومية."
+          "description": "نظام إدارة الموارد البشرية، تقييم الأداء، الرواتب، ملفات الموظفين، التأمين الصحي، الحضور والانصراف، الإجراءات الداخلية، والمنصات الحكومية.",
+          "features": [
+            "نظام إدارة الموارد البشرية",
+            "إدارة تقييم الأداء",
+            "إدارة ومتابعة الرواتب",
+            "إدارة ملفات الموظفين",
+            "إدارة ومتابعة التأمين الصحي",
+            "إدارة الحضور والانصراف",
+            "إدارة الإجراءات الداخلية",
+            "إدارة المنصات الحكومية"
+          ]
         },
         "marketing": {
           "title": "خدمة العمل عن بُعد",
@@ -96,12 +106,17 @@
     },
     "solutions": {
       "title": "حلول إسناد الأعمال",
-      "subtitle": "موارد بشرية متخصصة ورخص عمل عن بُعد",
+      "subtitle": "رخص العمل عن بُعد مع أنظمة وتشغيل متكامل",
       "items": [
-        { "title": "حلول خدمة الموارد البشرية", "description": "إدارة تقييم الأداء، الرواتب، ملفات الموظفين، التأمين الصحي، الحضور والانصراف، الإجراءات الداخلية، والمنصات الحكومية.", "pill": "موارد بشرية" },
-        { "title": "رخص العمل عن بُعد", "description": "انتشار مزود خدمة معتمد؛ نسجل موظفيك في بوابة العمل عن بُعد ونوفر أنظمة لمتابعة المهام والطلبات باحترافية.", "pill": "عمل عن بُعد" },
-        { "title": "حلول نظام إدارة العلاقات العامة", "description": "نظام تذاكر وعلاقات عملاء يسهّل التواصل مع العملاء ويدعم احتياجات أصحاب العمل.", "pill": "عمل عن بُعد" },
-        { "title": "حلول مراكز الاتصال السحابية", "description": "أدوات اتصال سحابية تربط المستفيدين بأعمالك بأفضل تجربة تواصل.", "pill": "عمل عن بُعد" }
+        {
+          "title": "رخص العمل عن بُعد",
+          "description": "انتشار مزود خدمة معتمد من وزارة العمل والتنمية الاجتماعية. نوفر لك تسجيل الموظفين في بوابة العمل عن بُعد كمزود خدمة معتمد، ونقدم لك أحدث الأنظمة المخصصة لصاحب العمل وممثلي صاحب العمل لتحديد المهام والطلبات ومراقبة إنجاز المهام في الوقت المناسب وبطريقة احترافية.",
+          "pill": "عمل عن بُعد",
+          "features": [
+            "حلول نظام إدارة العلاقات العامة: نظام تذاكر وعلاقات عملاء يسهّل التواصل مع العملاء ويدعم متطلبات أصحاب العمل.",
+            "حلول مراكز الاتصال السحابية: أدوات اتصال سحابية تربط المستفيدين بأعمالك بأفضل تجربة تواصل."
+          ]
+        }
       ]
     },
     "channels": {
@@ -343,7 +358,17 @@
         },
         "cloud": {
           "title": "HR Service",
-          "description": "HR system, performance reviews, payroll, employee files, health insurance, attendance, internal workflows, and government platforms."
+          "description": "HR system, performance reviews, payroll, employee files, health insurance, attendance, internal workflows, and government platforms.",
+          "features": [
+            "HR management system",
+            "Performance review management",
+            "Payroll management",
+            "Employee files management",
+            "Health insurance tracking",
+            "Attendance and time management",
+            "Internal workflow management",
+            "Government platforms management"
+          ]
         },
         "marketing": {
           "title": "Remote Work Service",
@@ -405,12 +430,17 @@
     },
     "solutions": {
       "title": "Business Outsourcing Solutions",
-      "subtitle": "Specialized HR delivery and remote work licensing",
+      "subtitle": "Remote work licenses with integrated systems",
       "items": [
-        { "title": "HR Service Solutions", "description": "Performance reviews, payroll, employee files, health insurance, attendance, internal workflows, and government platforms.", "pill": "HR" },
-        { "title": "Remote Work Licenses", "description": "Authorized provider to register remote employees and track tasks/requests professionally.", "pill": "Remote" },
-        { "title": "Public Relations / CRM Ticketing", "description": "Ticketing and CRM to streamline employer communications and support.", "pill": "Remote" },
-        { "title": "Cloud Contact Center Solutions", "description": "Cloud contact tools to connect beneficiaries with your services.", "pill": "Remote" }
+        {
+          "title": "Remote Work Licenses",
+          "description": "Entishar is an authorized provider by the Ministry of Labor. We register your employees on the remote work portal and deliver purpose-built systems for employers and their representatives to assign tasks, manage requests, and track completion on time with a professional flow.",
+          "pill": "Remote",
+          "features": [
+            "Public Relations Management System: ticketing/CRM to streamline client communications and support employer needs.",
+            "Cloud Contact Center Solutions: cloud tools connecting beneficiaries with your services for the best experience."
+          ]
+        }
       ]
     },
     "achievements": {

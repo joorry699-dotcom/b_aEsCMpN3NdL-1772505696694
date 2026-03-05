@@ -1,5 +1,7 @@
 "use client"
 
+import { useState } from "react"
+import { ChevronDown } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { useLanguage } from "./language-provider"
 
@@ -11,7 +13,9 @@ export function SolutionsSection() {
     title: string
     description: string
     pill: string
+    features?: string[]
   }>
+  const [openKey, setOpenKey] = useState<string | null>(solutions?.[0]?.title ?? null)
 
   return (
     <section
@@ -36,20 +40,55 @@ export function SolutionsSection() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {solutions?.map((item) => (
-            <div
-              key={item.title}
-              className="card-magazine group relative rounded-2xl border border-white/10 bg-white/[0.05] p-6 shadow-[0_20px_50px_-36px_rgba(0,0,0,0.8)] transition-all hover:-translate-y-1 hover:border-[#22d3ee]/25 hover:bg-white/[0.08]"
-            >
-              <div className="mb-3 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#7ad8ff]">
-                {item.pill}
-              </div>
-              <h3 className="mb-2 text-lg font-semibold text-white leading-tight">
-                {item.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-white/70">{item.description}</p>
-            </div>
-          ))}
+          {solutions?.map((item) => {
+            const isOpen = openKey === item.title
+            return (
+              <button
+                key={item.title}
+                type="button"
+                onClick={() => setOpenKey((prev) => (prev === item.title ? null : item.title))}
+                className={`group relative w-full rounded-2xl border p-6 text-right shadow-[0_20px_50px_-36px_rgba(0,0,0,0.8)] transition-all ${
+                  isOpen
+                    ? "border-[#22d3ee] bg-white/[0.08]"
+                    : "border-white/10 bg-white/[0.05] hover:border-[#22d3ee]/25 hover:bg-white/[0.08]"
+                }`}
+              >
+                <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "36px 36px" }} />
+                <div className="relative flex flex-col gap-3 text-right">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#7ad8ff]">
+                      {item.pill}
+                    </div>
+                    <ChevronDown
+                      className={`h-5 w-5 text-white/60 transition-transform duration-300 ${
+                        isOpen ? "rotate-180 text-[#7ad8ff]" : ""
+                      }`}
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white leading-tight">{item.title}</h3>
+                  <div
+                    className={`overflow-hidden text-sm text-white/70 transition-all duration-300 ${
+                      isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="space-y-3 leading-relaxed">
+                      <p>{item.description}</p>
+                      {item.features?.length ? (
+                        <ul className="space-y-2">
+                          {item.features.map((feat) => (
+                            <li key={feat} className="flex items-start gap-2 text-white/80">
+                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                              <span>{feat}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </div>
+                  </div>
+                </div>
+              </button>
+            )
+          })}
         </div>
       </div>
     </section>
