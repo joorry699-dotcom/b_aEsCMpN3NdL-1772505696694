@@ -172,7 +172,7 @@ export default function ServicesSection() {
               <p className="text-sm sm:text-base text-white/70 leading-relaxed">{selectedData?.description}</p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-4 sm:p-5 space-y-3">
               {elmCards.map((card) => {
                 const active = openElm === card.key
                 return (
@@ -180,17 +180,17 @@ export default function ServicesSection() {
                     key={card.key}
                     type="button"
                     onClick={() => handleSelectElm(card.key)}
-                    className={`group relative w-full overflow-hidden rounded-2xl border p-5 text-right transition-all duration-500 ${
+                    className={`group relative w-full overflow-hidden rounded-2xl border p-4 text-right transition-all duration-500 ${
                       active
                         ? "border-[#22d3ee] bg-white/[0.08] shadow-[0_20px_60px_-32px_rgba(34,211,238,0.7)]"
-                        : "border-white/10 bg-white/[0.05] hover:border-[#22d3ee]/40 hover:bg-white/[0.07]"
+                        : "border-white/10 bg-white/[0.03] hover:border-[#22d3ee]/30 hover:bg-white/[0.05]"
                     }`}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/8 via-transparent to-transparent opacity-80" />
                     <div className="relative flex flex-col gap-3">
                       <div className="flex items-center justify-between gap-3">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
-                          <span className="text-sm font-bold uppercase">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
+                          <span className="text-xs font-bold uppercase">
                             {card.key === "muqeem" ? "MQ" : card.key === "masarat" ? "MS" : "TM"}
                           </span>
                         </div>
