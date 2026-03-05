@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, type ReactNode } from "react"
 import { ChevronDown, Briefcase, Globe2 } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { useLanguage } from "./language-provider"
@@ -19,7 +19,7 @@ export function SolutionsSection() {
   const [openKey, setOpenKey] = useState<string | null>(list?.[0]?.title ?? null)
 
   const iconMap = useMemo(() => {
-    return list.reduce<Record<string, JSX.Element>>((acc, item) => {
+    return list.reduce<Record<string, ReactNode>>((acc, item) => {
       const key = item.pill?.toLowerCase()
       if (key?.includes("hr")) acc[item.title] = <Briefcase className="h-5 w-5" />
       else acc[item.title] = <Globe2 className="h-5 w-5" />
