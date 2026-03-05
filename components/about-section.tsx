@@ -8,7 +8,8 @@ export default function AboutSection() {
   const { t } = useLanguage()
   const { ref, isVisible } = useScrollReveal()
 
-  const points = t("about.points") as string[]
+  const about = t("hero.about") as { title?: string; subtitle?: string; points?: string[] }
+  const points = Array.isArray(about?.points) ? about.points : []
   const stats = t("achievements.stats") as Record<string, { value: string; label: string }>
 
   return (
@@ -30,9 +31,9 @@ export default function AboutSection() {
           <div className="flex flex-col gap-6 text-right sm:text-right">
             <div className="inline-flex items-center gap-2 self-start rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-[#7ad8ff]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
-              <span>{t("about.title")}</span>
+              <span>{about?.title || t("hero.about.title")}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold leading-tight text-white">{t("about.subtitle")}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold leading-tight text-white">{about?.subtitle || t("hero.about.subtitle")}</h2>
 
             <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
               {points?.map((item) => (
