@@ -48,7 +48,14 @@
         },
         "marketing": {
           "title": "خدمة العمل عن بُعد",
-          "description": "تسجيل الموظفين كعمل عن بُعد كمزود خدمة معتمد، ومتابعة المهام والطلبات بأنظمة مخصصة لصاحب العمل لمراقبة الإنجاز باحترافية."
+          "description": "تسجيل الموظفين كعمل عن بُعد كمزود خدمة معتمد، ومتابعة المهام والطلبات بأنظمة مخصصة لصاحب العمل لمراقبة الإنجاز باحترافية.",
+          "features": [
+            "انتشار مزود خدمة معتمد للعمل عن بُعد",
+            "تسجيل الموظفين في بوابة العمل عن بُعد",
+            "لوحات تحكم لصاحب العمل لمتابعة المهام",
+            "تنبيهات للمهام والطلبات في الوقت المناسب",
+            "تقارير إنجاز احترافية ومؤشرات أداء"
+          ]
         },
         "construction": {
           "title": "خدمة منصة علم",
@@ -116,23 +123,8 @@
     },
     "solutions": {
       "title": "حلول إسناد الأعمال",
-      "subtitle": "خدمات الموارد البشرية ورخص العمل عن بُعد",
+      "subtitle": "رخص العمل عن بُعد وحلول تقنية وأمنية",
       "items": [
-        {
-          "title": "حلول خدمة الموارد البشرية",
-          "description": "حزمة متكاملة للموارد البشرية: تقييم الأداء، الرواتب، ملفات الموظفين، التأمين الصحي، الحضور والانصراف، الإجراءات الداخلية، والمنصات الحكومية.",
-          "pill": "موارد بشرية",
-          "features": [
-            "نظام إدارة الموارد البشرية",
-            "إدارة تقييم الأداء",
-            "إدارة ومتابعة الرواتب",
-            "إدارة ملفات الموظفين",
-            "إدارة ومتابعة التأمين الصحي",
-            "إدارة الحضور والانصراف",
-            "إدارة الإجراءات الداخلية",
-            "إدارة المنصات الحكومية"
-          ]
-        },
         {
           "title": "رخص العمل عن بُعد",
           "description": "انتشار مزود خدمة معتمد من وزارة العمل والتنمية الاجتماعية. نسجل موظفيك في بوابة العمل عن بُعد ونقدم أنظمة مخصصة لصاحب العمل وممثليه لتحديد المهام والطلبات ومراقبة إنجازها باحترافية.",
@@ -140,6 +132,32 @@
           "features": [
             "حلول نظام إدارة العلاقات العامة: نظام تذاكر وعلاقات عملاء يسهّل التواصل مع العملاء ويدعم متطلبات أصحاب العمل.",
             "حلول مراكز الاتصال السحابية: أدوات اتصال سحابية تربط المستفيدين بأعمالك بأفضل تجربة تواصل."
+          ]
+        },
+        {
+          "title": "حلول تقنية المعلومات وتطوير المنصات",
+          "description": "إنشاء وتطوير الأنظمة والبوابات الإلكترونية وتوريد الأجهزة والخوادم مع بنية تحتية متكاملة لمراكز المعلومات والشبكات الداخلية.",
+          "pill": "تقنية",
+          "features": [
+            "إنشاء وتطوير الأنظمة والبوابات الإلكترونية",
+            "توريد الأجهزة والخوادم",
+            "بناء وتصميم البنية التحتية لمراكز المعلومات",
+            "إنشاء وتصميم شبكات الحاسب الآلي الداخلية"
+          ]
+        },
+        {
+          "title": "حلول الأمان والمنزل الذكي",
+          "description": "أنظمة أمان وكاميرات وبوابات إلكترونية مع تكامل أوامر صوتية، وصول عن بُعد، إدارة طاقة وأقفال ومنافذ ذكية.",
+          "pill": "أمن",
+          "features": [
+            "الكاميرات الأمنية",
+            "البوابات الإلكترونية",
+            "أنظمة الأمن المنزلية",
+            "التكامل مع الأوامر الصوتية",
+            "الوصول عن بُعد",
+            "إدارة الطاقة",
+            "الأقفال الذكية",
+            "المنافذ الذكية"
           ]
         }
       ]
@@ -397,7 +415,14 @@
         },
         "marketing": {
           "title": "Remote Work Service",
-          "description": "Register employees as remote workers (authorized provider) and track tasks/requests with employer-focused dashboards."
+          "description": "Register employees as remote workers (authorized provider) and track tasks/requests with employer-focused dashboards.",
+          "features": [
+            "Authorized remote work provider",
+            "Register employees on the remote work portal",
+            "Employer dashboards to track tasks",
+            "On-time task/request alerts",
+            "Professional performance and completion reports"
+          ]
         },
         "construction": {
           "title": "Elm Platform Service",
@@ -465,23 +490,8 @@
     },
     "solutions": {
       "title": "Business Outsourcing Solutions",
-      "subtitle": "HR services and remote work licenses",
+      "subtitle": "Remote work licenses, tech, and security",
       "items": [
-        {
-          "title": "HR Service Solutions",
-          "description": "Complete HR bundle: performance reviews, payroll, employee files, health insurance, attendance, internal workflows, and government platforms.",
-          "pill": "HR",
-          "features": [
-            "HR management system",
-            "Performance review management",
-            "Payroll management",
-            "Employee files management",
-            "Health insurance tracking",
-            "Attendance and time management",
-            "Internal workflow management",
-            "Government platforms management"
-          ]
-        },
         {
           "title": "Remote Work Licenses",
           "description": "Entishar is an authorized provider by the Ministry of Labor. We register your employees on the remote work portal and deliver purpose-built systems for employers and their representatives to assign tasks, manage requests, and track completion on time with a professional flow.",
@@ -489,6 +499,32 @@
           "features": [
             "Public Relations Management System: ticketing/CRM to streamline client communications and support employer needs.",
             "Cloud Contact Center Solutions: cloud tools connecting beneficiaries with your services for the best experience."
+          ]
+        },
+        {
+          "title": "IT Solutions & Platform Development",
+          "description": "Build and develop systems and e-portals, supply hardware/servers, and design infrastructure for data centers and internal networks.",
+          "pill": "Tech",
+          "features": [
+            "Build and develop systems and e-portals",
+            "Supply hardware and servers",
+            "Design data center infrastructure",
+            "Design internal computer networks"
+          ]
+        },
+        {
+          "title": "Security & Smart Home Solutions",
+          "description": "Security systems with cameras and gates plus voice-assistant integration, remote access, energy management, smart locks, and smart outlets.",
+          "pill": "Security",
+          "features": [
+            "Security cameras",
+            "Electronic gates",
+            "Home security systems",
+            "Voice commands integration",
+            "Remote access",
+            "Energy management",
+            "Smart locks",
+            "Smart outlets"
           ]
         }
       ]
