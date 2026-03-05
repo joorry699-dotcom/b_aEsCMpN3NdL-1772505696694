@@ -52,13 +52,13 @@
         },
         "construction": {
           "title": "خدمة منصة علم",
-          "description": "تشغيل خدمات مقيم ومسارات وتم عبر منصة علم بإدارة موحدة وتنبيهات صيانة وتتبع فوري."
+          "description": "تشغيل خدمات مقيم، مسارات، تم، ونبأ عبر منصة علم بإدارة موحدة وتنبيهات صيانة وتتبع فوري."
         }
       }
     },
     "elm": {
       "heading": "خدمات منصة علم",
-      "subheading": "مقيم ومسارات وتم بإدارة موحدة ونموذج طلب سريع",
+      "subheading": "مقيم، مسارات، تم، ونبأ بإدارة موحدة ونموذج طلب سريع",
       "services": {
         "muqeem": {
           "title": "خدمة مقيم",
@@ -89,6 +89,16 @@
             "تنبيهات صلاحية وتذكير بالتجديد",
             "تقارير تشغيلية للعمليات اللوجستية"
           ]
+        },
+        "nabaa": {
+          "title": "خدمة نبأ",
+          "description": "إرسال رسائل نصية إلى أرقام الجوال المسجلة في أبشر عبر مركز المعلومات الوطني",
+          "features": [
+            "إرسال رسائل موثقة إلى أرقام أبشر المسجلة",
+            "تنبيهات وإشعارات فورية للمستفيدين",
+            "ربط آمن مع مركز المعلومات الوطني",
+            "تقارير تسليم ومتابعة للحملات"
+          ]
         }
       },
       "form": {
@@ -106,11 +116,26 @@
     },
     "solutions": {
       "title": "حلول إسناد الأعمال",
-      "subtitle": "رخص العمل عن بُعد مع أنظمة وتشغيل متكامل",
+      "subtitle": "خدمات الموارد البشرية ورخص العمل عن بُعد",
       "items": [
         {
+          "title": "حلول خدمة الموارد البشرية",
+          "description": "حزمة متكاملة للموارد البشرية: تقييم الأداء، الرواتب، ملفات الموظفين، التأمين الصحي، الحضور والانصراف، الإجراءات الداخلية، والمنصات الحكومية.",
+          "pill": "موارد بشرية",
+          "features": [
+            "نظام إدارة الموارد البشرية",
+            "إدارة تقييم الأداء",
+            "إدارة ومتابعة الرواتب",
+            "إدارة ملفات الموظفين",
+            "إدارة ومتابعة التأمين الصحي",
+            "إدارة الحضور والانصراف",
+            "إدارة الإجراءات الداخلية",
+            "إدارة المنصات الحكومية"
+          ]
+        },
+        {
           "title": "رخص العمل عن بُعد",
-          "description": "انتشار مزود خدمة معتمد من وزارة العمل والتنمية الاجتماعية. نوفر لك تسجيل الموظفين في بوابة العمل عن بُعد كمزود خدمة معتمد، ونقدم لك أحدث الأنظمة المخصصة لصاحب العمل وممثلي صاحب العمل لتحديد المهام والطلبات ومراقبة إنجاز المهام في الوقت المناسب وبطريقة احترافية.",
+          "description": "انتشار مزود خدمة معتمد من وزارة العمل والتنمية الاجتماعية. نسجل موظفيك في بوابة العمل عن بُعد ونقدم أنظمة مخصصة لصاحب العمل وممثليه لتحديد المهام والطلبات ومراقبة إنجازها باحترافية.",
           "pill": "عمل عن بُعد",
           "features": [
             "حلول نظام إدارة العلاقات العامة: نظام تذاكر وعلاقات عملاء يسهّل التواصل مع العملاء ويدعم متطلبات أصحاب العمل.",
@@ -376,13 +401,13 @@
         },
         "construction": {
           "title": "Elm Platform Service",
-          "description": "Run Muqeem, Masarat, and Tamm via Elm with unified management, maintenance alerts, and live tracking."
+          "description": "Run Muqeem, Masarat, Tamm, and Nabaa via Elm with unified management, maintenance alerts, and live tracking."
         }
       }
     },
     "elm": {
       "heading": "Elm Platform Services",
-      "subheading": "Muqeem, Masarat, and Tamm with unified management and quick intake",
+      "subheading": "Muqeem, Masarat, Tamm, and Nabaa with unified management and quick intake",
       "services": {
         "muqeem": {
           "title": "Muqeem Service",
@@ -413,6 +438,16 @@
             "Validity alerts and renewal reminders",
             "Operational reports for logistics workflows"
           ]
+        },
+        "nabaa": {
+          "title": "Nabaa Service",
+          "description": "Send verified SMS to Absher-registered mobile numbers via NIC",
+          "features": [
+            "Send trusted messages to Absher-registered numbers",
+            "Instant alerts and notifications to beneficiaries",
+            "Secure integration with the National Information Center",
+            "Delivery reports and campaign tracking"
+          ]
         }
       },
       "form": {
@@ -430,8 +465,23 @@
     },
     "solutions": {
       "title": "Business Outsourcing Solutions",
-      "subtitle": "Remote work licenses with integrated systems",
+      "subtitle": "HR services and remote work licenses",
       "items": [
+        {
+          "title": "HR Service Solutions",
+          "description": "Complete HR bundle: performance reviews, payroll, employee files, health insurance, attendance, internal workflows, and government platforms.",
+          "pill": "HR",
+          "features": [
+            "HR management system",
+            "Performance review management",
+            "Payroll management",
+            "Employee files management",
+            "Health insurance tracking",
+            "Attendance and time management",
+            "Internal workflow management",
+            "Government platforms management"
+          ]
+        },
         {
           "title": "Remote Work Licenses",
           "description": "Entishar is an authorized provider by the Ministry of Labor. We register your employees on the remote work portal and deliver purpose-built systems for employers and their representatives to assign tasks, manage requests, and track completion on time with a professional flow.",

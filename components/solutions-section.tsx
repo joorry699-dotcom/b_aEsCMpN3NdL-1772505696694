@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { useState, useMemo } from "react"
+import { ChevronDown, Briefcase, Globe2 } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { useLanguage } from "./language-provider"
 
@@ -15,7 +15,17 @@ export function SolutionsSection() {
     pill: string
     features?: string[]
   }>
-  const [openKey, setOpenKey] = useState<string | null>(solutions?.[0]?.title ?? null)
+  const list = Array.isArray(solutions) ? solutions : []
+  const [openKey, setOpenKey] = useState<string | null>(list?.[0]?.title ?? null)
+
+  const iconMap = useMemo(() => {
+    return list.reduce<Record<string, JSX.Element>>((acc, item) => {
+      const key = item.pill?.toLowerCase()
+      if (key?.includes("hr")) acc[item.title] = <Briefcase className="h-5 w-5" />
+      else acc[item.title] = <Globe2 className="h-5 w-5" />
+      return acc
+    }, {})
+  }, [list])
 
   return (
     <section
@@ -40,7 +50,7 @@ export function SolutionsSection() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {solutions?.map((item) => {
+          {list.map((item) => {
             const isOpen = openKey === item.title
             return (
               <button
@@ -56,8 +66,9 @@ export function SolutionsSection() {
                 <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "36px 36px" }} />
                 <div className="relative flex flex-col gap-3 text-right">
                   <div className="flex items-center justify-between gap-3">
-                    <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#7ad8ff]">
-                      {item.pill}
+                    <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#7ad8ff]">
+                      {iconMap[item.title]}
+                      <span>{item.pill}</span>
                     </div>
                     <ChevronDown
                       className={`h-5 w-5 text-white/60 transition-transform duration-300 ${

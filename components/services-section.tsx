@@ -11,7 +11,7 @@ export default function ServicesSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal()
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
-  const [openElm, setOpenElm] = useState<"muqeem" | "masarat" | "tamm" | null>("muqeem")
+  const [openElm, setOpenElm] = useState<"muqeem" | "masarat" | "tamm" | "nabaa" | null>("muqeem")
   const [openService, setOpenService] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [formData, setFormData] = useState({
@@ -28,7 +28,7 @@ export default function ServicesSection() {
     | string
 
   const elmServices = t("elm.services") as Record<
-    "muqeem" | "masarat" | "tamm",
+    "muqeem" | "masarat" | "tamm" | "nabaa",
     { title: string; description: string; features: string[] }
   >
   const elmForm = t("elm.form") as Record<string, string>
@@ -62,7 +62,7 @@ export default function ServicesSection() {
   const displayElm = openElm ?? "muqeem"
   const selectedData = useMemo(() => elmServices?.[displayElm], [displayElm, elmServices])
   const elmCards = useMemo(() => (
-    (["muqeem", "masarat", "tamm"] as const).map((key) => ({
+    (["muqeem", "masarat", "tamm", "nabaa"] as const).map((key) => ({
       key,
       title: elmServices?.[key]?.title ?? "",
       description: elmServices?.[key]?.description ?? "",
@@ -70,7 +70,7 @@ export default function ServicesSection() {
     }))
   ), [elmServices])
 
-  const handleSelectElm = (key: "muqeem" | "masarat" | "tamm") => {
+  const handleSelectElm = (key: "muqeem" | "masarat" | "tamm" | "nabaa") => {
     setOpenElm((prev) => (prev === key ? null : key))
   }
 
@@ -173,8 +173,8 @@ export default function ServicesSection() {
               <div className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
                 {t("elm.heading")}
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-white">{selectedData?.title}</h3>
-              <p className="text-sm sm:text-base text-white/70 leading-relaxed">{selectedData?.description}</p>
+              <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-white">{t("services.items.construction.title")}</h3>
+              <p className="text-sm sm:text-base text-white/70 leading-relaxed">{t("services.items.construction.description")}</p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-4 sm:p-5 space-y-3">
@@ -196,7 +196,13 @@ export default function ServicesSection() {
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
                           <span className="text-xs font-bold uppercase">
-                            {card.key === "muqeem" ? "MQ" : card.key === "masarat" ? "MS" : "TM"}
+                            {card.key === "muqeem"
+                              ? "MQ"
+                              : card.key === "masarat"
+                                ? "MS"
+                                : card.key === "tamm"
+                                  ? "TM"
+                                  : "NB"}
                           </span>
                         </div>
                         <ChevronDown
