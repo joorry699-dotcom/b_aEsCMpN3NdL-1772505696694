@@ -15,10 +15,7 @@ export default function Navbar() {
   const navLinks = [
     { label: t("nav.home"), id: "hero" },
     { label: t("nav.services"), id: "services" },
-    { label: t("nav.channels"), id: "channels" },
-    { label: t("nav.benefits"), id: "benefits" },
-    { label: t("nav.strategies"), id: "strategies" },
-    { label: t("nav.clients"), id: "clients" },
+    { label: t("nav.solutions"), id: "solutions" },
     { label: t("nav.blog"), id: "latest-news" },
   ]
 

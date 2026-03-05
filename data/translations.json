@@ -3,6 +3,7 @@
     "nav": {
       "home": "الرئيسية",
       "services": "خدماتنا",
+      "solutions": "حلول إسناد الأعمال",
       "channels": "القنوات",
       "benefits": "المزايا",
       "strategies": "استراتيجياتنا",
@@ -13,10 +14,10 @@
       "careers": "الوظائف"
     },
     "hero": {
-      "title": "انتشار للتسويق الرقمي",
-      "subtitle": "نصنع لك بصمة رقمية لا تُنسى في عالم متسارع.",
+      "title": "انتشار لتعهيد الأعمال",
+      "subtitle": "حلول متكاملة لتشغيل مراكز الاتصال وإسناد الأعمال بخبرة موحدة.",
       "ctaPrimary": "احصل على الخدمة",
-      "ctaSecondary": "تعرف على خدماتنا",
+      "ctaSecondary": "استكشف خدماتنا",
       "features": {
         "channels": "نستقبل تواصل عملائك عبر جميع القنوات",
         "partner": "شريك أعمالك الاستراتيجي في التواصل",
@@ -25,92 +26,93 @@
     },
     "services": {
       "title": "خدماتنا",
-      "subtitle": "نقدم مجموعة شاملة من الخدمات المتكاملة لتلبية جميع احتياجات أعمالك",
+      "subtitle": "نغطي مركز الاتصال، الموارد البشرية، العمل عن بُعد، ومنصة علم",
       "items": {
         "bpo": {
-          "title": "إسناد الأعمال والدعم الإداري (BPO)",
-          "description": "حلول متكاملة لإسناد العمليات الإدارية والتشغيلية لتركّز منشأتك على أعمالها الأساسية"
+          "title": "خدمة مركز الاتصال",
+          "description": "إدارة وتشغيل مركز التواصل، استضافة الأرقام الموحدة، إدارة التواصل في مختلف المنصات، وبناء مركز الاتصال من الصفر."
         },
         "cloud": {
-          "title": "الحلول التقنية والخدمات السحابية",
-          "description": "أنظمة سحابية لإدارة الاتصال والأداء مع بنية تقنية مرنة وآمنة"
+          "title": "خدمة الموارد البشرية",
+          "description": "نظام إدارة الموارد البشرية، تقييم الأداء، الرواتب، ملفات الموظفين، التأمين الصحي، الحضور والانصراف، الإجراءات الداخلية، والمنصات الحكومية."
         },
         "marketing": {
-          "title": "التسويق وتطوير العلامة التجارية",
-          "description": "حملات متكاملة لبناء الهوية وتعزيز النمو عبر القنوات الرقمية"
+          "title": "خدمة العمل عن بُعد",
+          "description": "تسجيل الموظفين كعمل عن بُعد كمزود خدمة معتمد، ومتابعة المهام والطلبات بأنظمة مخصصة لصاحب العمل لمراقبة الإنجاز باحترافية."
         },
         "construction": {
-          "title": "خدمات البناء والتصميم",
-          "description": "تصميم وتنفيذ مشاريع متكاملة بمعايير جودة عالية وإدارة مشاريع دقيقة"
-        },
-        "smart": {
-          "title": "المباني الذكية والأمن",
-          "description": "حلول أمان ومباني ذكية متصلة لرفع الكفاءة والسلامة"
+          "title": "خدمة منصة علم",
+          "description": "تشغيل خدمات مقيم ومسارات وتم عبر منصة علم بإدارة موحدة وتنبيهات صيانة وتتبع فوري."
         }
       }
     },
     "elm": {
-      "heading": "خدمات علم (مقيم ومسارات)",
-      "subheading": "حلول موثوقة لإدارة بيانات المقيمين وتتبع أساطيل المركبات مع نماذج طلب سريعة",
+      "heading": "خدمات منصة علم",
+      "subheading": "مقيم ومسارات وتم بإدارة موحدة ونموذج طلب سريع",
       "services": {
         "muqeem": {
           "title": "خدمة مقيم",
           "description": "إدارة بيانات المقيمين وإصدار وتجديد الإقامات والتأشيرات إلكترونياً",
           "features": [
-            "عرض وتحديث بيانات المقيمين عبر بوابة موحدة",
-            "إصدار وتجديد الإقامات والتأشيرات بسرعة",
-            "تنبيهات صلاحيات وإشعارات متابعة آلية",
-            "صلاحيات متعددة للمستخدمين مع سجل تدقيق للعمليات"
+            "عرض وتحديث بيانات المقيمين عبر بوابة واحدة",
+            "إصدار وتجديد الإقامة والتأشيرات بسرعة",
+            "تنبيهات صلاحية تلقائية وإشعارات متابعة",
+            "صلاحيات أدوار مع سجل تدقيق للإجراءات"
           ]
         },
         "masarat": {
           "title": "خدمة مسارات",
-          "description": "تتبع وإدارة المركبات لحظياً مع خطط صيانة وتشغيل متكاملة",
+          "description": "تتبع فوري للمركبات وإدارة الأساطيل مع خطط صيانة تشغيلية",
           "features": [
-            "تتبع لحظي للمركبات عبر GPS مع تنبيهات السرعة والمسار",
-            "جداول صيانة وتشغيل للأسطول مع مهام موثقة",
+            "تتبع GPS مباشر مع تنبيهات السرعة والمسار",
+            "خطط صيانة وتشغيل للأسطول",
             "تقارير استخدام السائقين والمخالفات",
-            "لوحات متابعة لحظية للأسطول وحالة المركبات"
+            "لوحات لحظية لحالة الأسطول وسلامته"
+          ]
+        },
+        "tamm": {
+          "title": "خدمة تم",
+          "description": "تكامل سريع مع خدمات المرور لإدارة المركبات والعمليات اللوجستية",
+          "features": [
+            "إصدار وإدارة تفويض المركبات إلكترونياً",
+            "استعلامات فورية عن المخالفات وتجديد الاستمارات",
+            "تنبيهات صلاحية وتذكير بالتجديد",
+            "تقارير تشغيلية للعمليات اللوجستية"
           ]
         }
       },
       "form": {
-        "title": "اطلب الخدمة الآن",
-        "subtitle": "عبئ بيانات منشأتك وسنعاود الاتصال بك لتفعيل الخدمة",
-        "name": "الاسم",
+        "title": "اطلب الخدمة",
+        "subtitle": "أدخل بيانات منشأتك وسنفعّل الخدمة لك",
+        "name": "الاسم الكامل",
         "phone": "رقم الجوال",
         "email": "البريد الإلكتروني",
-        "company": "اسم الشركة",
-        "account": "رقم حساب المنشأة / السجل التجاري",
+        "company": "اسم المنشأة",
+        "account": "رقم المنشأة / رقم السجل",
         "notes": "ملاحظات إضافية",
         "submit": "إرسال الطلب",
-        "success": "تم استلام طلبك وسنتواصل خلال وقت قصير"
+        "success": "استلمنا طلبك وسنتواصل معك قريباً"
       }
     },
     "solutions": {
-      "title": "حلول الأعمال (إسناد)",
-      "subtitle": "حزمة متكاملة لتشغيل أعمالك: مراكز الاتصال، الموارد البشرية، الدعم التشغيلي، والتحول الرقمي",
+      "title": "حلول مركز الاتصال",
+      "subtitle": "حلول مركز الاتصال تتناسب مع أعمالك",
       "items": [
-        {
-          "title": "تشغيل مراكز الاتصال",
-          "description": "إنشاء وتشغيل مراكز اتصال متعددة القنوات مع استضافة الرقم الموحد وعمليات ضمان الجودة",
-          "pill": "اتصال"
-        },
-        {
-          "title": "حلول الموارد البشرية والتوظيف",
-          "description": "استقطاب وتشغيل الرواتب والحضور والإجازات وفق اللوائح السعودية مع لوحات متابعة تنفيذية",
-          "pill": "موارد بشرية"
-        },
-        {
-          "title": "الدعم التشغيلي والميداني",
-          "description": "إدارة مهام الميدان، تتبع الطلبات، وجدولة الطواقم لتقليل زمن الإنجاز وتحسين الجودة",
-          "pill": "تشغيلي"
-        },
-        {
-          "title": "التحول الرقمي والتكامل",
-          "description": "أتمتة العمليات، تكامل الأنظمة والـCRM، ولوحات بيانات لحظية لاتخاذ القرار",
-          "pill": "رقمي"
-        }
+        { "title": "إدارة وتشغيل مركز التواصل", "description": "تشغيل شامل مع معايير جودة وتقارير أداء مستمرة", "pill": "مركز اتصال" },
+        { "title": "استضافة الأرقام الموحدة", "description": "تهيئة وتشغيل الرقم الموحد وربطه بالقنوات", "pill": "مركز اتصال" },
+        { "title": "إدارة التواصل في مختلف المنصات", "description": "قنوات هاتف، واتساب، بريد، سوشيال مع توحيد التذاكر", "pill": "مركز اتصال" },
+        { "title": "بناء مركز الاتصال", "description": "تصميم البنية، الاسكربتات، الحوكمة، ولوحات المتابعة", "pill": "مركز اتصال" },
+        { "title": "حلول إسناد الأعمال - الموارد البشرية", "description": "حلول خدمة الموارد البشرية بإدارة موحدة", "pill": "إسناد الأعمال" },
+        { "title": "نظام إدارة الموارد البشرية", "description": "ملفات الموظفين، الحضور، والإجازات في نظام موحد", "pill": "إسناد الأعمال" },
+        { "title": "إدارة تقييم الأداء", "description": "نماذج تقييم وربطها بالمسارات التطويرية", "pill": "إسناد الأعمال" },
+        { "title": "إدارة ومتابعة الرواتب", "description": "صرف رواتب آمن ومتوافق مع اللوائح وتقارير شفافة", "pill": "إسناد الأعمال" },
+        { "title": "إدارة ومتابعة التأمين الصحي", "description": "ربط بيانات التأمين الصحي ومتابعة صلاحياته", "pill": "إسناد الأعمال" },
+        { "title": "إدارة الحضور والانصراف", "description": "تتبُّع دقيق بسجلات دخول وخروج وتنبيهات فورية", "pill": "إسناد الأعمال" },
+        { "title": "إدارة الإجراءات الداخلية", "description": "سياسات، إجراءات، وموافقات مؤتمتة", "pill": "إسناد الأعمال" },
+        { "title": "إدارة المنصات الحكومية", "description": "تكامل مع منصات حكومية لضمان التزام كامل", "pill": "إسناد الأعمال" },
+        { "title": "رخص العمل عن بُعد", "description": "تسجيل الموظفين كعمل عن بُعد كمزود خدمة معتمد ومراقبة المهام احترافياً", "pill": "عمل عن بُعد" },
+        { "title": "حلول نظام إدارة العلاقات العامة", "description": "نظام تذاكر وعلاقات عملاء لتسهيل التواصل ودعم أصحاب العمل", "pill": "عمل عن بُعد" },
+        { "title": "حلول مراكز الاتصال السحابية", "description": "ربط المستفيدين بأعمالك بأفضل وسائل الاتصال السحابية", "pill": "عمل عن بُعد" }
       ]
     },
     "channels": {
@@ -321,6 +323,7 @@
     "nav": {
       "home": "Home",
       "services": "Services",
+      "solutions": "Business Outsourcing",
       "channels": "Channels",
       "benefits": "Benefits",
       "strategies": "Strategies",
@@ -331,10 +334,10 @@
       "careers": "Careers"
     },
     "hero": {
-      "title": "Entishar Digital Marketing",
-      "subtitle": "Creating an unforgettable digital footprint in a fast-paced world.",
-      "ctaPrimary": "Get Service",
-      "ctaSecondary": "Explore Our Services",
+      "title": "Entishar for Business Outsourcing",
+      "subtitle": "Integrated operations for contact centers and business support with unified expertise.",
+      "ctaPrimary": "Get the Service",
+      "ctaSecondary": "Explore Services",
       "features": {
         "channels": "Handling customer communication across all channels",
         "partner": "Your strategic business partner in communication",
@@ -343,33 +346,29 @@
     },
     "services": {
       "title": "Our Services",
-      "subtitle": "We deliver a full spectrum of integrated services to meet all your business needs",
+      "subtitle": "Contact center, HR, remote work, and Elm platform under one roof",
       "items": {
         "bpo": {
-          "title": "Business Process Outsourcing (BPO)",
-          "description": "End-to-end administrative and operational outsourcing so you stay focused on your core business"
+          "title": "Contact Center Service",
+          "description": "Operate and run your contact center, host unified numbers, manage all channels, and build the center end-to-end."
         },
         "cloud": {
-          "title": "Tech & Cloud Solutions",
-          "description": "Cloud-native contact and performance platforms with secure, flexible infrastructure"
+          "title": "HR Service",
+          "description": "HR system, performance reviews, payroll, employee files, health insurance, attendance, internal workflows, and government platforms."
         },
         "marketing": {
-          "title": "Marketing & Brand Growth",
-          "description": "Integrated campaigns to build brand equity and drive growth across digital channels"
+          "title": "Remote Work Service",
+          "description": "Register employees as remote workers (authorized provider) and track tasks/requests with employer-focused dashboards."
         },
         "construction": {
-          "title": "Construction & Design Services",
-          "description": "Design and build projects with rigorous quality standards and precise project management"
-        },
-        "smart": {
-          "title": "Smart Buildings & Security",
-          "description": "Connected smart-building and security solutions to improve efficiency and safety"
+          "title": "Elm Platform Service",
+          "description": "Run Muqeem, Masarat, and Tamm via Elm with unified management, maintenance alerts, and live tracking."
         }
       }
     },
     "elm": {
-      "heading": "ELM Services (Muqeem & Masarat)",
-      "subheading": "Trusted platforms for resident management and fleet tracking with a quick intake form",
+      "heading": "Elm Platform Services",
+      "subheading": "Muqeem, Masarat, and Tamm with unified management and quick intake",
       "services": {
         "muqeem": {
           "title": "Muqeem Service",
@@ -390,11 +389,21 @@
             "Driver usage and violations reporting",
             "Live dashboards for fleet status and health"
           ]
+        },
+        "tamm": {
+          "title": "Tamm Service",
+          "description": "Fast MOT integration for vehicle delegation and logistics ops",
+          "features": [
+            "Issue and manage vehicle delegations digitally",
+            "Instant violation queries and registration renewals",
+            "Validity alerts and renewal reminders",
+            "Operational reports for logistics workflows"
+          ]
         }
       },
       "form": {
         "title": "Request the Service",
-        "subtitle": "Fill your company details and we will activate the service for you",
+        "subtitle": "Share your company details and we'll activate it for you",
         "name": "Full Name",
         "phone": "Mobile Number",
         "email": "Email",
@@ -406,29 +415,26 @@
       }
     },
     "solutions": {
-      "title": "Business Solutions (Isnad)",
-      "subtitle": "An integrated bundle: contact centers, HR, field ops, and digital transformation",
+      "title": "Contact Center Solutions",
+      "subtitle": "Tailored contact center solutions for your business",
       "items": [
-        {
-          "title": "Contact Center Operations",
-          "description": "Build and run omnichannel contact centers with unified number hosting and quality ops",
-          "pill": "Contact"
-        },
-        {
-          "title": "HR & Talent Solutions",
-          "description": "Recruitment, payroll, attendance, and leave compliant with KSA labor rules plus exec dashboards",
-          "pill": "HR"
-        },
-        {
-          "title": "Operational & Field Support",
-          "description": "Manage field tasks, orders, and crew scheduling to cut turnaround time and lift quality",
-          "pill": "Ops"
-        },
-        {
-          "title": "Digital Transformation",
-          "description": "Process automation, CRM/ERP integrations, and live BI for faster decisions",
-          "pill": "Digital"
-        }
+        { "title": "Operate and Run the Contact Center", "description": "End-to-end ops with quality standards and continuous reporting", "pill": "Contact" },
+        { "title": "Unified Number Hosting", "description": "Provision and run your unified number across channels", "pill": "Contact" },
+        { "title": "Omnichannel Communications", "description": "Voice, WhatsApp, email, and social with unified ticketing", "pill": "Contact" },
+        { "title": "Build the Contact Center", "description": "Design infrastructure, scripts, governance, and monitoring dashboards", "pill": "Contact" },
+
+        { "title": "Business Outsourcing – HR", "description": "HR service delivery with unified management", "pill": "HR" },
+        { "title": "HR Management System", "description": "Employee records, attendance, and leave in one system", "pill": "HR" },
+        { "title": "Performance Management", "description": "Review models tied to development plans", "pill": "HR" },
+        { "title": "Payroll Management", "description": "Compliant, secure payroll with transparent reporting", "pill": "HR" },
+        { "title": "Health Insurance Management", "description": "Sync health insurance data and monitor validity", "pill": "HR" },
+        { "title": "Attendance and Time Tracking", "description": "Precise time logs with instant alerts", "pill": "HR" },
+        { "title": "Internal Procedures", "description": "Policies, workflows, and approvals automated", "pill": "HR" },
+        { "title": "Government Platforms", "description": "Integrations to keep compliance with government portals", "pill": "HR" },
+
+        { "title": "Remote Work Licenses", "description": "Register remote employees as an approved provider and monitor tasks professionally", "pill": "Remote" },
+        { "title": "Public Relations/CRM Ticketing", "description": "CRM and ticketing to streamline employer communication", "pill": "Remote" },
+        { "title": "Cloud Contact Center Solutions", "description": "Cloud contact tools to connect beneficiaries with your services", "pill": "Remote" }
       ]
     },
     "achievements": {

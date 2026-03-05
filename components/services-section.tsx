@@ -18,7 +18,7 @@ export default function ServicesSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal()
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
-  const [openElm, setOpenElm] = useState<"muqeem" | "masarat" | null>("muqeem")
+  const [openElm, setOpenElm] = useState<"muqeem" | "masarat" | "tamm" | null>("muqeem")
   const [openService, setOpenService] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [formData, setFormData] = useState({
@@ -35,7 +35,7 @@ export default function ServicesSection() {
     | string
 
   const elmServices = t("elm.services") as Record<
-    "muqeem" | "masarat",
+    "muqeem" | "masarat" | "tamm",
     { title: string; description: string; features: string[] }
   >
   const elmForm = t("elm.form") as Record<string, string>
@@ -69,7 +69,7 @@ export default function ServicesSection() {
   const displayElm = openElm ?? "muqeem"
   const selectedData = useMemo(() => elmServices?.[displayElm], [displayElm, elmServices])
   const elmCards = useMemo(() => (
-    (["muqeem", "masarat"] as const).map((key) => ({
+    (["muqeem", "masarat", "tamm"] as const).map((key) => ({
       key,
       title: elmServices?.[key]?.title ?? "",
       description: elmServices?.[key]?.description ?? "",
@@ -77,7 +77,7 @@ export default function ServicesSection() {
     }))
   ), [elmServices])
 
-  const handleSelectElm = (key: "muqeem" | "masarat") => {
+  const handleSelectElm = (key: "muqeem" | "masarat" | "tamm") => {
     setOpenElm((prev) => (prev === key ? null : key))
   }
 
@@ -190,7 +190,9 @@ export default function ServicesSection() {
                     <div className="relative flex flex-col gap-3">
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
-                          <span className="text-sm font-bold uppercase">{card.key === "muqeem" ? "M" : "T"}</span>
+                          <span className="text-sm font-bold uppercase">
+                            {card.key === "muqeem" ? "MQ" : card.key === "masarat" ? "MS" : "TM"}
+                          </span>
                         </div>
                         <ChevronDown
                           className={`h-5 w-5 text-white/60 transition-transform duration-300 ${active ? "rotate-180 text-[#7ad8ff]" : ""}`}
