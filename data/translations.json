@@ -135,6 +135,18 @@
           ]
         },
         {
+          "title": "حلول نظام إدارة العلاقات العامة",
+          "description": "نظام تذاكر وعلاقات عملاء يسهّل التواصل مع العملاء ويدعم متطلبات أصحاب العمل.",
+          "pill": "علاقات",
+          "features": []
+        },
+        {
+          "title": "حلول مراكز الاتصال السحابية",
+          "description": "تقدم انتشار أفضل وسائل الاتصال والتواصل المحققة لربط المستفيدين من خدماتك بأعمالك.",
+          "pill": "سحابي",
+          "features": []
+        },
+        {
           "title": "حلول تقنية المعلومات وتطوير المنصات",
           "description": "إنشاء وتطوير الأنظمة والبوابات الإلكترونية وتوريد الأجهزة والخوادم مع بنية تحتية متكاملة لمراكز المعلومات والشبكات الداخلية.",
           "pill": "تقنية",
@@ -500,6 +512,18 @@
             "Public Relations Management System: ticketing/CRM to streamline client communications and support employer needs.",
             "Cloud Contact Center Solutions: cloud tools connecting beneficiaries with your services for the best experience."
           ]
+        },
+        {
+          "title": "Public Relations Management System",
+          "description": "Ticketing/CRM to streamline client communications and support employer needs.",
+          "pill": "PR",
+          "features": []
+        },
+        {
+          "title": "Cloud Contact Center Solutions",
+          "description": "Cloud communication tools linking your beneficiaries to your services with the best experience.",
+          "pill": "Cloud",
+          "features": []
         },
         {
           "title": "IT Solutions & Platform Development",

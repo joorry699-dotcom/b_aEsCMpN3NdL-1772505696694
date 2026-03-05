@@ -13,6 +13,17 @@ export default function ServicesSection() {
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
   const [openElm, setOpenElm] = useState<"muqeem" | "masarat" | "tamm" | "nabaa" | null>("muqeem")
   const [openService, setOpenService] = useState<string | null>(null)
+  const [showElmForm, setShowElmForm] = useState(false)
+  const [formService, setFormService] = useState<"muqeem" | "masarat" | "tamm" | "nabaa">("muqeem")
+  const [submitted, setSubmitted] = useState(false)
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    account: "",
+    company: "",
+    notes: "",
+  })
 
   const servicesItems = t("services.items") as
     | Record<string, { title: string; description: string; features?: string[] }>
@@ -22,6 +33,9 @@ export default function ServicesSection() {
     "muqeem" | "masarat" | "tamm" | "nabaa",
     { title: string; description: string; features: string[] }
   >
+  const elmForm = t("elm.form") as Record<string, string>
+  const inputClass =
+    "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-[#22d3ee] focus:ring-1 focus:ring-[#22d3ee]/40"
 
   const iconMap: Record<string, LucideIcon> = {
     bpo: Briefcase,
@@ -58,6 +72,16 @@ export default function ServicesSection() {
 
   const handleSelectElm = (key: "muqeem" | "masarat" | "tamm" | "nabaa") => {
     setOpenElm((prev) => (prev === key ? null : key))
+  }
+
+  const handleElmSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setSubmitted(true)
+    setTimeout(() => {
+      setSubmitted(false)
+      setShowElmForm(false)
+      setFormData({ name: "", phone: "", email: "", account: "", company: "", notes: "" })
+    }, 1500)
   }
 
   return (
@@ -208,19 +232,129 @@ export default function ServicesSection() {
                       </div>
                       <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
                         <span className="text-sm font-semibold text-[#7ad8ff]">{t("elm.subheading") as string}</span>
-                        <a
-                          href="#contact"
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setFormService(card.key)
+                            setShowElmForm(true)
+                          }}
                           className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
                         >
                           {t("elm.form.submit")}
                           <span className="text-base leading-none">→</span>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </button>
                 )
               })}
             </div>
+
+            {showElmForm && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowElmForm(false)} />
+                <div className="relative w-full max-w-2xl rounded-3xl border border-white/10 bg-[#0c1b32] p-6 sm:p-7 shadow-[0_28px_80px_-40px_rgba(0,0,0,0.85)]">
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-[#7ad8ff]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                      <span>{elmServices?.[formService]?.title}</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setShowElmForm(false)}
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white hover:border-[#22d3ee]/40 hover:text-[#7ad8ff]"
+                    >
+                      ✕
+                    </button>
+                  </div>
+
+                  <form onSubmit={handleElmSubmit} className="space-y-4">
+                    <div className="space-y-1">
+                      <h4 className="text-lg font-semibold text-white">{elmForm?.title}</h4>
+                      <p className="text-sm text-white/70">{elmForm?.subtitle}</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                      <label className="space-y-1 text-sm text-white/80">
+                        <span className="font-semibold text-white">{elmForm?.name}</span>
+                        <input
+                          required
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          className={inputClass}
+                          placeholder={elmForm?.name}
+                        />
+                      </label>
+                      <label className="space-y-1 text-sm text-white/80">
+                        <span className="font-semibold text-white">{elmForm?.phone}</span>
+                        <input
+                          required
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className={inputClass}
+                          placeholder="05xxxxxxxx"
+                          dir="ltr"
+                        />
+                      </label>
+                      <label className="space-y-1 text-sm text-white/80">
+                        <span className="font-semibold text-white">{elmForm?.email}</span>
+                        <input
+                          required
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          className={inputClass}
+                          placeholder="email@example.com"
+                          dir="ltr"
+                        />
+                      </label>
+                      <label className="space-y-1 text-sm text-white/80">
+                        <span className="font-semibold text-white">{elmForm?.company}</span>
+                        <input
+                          required
+                          value={formData.company}
+                          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                          className={inputClass}
+                          placeholder={elmForm?.company}
+                        />
+                      </label>
+                      <label className="space-y-1 text-sm text-white/80 md:col-span-2">
+                        <span className="font-semibold text-white">{elmForm?.account}</span>
+                        <input
+                          required
+                          value={formData.account}
+                          onChange={(e) => setFormData({ ...formData, account: e.target.value })}
+                          className={inputClass}
+                          placeholder={elmForm?.account}
+                        />
+                      </label>
+                      <label className="space-y-1 text-sm text-white/80 md:col-span-2">
+                        <span className="font-semibold text-white">{elmForm?.notes}</span>
+                        <textarea
+                          value={formData.notes}
+                          onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                          className={`${inputClass} min-h-[120px] resize-none`}
+                          placeholder={elmForm?.notes}
+                        />
+                      </label>
+                    </div>
+
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                      <button
+                        type="submit"
+                        disabled={submitted}
+                        className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-6 py-3 text-sm font-semibold text-[#0b182f] transition hover:shadow-[0_18px_40px_-28px_rgba(34,211,238,0.8)] disabled:opacity-70"
+                      >
+                        {submitted ? "✓" : "→"} {elmForm?.submit}
+                      </button>
+                      {submitted && (
+                        <span className="text-sm font-semibold text-[#6ee7b7]">{elmForm?.success}</span>
+                      )}
+                    </div>
+                  </form>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
