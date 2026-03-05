@@ -287,7 +287,7 @@
         "بناء مركز الاتصال"
       ],
       "form": {
-        "heading": "احجز استشارة واكتب تفاصيل احتياجك",
+        "heading": "احجز استشارة مجانية واكتب تفاصيل احتياجك",
         "fields": {
           "name": "الاسم",
           "phone": "رقم الجوال",
@@ -304,14 +304,13 @@
           "details": "اكتب تفاصيل طلبك هنا... (25 حرف على الاقل)"
         },
         "serviceOptions": {
-          "placeholder": "اختر الخدمة",
-          "customer-service": "تشغيل خدمات العملاء للغير",
-          "cloud": "الكلاود كول سنتر",
-          "chat": "المحادثة الفورية",
-          "crm": "أنظمة إدارة خدمة العملاء",
-          "telemarketing": "التسويق عبر الهاتف",
-          "ip": "خدمة IP Telephony",
-          "unified": "استضافة الأرقام الموحدة",
+          "placeholder": "اختر الخدمة (الاستشارة مجانية)",
+          "bpo": "تشغيل وإدارة مراكز الاتصال",
+          "cloud": "خدمة الموارد البشرية",
+          "remote": "خدمة العمل عن بُعد",
+          "elm": "منصة علم (مقيم/مسارات/تم/نبأ)",
+          "it": "حلول تقنية المعلومات وتطوير المنصات",
+          "security": "حلول الأمان والمنزل الذكي",
           "other": "أخرى"
         },
         "slotsLabel": "حدد تاريخ ووقت الاستشارة",
@@ -699,7 +698,7 @@
         "Build and launch a contact center"
       ],
       "form": {
-        "heading": "Book a consultation and share your needs",
+        "heading": "Book a free consultation and share your needs",
         "fields": {
           "name": "Name",
           "phone": "Mobile number",
@@ -716,14 +715,13 @@
           "details": "Describe your request... (min 25 characters)"
         },
         "serviceOptions": {
-          "placeholder": "Select a service",
-          "customer-service": "Customer service operations",
-          "cloud": "Cloud call center",
-          "chat": "Live chat",
-          "crm": "Customer service platforms",
-          "telemarketing": "Telemarketing",
-          "ip": "IP Telephony",
-          "unified": "Unified number hosting",
+          "placeholder": "Select a service (consultation is free)",
+          "bpo": "Contact center operations",
+          "cloud": "HR service",
+          "remote": "Remote work service",
+          "elm": "Elm platform (Muqeem / Masarat / Tamm / Nabaa)",
+          "it": "IT solutions & platform development",
+          "security": "Security & smart home solutions",
           "other": "Other"
         },
         "slotsLabel": "Select consultation date & time",

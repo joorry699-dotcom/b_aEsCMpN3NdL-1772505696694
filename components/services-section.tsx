@@ -161,6 +161,17 @@ export default function ServicesSection() {
                         ))}
                       </ul>
                     ) : null}
+                    {['bpo', 'cloud', 'marketing'].includes(service.key) ? (
+                      <div className="pt-2 text-left">
+                        <a
+                          href="#contact"
+                          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
+                        >
+                          {t("nav.contact")}
+                          <span className="text-base leading-none">→</span>
+                        </a>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>

@@ -6,7 +6,7 @@ import { LanguageProvider } from '@/components/language-provider'
 
 const tajawal = Tajawal({
   subsets: ['arabic', 'latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '700', '800', '900'],
   variable: '--font-tajawal',
   display: 'swap',
 })
