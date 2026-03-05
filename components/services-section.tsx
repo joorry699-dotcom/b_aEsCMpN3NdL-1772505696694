@@ -206,8 +206,15 @@ export default function ServicesSection() {
                           ))}
                         </ul>
                       </div>
-                      <div className="flex items-center gap-2 text-sm font-semibold text-[#7ad8ff]">
-                        {t("elm.subheading") as string}
+                      <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+                        <span className="text-sm font-semibold text-[#7ad8ff]">{t("elm.subheading") as string}</span>
+                        <a
+                          href="#contact"
+                          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
+                        >
+                          {t("elm.form.submit")}
+                          <span className="text-base leading-none">→</span>
+                        </a>
                       </div>
                     </div>
                   </button>
