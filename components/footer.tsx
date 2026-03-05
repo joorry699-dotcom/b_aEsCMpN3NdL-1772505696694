@@ -14,6 +14,7 @@ export default function Footer() {
       { label: t("nav.careers"), href: "/#careers" },
     ],
     entshaar: [
+      { label: t("nav.about"), href: "/#about" },
       { label: t("nav.home"), href: "/#hero" },
       { label: t("nav.clients"), href: "/#clients" },
       { label: t("nav.services"), href: "/#services" },

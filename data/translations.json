@@ -3,6 +3,7 @@
     "nav": {
       "home": "الرئيسية",
       "services": "خدماتنا",
+      "about": "من نحن",
       "solutions": "حلول إسناد الأعمال",
       "channels": "القنوات",
       "benefits": "المزايا",
@@ -16,6 +17,15 @@
     "hero": {
       "title": "انتشار لتعهيد الأعمال",
       "subtitle": "حلول متكاملة لتشغيل مراكز الاتصال وإسناد الأعمال بخبرة موحدة.",
+          "about": {
+            "title": "من نحن",
+            "subtitle": "انتشار شريكك لتشغيل مراكز الاتصال وإسناد الأعمال بخبرة تمتد لأكثر من 15 عاماً.",
+            "points": [
+              "خبرة تشغيلية في تعهيد مراكز الاتصال وخدمات العملاء متعددة القنوات",
+              "شراكات مع جهات حكومية وخاصة مع نماذج تقارير وشفافية في الأداء",
+              "إنجازات تشمل إدارة عمليات تتجاوز مليون تفاعل وتشغيل فرق تتخطى 500 موظف"
+            ]
+          },
       "ctaPrimary": "احصل على الخدمة",
       "ctaSecondary": "استكشف خدماتنا",
       "features": {
@@ -382,6 +392,7 @@
     "nav": {
       "home": "Home",
       "services": "Services",
+      "about": "About",
       "solutions": "Business Outsourcing",
       "channels": "Channels",
       "benefits": "Benefits",
@@ -395,6 +406,15 @@
     "hero": {
       "title": "Entishar for Business Outsourcing",
       "subtitle": "Integrated operations for contact centers and business support with unified expertise.",
+          "about": {
+            "title": "About Us",
+            "subtitle": "Entishar is your partner to run contact centers and business outsourcing with 15+ years of experience.",
+            "points": [
+              "Operational expertise in multi-channel contact centers and customer care",
+              "Partnerships with government and private sectors with transparent reporting",
+              "Achievements include 1M+ managed interactions and teams of 500+ employees"
+            ]
+          },
       "ctaPrimary": "Get the Service",
       "ctaSecondary": "Explore Services",
       "features": {

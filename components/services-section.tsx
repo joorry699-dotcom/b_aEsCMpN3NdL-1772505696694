@@ -11,7 +11,8 @@ export default function ServicesSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal()
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
-  const [openElm, setOpenElm] = useState<"muqeem" | "masarat" | "tamm" | "nabaa" | null>("muqeem")
+  const [elmBoxOpen, setElmBoxOpen] = useState(false)
+  const [openElm, setOpenElm] = useState<"muqeem" | "masarat" | "tamm" | "nabaa" | null>(null)
   const [openService, setOpenService] = useState<string | null>(null)
   const [showElmForm, setShowElmForm] = useState(false)
   const [formService, setFormService] = useState<"muqeem" | "masarat" | "tamm" | "nabaa">("muqeem")
@@ -170,84 +171,107 @@ export default function ServicesSection() {
             elmVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 lg:p-8 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] backdrop-blur-xl space-y-8">
-            <div className="flex flex-col gap-3 text-center sm:text-right">
-              <div className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-[#7ad8ff]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
-                <span>{t("elm.heading")}</span>
+          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 lg:p-8 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] backdrop-blur-xl space-y-6">
+            <button
+              type="button"
+              onClick={() => setElmBoxOpen((prev) => !prev)}
+              className="group flex w-full items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-right transition hover:border-[#22d3ee]/40 hover:bg-white/[0.06]"
+            >
+              <div className="flex flex-col gap-2 text-right">
+                <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-[#7ad8ff]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                  <span>{t("elm.heading")}</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-white">{t("services.items.construction.title")}</h3>
+                  <p className="mt-1 text-sm sm:text-base text-white/70 leading-relaxed">
+                    {t("services.items.construction.description")}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-white">{t("services.items.construction.title")}</h3>
-              <p className="text-sm sm:text-base text-white/70 leading-relaxed">{t("services.items.construction.description")}</p>
-            </div>
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/70 transition group-hover:border-[#22d3ee]/40 group-hover:text-white">
+                <ChevronDown
+                  className={`h-5 w-5 transition-transform duration-300 ${elmBoxOpen ? "rotate-180 text-[#7ad8ff]" : ""}`}
+                />
+              </div>
+            </button>
 
-            <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-4 sm:p-5 space-y-3">
-              {elmCards.map((card) => {
-                const active = openElm === card.key
-                return (
-                  <button
-                    key={card.key}
-                    type="button"
-                    onClick={() => handleSelectElm(card.key)}
-                    className={`group relative w-full overflow-hidden rounded-2xl border p-4 text-right transition-all duration-500 ${
-                      active
-                        ? "border-[#22d3ee] bg-white/[0.08] shadow-[0_20px_60px_-32px_rgba(34,211,238,0.7)]"
-                        : "border-white/10 bg-white/[0.03] hover:border-[#22d3ee]/30 hover:bg-white/[0.05]"
-                    }`}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/8 via-transparent to-transparent opacity-80" />
-                    <div className="relative flex flex-col gap-3">
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
-                          <span className="text-xs font-bold uppercase">
-                            {card.key === "muqeem"
-                              ? "MQ"
-                              : card.key === "masarat"
-                                ? "MS"
-                                : card.key === "tamm"
-                                  ? "TM"
-                                  : "NB"}
-                          </span>
+            <div
+              className={`overflow-hidden transition-all duration-500 ${
+                elmBoxOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-4 sm:p-5 space-y-3">
+                {elmCards.map((card) => {
+                  const active = openElm === card.key
+                  return (
+                    <button
+                      key={card.key}
+                      type="button"
+                      onClick={() => handleSelectElm(card.key)}
+                      className={`group relative w-full overflow-hidden rounded-2xl border p-4 text-right transition-all duration-500 ${
+                        active
+                          ? "border-[#22d3ee] bg-white/[0.08] shadow-[0_20px_60px_-32px_rgba(34,211,238,0.7)]"
+                          : "border-white/10 bg-white/[0.03] hover:border-[#22d3ee]/30 hover:bg-white/[0.05]"
+                      }`}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/8 via-transparent to-transparent opacity-80" />
+                      <div className="relative flex flex-col gap-3">
+                        <div className="flex items-center justify-between gap-3">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
+                            <span className="text-xs font-bold uppercase">
+                              {card.key === "muqeem"
+                                ? "MQ"
+                                : card.key === "masarat"
+                                  ? "MS"
+                                  : card.key === "tamm"
+                                    ? "TM"
+                                    : "NB"}
+                            </span>
+                          </div>
+                          <ChevronDown
+                            className={`h-5 w-5 text-white/60 transition-transform duration-300 ${active ? "rotate-180 text-[#7ad8ff]" : ""}`}
+                          />
                         </div>
-                        <ChevronDown
-                          className={`h-5 w-5 text-white/60 transition-transform duration-300 ${active ? "rotate-180 text-[#7ad8ff]" : ""}`}
-                        />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold text-white">{card.title}</h4>
-                        <p className="mt-1 text-sm text-white/70 leading-relaxed line-clamp-2">{card.description}</p>
-                      </div>
-                      <div
-                        className={`overflow-hidden text-sm text-white/75 transition-all duration-300 ${
-                          active ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
-                        }`}
-                      >
-                        <ul className="space-y-2 pt-2">
-                          {card.features.map((feat) => (
-                            <li key={feat} className="flex items-start gap-3">
-                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
-                              <span>{feat}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-                        <span className="text-sm font-semibold text-[#7ad8ff]">{t("elm.subheading") as string}</span>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setFormService(card.key)
-                            setShowElmForm(true)
-                          }}
-                          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
+                        <div
+                          className={`overflow-hidden transition-all duration-300 ${
+                            active ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
+                          }`}
                         >
-                          {t("elm.form.submit")}
-                          <span className="text-base leading-none">→</span>
-                        </button>
+                          <div className="space-y-3 text-sm text-white/75 leading-relaxed">
+                            <p className="text-white/80">{card.description}</p>
+                            <ul className="space-y-2">
+                              {card.features.map((feat) => (
+                                <li key={feat} className="flex items-start gap-3">
+                                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                                  <span>{feat}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+                              <span className="text-sm font-semibold text-[#7ad8ff]">{t("elm.subheading") as string}</span>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setFormService(card.key)
+                                  setShowElmForm(true)
+                                }}
+                                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
+                              >
+                                {t("elm.form.submit")}
+                                <span className="text-base leading-none">→</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        {!active && (
+                          <p className="text-sm text-white/60 leading-relaxed line-clamp-1">{card.description}</p>
+                        )}
                       </div>
-                    </div>
-                  </button>
-                )
-              })}
+                    </button>
+                  )
+                })}
+              </div>
             </div>
 
             {showElmForm && (

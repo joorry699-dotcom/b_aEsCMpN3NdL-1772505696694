@@ -13,6 +13,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero")
 
   const navLinks = [
+    { label: t("nav.about"), id: "about" },
     { label: t("nav.home"), id: "hero" },
     { label: t("nav.services"), id: "services" },
     { label: t("nav.solutions"), id: "solutions" },

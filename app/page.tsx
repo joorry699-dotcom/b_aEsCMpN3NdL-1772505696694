@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar"
 import HeroSection from "@/components/hero-section"
+import AboutSection from "@/components/about-section"
 import ServicesSection from "@/components/services-section"
 import { SolutionsSection } from "@/components/solutions-section"
 import ChannelsSection from "@/components/channels-section"
@@ -20,6 +21,7 @@ export default function Home() {
     <main className="bg-[#0b182f]">
       <Navbar />
       <HeroSection />
+      <AboutSection />
       <VideoSection />
       <ServicesSection />
       <SolutionsSection />
