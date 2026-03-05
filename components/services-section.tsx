@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react"
 import type { LucideIcon } from "lucide-react"
-import { Cloud, Megaphone, Briefcase, ShieldCheck, ChevronDown } from "lucide-react"
+import { Cloud, Megaphone, Briefcase, ShieldCheck, ChevronDown, IdCard, Route, FileSearch, MessageCircle } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { useLanguage } from "./language-provider"
 
@@ -11,7 +11,7 @@ export default function ServicesSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal()
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
-  const [openService, setOpenService] = useState<string | null>(null)
+  const [openService, setOpenService] = useState<string | null>("bpo")
   const [showElmForm, setShowElmForm] = useState(false)
   const [formService, setFormService] = useState<"muqeem" | "masarat" | "tamm" | "nabaa">("muqeem")
   const [submitted, setSubmitted] = useState(false)
@@ -43,6 +43,13 @@ export default function ServicesSection() {
     smart: ShieldCheck,
   }
 
+  const elmIconMap: Record<"muqeem" | "masarat" | "tamm" | "nabaa", LucideIcon> = {
+    muqeem: IdCard,
+    masarat: Route,
+    tamm: FileSearch,
+    nabaa: MessageCircle,
+  }
+
   const services = (() => {
     if (!servicesItems || typeof servicesItems !== "object") return []
 
@@ -67,6 +74,7 @@ export default function ServicesSection() {
         title: elmServices?.[key]?.title ?? "",
         description: elmServices?.[key]?.description ?? "",
         features: elmServices?.[key]?.features ?? [],
+        icon: elmIconMap[key],
       })),
     [elmServices],
   )
@@ -137,8 +145,8 @@ export default function ServicesSection() {
                 </div>
                 <h3 className="text-lg font-semibold text-white">{service.title}</h3>
                 <div
-                  className={`overflow-hidden text-sm text-white/70 transition-all duration-300 ${
-                    openService === service.key ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  className={`overflow-hidden text-sm text-white/70 transition-all duration-400 ${
+                    openService === service.key ? "max-h-[1200px] opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-3 leading-relaxed">
@@ -167,7 +175,8 @@ export default function ServicesSection() {
             elmVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 lg:p-8 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] backdrop-blur-xl space-y-8">
+          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 lg:p-8 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] backdrop-blur-xl space-y-8 relative overflow-hidden">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.08),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(8,145,178,0.12),transparent_30%)]" />
             <div className="flex flex-col gap-3 text-right sm:text-right">
               <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-[#7ad8ff]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
@@ -185,52 +194,66 @@ export default function ServicesSection() {
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {elmCards.map((card) => (
-                <div
-                  key={card.key}
-                  className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-right shadow-[0_20px_60px_-32px_rgba(34,211,238,0.7)] transition-all duration-500 hover:-translate-y-1 hover:border-[#22d3ee]/40 hover:bg-white/[0.06]"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/8 via-transparent to-transparent" />
-                  <div className="relative space-y-3">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
-                        <span className="text-xs font-bold uppercase">
-                          {card.key === "muqeem" ? "MQ" : card.key === "masarat" ? "MS" : card.key === "tamm" ? "TM" : "NB"}
-                        </span>
+              {elmCards.map((card) => {
+                const Icon = card.icon
+                return (
+                  <div
+                    key={card.key}
+                    className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-right shadow-[0_20px_60px_-32px_rgba(34,211,238,0.7)] transition-all duration-500 hover:-translate-y-1 hover:border-[#22d3ee]/40 hover:bg-white/[0.06]"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/10 via-transparent to-transparent" />
+                    <div className="absolute -left-12 -top-12 h-24 w-24 rounded-full bg-[#22d3ee]/10 blur-2xl" />
+                    <div className="absolute -right-10 -bottom-12 h-24 w-24 rounded-full bg-[#0891b2]/10 blur-2xl" />
+                    <div className="relative space-y-3">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
+                            <Icon className="h-5 w-5" />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-[11px] uppercase tracking-[0.18em] text-white/60">Elm</span>
+                            <span className="text-xs text-white/60">{card.key === "muqeem" ? "Muqeem" : card.key === "masarat" ? "Masarat" : card.key === "tamm" ? "Tamm" : "Nabaa"}</span>
+                          </div>
+                        </div>
+                        <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-[#7ad8ff]">
+                          {t("elm.form.title")}
+                        </div>
                       </div>
-                      <span className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">Elm</span>
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="text-lg font-semibold text-white">{card.title}</h4>
-                      <p className="text-sm text-white/75 leading-relaxed">{card.description}</p>
-                    </div>
-                    {card.features?.length ? (
-                      <ul className="space-y-2 text-sm text-white/75 leading-relaxed">
-                        {card.features.map((feat) => (
-                          <li key={feat} className="flex items-start gap-2">
-                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
-                            <span>{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                    <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-                      <span className="text-sm font-semibold text-[#7ad8ff]">{t("elm.form.title")}</span>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setFormService(card.key)
-                          setShowElmForm(true)
-                        }}
-                        className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
-                      >
-                        {t("hero.ctaPrimary")}
-                        <span className="text-base leading-none">→</span>
-                      </button>
+                      <div className="space-y-2">
+                        <h4 className="text-lg font-semibold text-white">{card.title}</h4>
+                        <p className="text-sm text-white/75 leading-relaxed">{card.description}</p>
+                      </div>
+                      {card.features?.length ? (
+                        <ul className="space-y-2 text-sm text-white/75 leading-relaxed">
+                          {card.features.map((feat) => (
+                            <li key={feat} className="flex items-start gap-2">
+                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                              <span>{feat}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                      <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+                        <div className="flex items-center gap-2 text-xs text-white/60">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                          <span>{t("elm.subheading")}</span>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setFormService(card.key)
+                            setShowElmForm(true)
+                          }}
+                          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
+                        >
+                          {t("hero.ctaPrimary")}
+                          <span className="text-base leading-none">→</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>

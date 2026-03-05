@@ -111,7 +111,7 @@
 }
 
 @theme inline {
-  --font-sans: 'GE SS Two', 'Acumin Regular', 'GE SND Book', 'Acumin Bold', var(--font-grotesk), var(--font-cairo), 'Geist', sans-serif;
+  --font-sans: 'Tajawal', var(--font-tajawal), 'GE SS Two', 'Acumin Regular', 'GE SND Book', 'Acumin Bold', 'Geist', sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-entshaar-dark: var(--entshaar-dark);
   --color-entshaar-teal: var(--entshaar-teal);
@@ -161,12 +161,12 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'GE SS Two', 'Acumin Regular', 'GE SND Book', 'Acumin Bold', var(--font-grotesk), var(--font-cairo), 'Geist', sans-serif;
+    font-family: 'Tajawal', var(--font-tajawal), 'GE SS Two', 'Acumin Regular', 'GE SND Book', 'Acumin Bold', 'Geist', sans-serif;
     letter-spacing: -0.01em;
   }
   h1, h2, h3, h4 {
     letter-spacing: -0.02em;
-    font-family: 'GE SND Book', 'Acumin Bold', 'GE SS Two', 'Acumin Regular', var(--font-grotesk), var(--font-cairo), 'Geist', sans-serif;
+    font-family: 'Tajawal', var(--font-tajawal), 'GE SND Book', 'Acumin Bold', 'GE SS Two', 'Acumin Regular', 'Geist', sans-serif;
   }
   html {
     scroll-behavior: smooth;

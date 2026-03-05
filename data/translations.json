@@ -138,7 +138,7 @@
         }
       },
       "form": {
-        "title": "اطلب الخدمة",
+        "title": "احصل على الخدمة",
         "subtitle": "أدخل بيانات منشأتك وسنفعّل الخدمة لك",
         "name": "الاسم الكامل",
         "phone": "رقم الجوال",
@@ -550,7 +550,7 @@
         }
       },
       "form": {
-        "title": "Request the Service",
+        "title": "Get the Service",
         "subtitle": "Share your company details and we'll activate it for you",
         "name": "Full Name",
         "phone": "Mobile Number",

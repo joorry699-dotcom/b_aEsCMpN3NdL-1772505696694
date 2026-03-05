@@ -1,20 +1,13 @@
 import type { Metadata, Viewport } from 'next'
-import { Cairo, Space_Grotesk } from 'next/font/google'
+import { Tajawal } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { LanguageProvider } from '@/components/language-provider'
 
-const cairo = Cairo({
+const tajawal = Tajawal({
   subsets: ['arabic', 'latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-cairo',
-  display: 'swap',
-})
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-grotesk',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-tajawal',
   display: 'swap',
 })
 
@@ -57,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ar" dir="rtl" className={`${cairo.variable} ${spaceGrotesk.variable}`}>
+    <html lang="ar" dir="rtl" className={tajawal.variable}>
       <body className="font-sans antialiased">
         <LanguageProvider>
           {children}
