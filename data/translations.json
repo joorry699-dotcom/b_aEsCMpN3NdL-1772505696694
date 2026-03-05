@@ -16,14 +16,14 @@
     },
     "hero": {
       "title": "انتشار لتعهيد الأعمال",
-      "subtitle": "حلول متكاملة لتشغيل مراكز الاتصال وإسناد الأعمال بخبرة موحدة.",
+      "subtitle": "شريك أعمالك الاستراتيجي في تعهيد وإسناد الأعمال بخبرة تتجاوز 15 عاماً وفريق سعودي متخصص.",
           "about": {
             "title": "من نحن",
-            "subtitle": "انتشار شريكك لتشغيل مراكز الاتصال وإسناد الأعمال بخبرة تمتد لأكثر من 15 عاماً.",
+            "subtitle": "شريك أعمالك الاستراتيجي بخبرة تتجاوز خمسة عشر عاماً في تقديم خدمات تعهيد وإسناد الأعمال المخصصة لتلبية احتياجاتك المتغيرة.",
             "points": [
-              "خبرة تشغيلية في تعهيد مراكز الاتصال وخدمات العملاء متعددة القنوات",
-              "شراكات مع جهات حكومية وخاصة مع نماذج تقارير وشفافية في الأداء",
-              "إنجازات تشمل إدارة عمليات تتجاوز مليون تفاعل وتشغيل فرق تتخطى 500 موظف"
+              "نقدم حلول تقنية واقتصادية لتطوير مراكز الاتصال والموارد البشرية بطاقم سعودي متخصص بمعايير عالية الجودة.",
+              "نساعدك على بناء قيمة تنافسية عبر حوكمة واضحة، تقارير شفافة، ونماذج تشغيل متكاملة.",
+              "نرافقك من التخطيط إلى التشغيل: تعريف الاحتياجات، تصميم التجربة، وإدارة الأداء المستمر."
             ]
           },
       "ctaPrimary": "احصل على الخدمة",
@@ -53,18 +53,29 @@
             "إدارة ومتابعة التأمين الصحي",
             "إدارة الحضور والانصراف",
             "إدارة الإجراءات الداخلية",
-            "إدارة المنصات الحكومية"
+            "إدارة المنصات الحكومية",
+            "إدارة لكافة التزامات الموارد البشرية ورفع الإنتاجية",
+            "100% ضمان سرية بيانات الموظفين",
+            "تجهيز العروض الوظيفية والعقود",
+            "تسجيل الكادر في الأنظمة الحكومية",
+            "نظام سحابي للتواصل والاطلاع",
+            "متابعة الأداء بتقارير شهرية شاملة",
+            "تحديد معايير الجودة المستهدفة",
+            "تقارير شاملة لمتابعة الأداء",
+            "زيادة الإنتاجية ومتابعة سير العمل"
           ]
         },
         "marketing": {
           "title": "خدمة العمل عن بُعد",
           "description": "تسجيل الموظفين كعمل عن بُعد كمزود خدمة معتمد، ومتابعة المهام والطلبات بأنظمة مخصصة لصاحب العمل لمراقبة الإنجاز باحترافية.",
           "features": [
-            "انتشار مزود خدمة معتمد للعمل عن بُعد",
-            "تسجيل الموظفين في بوابة العمل عن بُعد",
-            "لوحات تحكم لصاحب العمل لمتابعة المهام",
-            "تنبيهات للمهام والطلبات في الوقت المناسب",
-            "تقارير إنجاز احترافية ومؤشرات أداء"
+            "احصل على رخصة العمل عن بُعد لتقليل التكاليف وزيادة التوطين",
+            "انتشار مزود خدمة معتمد من وزارة العمل والتنمية الاجتماعية",
+            "تسجيل الموظفين في بوابة العمل عن بُعد كمزود خدمة معتمد",
+            "أنظمة ولوحات لصاحب العمل وممثليه لتحديد المهام والطلبات ومراقبة الإنجاز",
+            "حلول قابلة للتخصيص بتكاليف اقتصادية وقيمة تنافسية",
+            "دعم أوقات عمل مرنة وزيادة السعودة مع تدريب مهارات التواصل",
+            "خدمات العمل عن بُعد: تسجيل، علاقات عملاء، كول سنتر، موارد بشرية وخدمات إدارية"
           ]
         },
         "construction": {
@@ -79,32 +90,40 @@
       "services": {
         "muqeem": {
           "title": "خدمة مقيم",
-          "description": "إدارة بيانات المقيمين وإصدار وتجديد الإقامات والتأشيرات إلكترونياً",
+          "description": "خدمة تفاعلية لإنجاز معاملات المقيمين بالكامل إلكترونياً مع صلاحيات وأتمتة متقدمة",
           "features": [
-            "عرض وتحديث بيانات المقيمين عبر بوابة واحدة",
-            "إصدار وتجديد الإقامة والتأشيرات بسرعة",
-            "تنبيهات صلاحية تلقائية وإشعارات متابعة",
-            "صلاحيات أدوار مع سجل تدقيق للإجراءات"
+            "إصدار وتجديد الإقامة إلكترونياً دون مراجعة الجوازات إلا للاستلام",
+            "إصدار وإلغاء تأشيرات الخروج والعودة (مفردة/متعددة) والخروج النهائي",
+            "تعديل المهنة ونقل الكفالة وإدارة سجلات المقيمين والتابعين",
+            "استعلامات كاملة: بيانات مقيم، رخص القيادة، المخالفات، التأمين، التأشيرات",
+            "قوائم تفصيلية للمقيمين (الجدد، الحاملين لتأشيرات الخروج، السجلات غير النشطة، الهاربين)",
+            "طباعة قوائم وإحصاءات شاملة مع صلاحيات أدوار وسجلات تدقيق"
           ]
         },
         "masarat": {
           "title": "خدمة مسارات",
-          "description": "تتبع فوري للمركبات وإدارة الأساطيل مع خطط صيانة تشغيلية",
+          "description": "خدمة متكاملة لإدارة أسطول المركبات، الصيانة، التأجير، والتتبع اللحظي",
           "features": [
-            "تتبع GPS مباشر مع تنبيهات السرعة والمسار",
-            "خطط صيانة وتشغيل للأسطول",
-            "تقارير استخدام السائقين والمخالفات",
-            "لوحات لحظية لحالة الأسطول وسلامته"
+            "إدارة التشغيل والصيانة لجميع المركبات بخطط واضحة",
+            "خدمات متخصصة لإدارة تأجير المركبات مع خطط أسعار وعروض ترويجية",
+            "رقابة متكاملة على الأسطول وإدارة سجلات المركبات",
+            "متابعة سلوك قائدي المركبات وتحسين السلامة",
+            "تتبع المركبات GPS مع تنبيهات السرعة والمسار",
+            "إدارة تأجير المركبات",
+            "إدارة الصيانة والتشغيل للمركبات",
+            "إدارة سجلات الأسطول"
           ]
         },
         "tamm": {
           "title": "خدمة تم",
-          "description": "تكامل سريع مع خدمات المرور لإدارة المركبات والعمليات اللوجستية",
+          "description": "تكامل شامل مع المرور لإدارة المركبات، التفويضات، والاستعلامات الفورية",
           "features": [
-            "إصدار وإدارة تفويض المركبات إلكترونياً",
-            "استعلامات فورية عن المخالفات وتجديد الاستمارات",
-            "تنبيهات صلاحية وتذكير بالتجديد",
-            "تقارير تشغيلية للعمليات اللوجستية"
+            "استعلام عن معلومات المركبات والسائقين والمخالفات المرورية",
+            "إصدار وإلغاء التفويضات الداخلية والدولية ونقل الملكية",
+            "التأكد من معلومات المركبة ومالكها والتأمين",
+            "إصدار وتجديد رخص السير والحصول على الرقم التسلسلي",
+            "عرض قائمة المركبات وإدارة قائدي المركبات",
+            "نقل معلومات وثائق التأمين إلى المرور"
           ]
         },
         "nabaa": {
@@ -137,11 +156,15 @@
       "items": [
         {
           "title": "رخص العمل عن بُعد",
-          "description": "انتشار مزود خدمة معتمد من وزارة العمل والتنمية الاجتماعية. نسجل موظفيك في بوابة العمل عن بُعد ونقدم أنظمة مخصصة لصاحب العمل وممثليه لتحديد المهام والطلبات ومراقبة إنجازها باحترافية.",
+          "description": "احصل على رخصة العمل عن بُعد لتقليل تكاليف الموارد البشرية وزيادة التوطين بدعم مزود خدمة معتمد (انتشار).",
           "pill": "عمل عن بُعد",
           "features": [
-            "حلول نظام إدارة العلاقات العامة: نظام تذاكر وعلاقات عملاء يسهّل التواصل مع العملاء ويدعم متطلبات أصحاب العمل.",
-            "حلول مراكز الاتصال السحابية: أدوات اتصال سحابية تربط المستفيدين بأعمالك بأفضل تجربة تواصل."
+            "انتشار مزود خدمة معتمد من وزارة العمل لتسجيل الموظفين في بوابة العمل عن بُعد.",
+            "أنظمة ولوحات لصاحب العمل لتحديد المهام والطلبات ومراقبة الإنجاز باحترافية.",
+            "حلول قابلة للتخصيص بتكاليف اقتصادية وقيمة تنافسية.",
+            "زيادة السعودة وأوقات عمل مرنة مع تدريب مهارات التواصل ودعم هدف لمدة سنتين.",
+            "حلول نظام إدارة العلاقات العامة (تذاكر/CRM) لتسهيل التواصل مع العملاء وأصحاب العمل.",
+            "حلول مراكز الاتصال السحابية لربط المستفيدين بأعمالك بأفضل تجربة تواصل."
           ]
         },
         {
@@ -240,10 +263,10 @@
       "title": "بعض الإنجازات التي حققناها",
       "subtitle": "نفخر بنتائج عملياتنا المدارة وشراكاتنا، ونعكسها بشفافية عبر أرقام واضحة.",
       "stats": {
-        "operations": { "value": "1M+", "label": "عدد العمليات المدارة" },
-        "employees": { "value": "2,000+", "label": "عدد الموظفين تم إدارتهم" },
-        "services": { "value": "25+", "label": "عدد الخدمات المقدمة" },
-        "clients": { "value": "30+", "label": "عدد العملاء" }
+        "experience": { "value": "+15", "label": "سنة خبرة في المجال" },
+        "partners": { "value": "+20", "label": "شركة كبرى شركاء النجاح" },
+        "saudiTeam": { "value": "%100", "label": "فريق سعودي متخصص" },
+        "services": { "value": "6", "label": "خدمات رئيسية نقدمها" }
       }
     },
     "contact": {
@@ -442,18 +465,29 @@
             "Health insurance tracking",
             "Attendance and time management",
             "Internal workflow management",
-            "Government platforms management"
+            "Government platforms management",
+            "End-to-end HR obligations with productivity uplift",
+            "100% data confidentiality for your employees",
+            "Offer letter and contract preparation",
+            "Register workforce on government systems",
+            "Cloud portal for visibility and collaboration",
+            "Performance tracking with monthly reports",
+            "Define target quality standards",
+            "Comprehensive performance reporting",
+            "Higher productivity and smoother operations"
           ]
         },
         "marketing": {
           "title": "Remote Work Service",
           "description": "Register employees as remote workers (authorized provider) and track tasks/requests with employer-focused dashboards.",
           "features": [
-            "Authorized remote work provider",
-            "Register employees on the remote work portal",
-            "Employer dashboards to track tasks",
-            "On-time task/request alerts",
-            "Professional performance and completion reports"
+            "Get remote work licenses to cut costs and boost localization",
+            "Authorized provider by Ministry of Labor",
+            "Register staff on the remote work portal as an approved provider",
+            "Dashboards for employers to assign tasks/requests and track completion",
+            "Highly customizable, cost-efficient solutions for competitive value",
+            "Flexible hours, higher Saudization, and communication skills training",
+            "Remote work services: registration, CRM, contact center, HR and admin support"
           ]
         },
         "construction": {
@@ -468,32 +502,40 @@
       "services": {
         "muqeem": {
           "title": "Muqeem Service",
-          "description": "Manage resident data and issue/renew iqama and visas online",
+          "description": "Interactive service to handle resident permits and visas end-to-end online",
           "features": [
-            "View and update resident records from one portal",
-            "Issue and renew iqama and visas quickly",
-            "Automated validity alerts and follow-up notifications",
-            "Role-based permissions with action audit trails"
+            "Issue/renew iqama without visiting offices except for pickup",
+            "Issue/cancel single & multiple exit/entry and final exit visas",
+            "Change profession, transfer sponsorship, and manage dependents",
+            "Comprehensive inquiries: resident data, licenses, violations, insurance, visas",
+            "Detailed lists (new arrivals, exit visa holders, inactive records, absconders)",
+            "Print lists and stats with role-based access and audit logs"
           ]
         },
         "masarat": {
           "title": "Masarat Service",
-          "description": "Real-time vehicle tracking and fleet operations with maintenance plans",
+          "description": "End-to-end fleet management for tracking, maintenance, and rentals",
           "features": [
-            "Live GPS tracking with speed and route alerts",
-            "Fleet maintenance and operations schedules",
-            "Driver usage and violations reporting",
-            "Live dashboards for fleet status and health"
+            "Operate and maintain all vehicles with planned schedules",
+            "Specialized vehicle rental management with pricing and promos",
+            "Full fleet oversight with vehicle record management",
+            "Monitor driver behavior and safety",
+            "GPS tracking with speed and route alerts",
+            "Vehicle rentals",
+            "Maintenance & operations management",
+            "Fleet records management"
           ]
         },
         "tamm": {
           "title": "Tamm Service",
-          "description": "Fast MOT integration for vehicle delegation and logistics ops",
+          "description": "Full MOT integration for vehicle delegations and live inquiries",
           "features": [
-            "Issue and manage vehicle delegations digitally",
-            "Instant violation queries and registration renewals",
-            "Validity alerts and renewal reminders",
-            "Operational reports for logistics workflows"
+            "Vehicle, driver, and violation inquiries",
+            "Issue/cancel internal and international delegations; transfer ownership",
+            "Validate vehicle, owner, and insurance info",
+            "Issue/renew vehicle licenses and retrieve serial numbers",
+            "Fleet lists and driver management",
+            "Sync insurance documents with MOT"
           ]
         },
         "nabaa": {
@@ -526,11 +568,15 @@
       "items": [
         {
           "title": "Remote Work Licenses",
-          "description": "Entishar is an authorized provider by the Ministry of Labor. We register your employees on the remote work portal and deliver purpose-built systems for employers and their representatives to assign tasks, manage requests, and track completion on time with a professional flow.",
+          "description": "Get remote work licenses to cut HR costs and boost localization with Entishar as an authorized provider.",
           "pill": "Remote",
           "features": [
-            "Public Relations Management System: ticketing/CRM to streamline client communications and support employer needs.",
-            "Cloud Contact Center Solutions: cloud tools connecting beneficiaries with your services for the best experience."
+            "Authorized by the Ministry of Labor to register employees on the remote work portal.",
+            "Employer and representative dashboards to assign tasks/requests and track completion.",
+            "Highly customizable, cost-efficient solutions with competitive value.",
+            "Higher Saudization, flexible hours, communication training, and HRDF support for two years.",
+            "PR/CRM ticketing to streamline employer and customer communications.",
+            "Cloud contact center solutions to connect beneficiaries with your services smoothly."
           ]
         },
         {
@@ -578,10 +624,10 @@
       "title": "Key wins we are proud of",
       "subtitle": "Transparent numbers that reflect our managed operations and trusted partnerships.",
       "stats": {
-        "operations": { "value": "1M+", "label": "Managed operations" },
-        "employees": { "value": "2,000+", "label": "Employees managed" },
-        "services": { "value": "25+", "label": "Services delivered" },
-        "clients": { "value": "30+", "label": "Active clients" }
+        "experience": { "value": "+15", "label": "Years of experience" },
+        "partners": { "value": "+20", "label": "Enterprise partners" },
+        "saudiTeam": { "value": "100%", "label": "Saudi specialized team" },
+        "services": { "value": "6", "label": "Core services delivered" }
       }
     },
     "channels": {
