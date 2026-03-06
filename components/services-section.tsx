@@ -194,12 +194,20 @@ export default function ServicesSection() {
                     <p>{service.description}</p>
                     {service.features?.length ? (
                       <ul className="space-y-2">
-                        {service.features.map((feat) => (
-                          <li key={feat} className="flex items-start gap-2 text-white/80">
-                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
-                            <span>{feat.trim()}</span>
-                          </li>
-                        ))}
+                        {service.features.map((feat) => {
+                          const clean = feat.trim()
+                          const isBenefit = clean.startsWith("الفائدة") || clean.toLowerCase().startsWith("benefit")
+                          return isBenefit ? (
+                            <li key={feat} className="text-white/80 font-semibold">
+                              {clean}
+                            </li>
+                          ) : (
+                            <li key={feat} className="flex items-start gap-2 text-white/80">
+                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                              <span>{clean}</span>
+                            </li>
+                          )
+                        })}
                       </ul>
                     ) : null}
                     {['contact', 'hr', 'marketing', 'accounting'].includes(service.key) ? (
@@ -258,18 +266,13 @@ export default function ServicesSection() {
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/8 via-transparent to-transparent" />
                     <div className="relative space-y-3">
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
-                            <Icon className="h-5 w-5" />
-                          </div>
-                          <div className="flex flex-col">
-                            <span className="text-[11px] uppercase tracking-[0.18em] text-white/60">Elm</span>
-                            <span className="text-xs text-white/60">{card.key === "muqeem" ? "Muqeem" : card.key === "masarat" ? "Masarat" : card.key === "tamm" ? "Tamm" : "Nabaa"}</span>
-                          </div>
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
+                          <Icon className="h-5 w-5" />
                         </div>
-                        <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-[#7ad8ff]">
-                          {t("elm.form.title")}
+                        <div className="flex flex-col">
+                          <span className="text-[11px] uppercase tracking-[0.18em] text-white/60">Elm</span>
+                          <span className="text-xs text-white/60">{card.key === "muqeem" ? "Muqeem" : card.key === "masarat" ? "Masarat" : card.key === "tamm" ? "Tamm" : "Nabaa"}</span>
                         </div>
                       </div>
                       <div className="space-y-2">
