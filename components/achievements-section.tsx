@@ -107,7 +107,7 @@ export function AchievementsSection() {
       <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #22d3ee 1px, transparent 0)", backgroundSize: "36px 36px" }} />
 
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-12 px-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <div className="w-full max-w-xl space-y-4 text-center sm:text-right lg:max-w-lg">
+        <div className="w-full max-w-xl space-y-4 text-center lg:max-w-lg">
           <div className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
             {t("achievements.label")}
           </div>
@@ -135,11 +135,11 @@ export function AchievementsSection() {
                     className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] p-7 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.85)] transition-transform duration-500 hover:-translate-y-1 hover:border-[#22d3ee]/35 hover:bg-white/[0.07] sm:p-6"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/6 via-transparent to-transparent" />
-                    <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-3">
+                    <div className="relative flex flex-col items-center gap-4">
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
                         {Icon ? <Icon className="h-6 w-6" /> : null}
                       </div>
-                      <div className="text-center sm:text-right">
+                      <div className="text-center">
                         <div className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{displayValue}</div>
                         <div className="mt-1 text-sm text-white/65">{stat.label}</div>
                       </div>

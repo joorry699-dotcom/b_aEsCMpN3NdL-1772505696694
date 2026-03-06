@@ -135,6 +135,33 @@ export default function ServicesSection() {
           </p>
         </div>
 
+        {servicesItems && typeof servicesItems === "object" && (servicesItems as any).sme ? (
+          <div className="mb-8 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-[#0ea5e9]/20 via-[#22d3ee]/10 to-[#0b182f]/30 p-6 sm:p-7 shadow-[0_24px_70px_-32px_rgba(34,211,238,0.6)] backdrop-blur">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="space-y-2 text-right">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#7ad8ff]">{t("services.items.sme.title")}</p>
+                <h3 className="text-xl font-bold leading-tight text-white sm:text-2xl">{t("services.items.sme.description")}</h3>
+                {Array.isArray((servicesItems as any).sme?.features) ? (
+                  <div className="flex flex-wrap gap-2 text-[12px] text-white/75">
+                    {(servicesItems as any).sme.features.map((feat: string) => (
+                      <span key={feat} className="rounded-full border border-white/10 bg-white/5 px-3 py-1">
+                        {feat}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[#0b182f] px-5 py-2.5 text-sm font-semibold shadow-[0_18px_40px_-24px_rgba(255,255,255,0.6)] transition hover:shadow-[0_20px_46px_-22px_rgba(255,255,255,0.7)]"
+              >
+                {t("nav.contact")}
+                <span className="text-base leading-none">→</span>
+              </a>
+            </div>
+          </div>
+        ) : null}
+
         <div
           ref={gridRef}
           className={`stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${gridVisible ? "visible" : ""}`}
@@ -170,7 +197,7 @@ export default function ServicesSection() {
                         {service.features.map((feat) => (
                           <li key={feat} className="flex items-start gap-2 text-white/80">
                             <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
-                            <span>{feat}</span>
+                            <span>{feat.trim()}</span>
                           </li>
                         ))}
                       </ul>
@@ -193,37 +220,6 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {servicesItems && typeof servicesItems === "object" && servicesItems.sme ? (
-          <div className="mt-6 overflow-hidden rounded-2xl border border-dashed border-[#22d3ee]/50 bg-white/[0.04] p-6 text-right shadow-[0_20px_60px_-32px_rgba(0,0,0,0.7)]">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-xs font-semibold text-[#7ad8ff]">{t("services.items.sme.title")}</p>
-                <h3 className="text-lg font-bold text-white leading-tight">{t("services.items.sme.description")}</h3>
-                {Array.isArray((servicesItems as any).sme?.features) ? (
-                  <ul className="mt-2 grid grid-cols-1 gap-1 text-sm text-white/75 sm:grid-cols-2">
-                    {(servicesItems as any).sme.features.map((feat: string) => (
-                      <li key={feat} className="flex items-start gap-2">
-                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="rounded-full bg-[#22d3ee]/15 px-3 py-1 text-xs font-semibold text-[#7ad8ff]">{t("nav.contact")}</span>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
-                >
-                  {t("channels.cta")}
-                  <span className="text-base leading-none">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        ) : null}
-
         <div
           id="elm-services"
           ref={elmRef}
@@ -231,27 +227,27 @@ export default function ServicesSection() {
             elmVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 lg:p-8 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] backdrop-blur-xl space-y-8 relative overflow-hidden">
+          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 lg:p-8 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] backdrop-blur-xl space-y-6 relative overflow-hidden">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.08),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(8,145,178,0.12),transparent_30%)]" />
-            <div className="flex flex-col gap-3 text-right sm:text-right">
-              <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-[#7ad8ff]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
-                <span>{t("elm.heading")}</span>
-              </div>
-              <div className="flex flex-col gap-2">
+            <button
+              type="button"
+              onClick={() => setElmOpen((prev) => !prev)}
+              className="flex w-full items-center justify-between gap-3 text-right rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white hover:border-[#22d3ee]/40 hover:bg-white/[0.08]"
+            >
+              <div className="flex flex-col gap-2 text-right">
+                <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-[#7ad8ff] w-fit">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                  <span>{t("elm.heading")}</span>
+                </div>
                 <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-white">{t("elm.heading")}</h3>
                 <p className="text-sm sm:text-base text-white/70 leading-relaxed">
                   {t("elm.subheading") as string}
                 </p>
               </div>
-              <button
-                type="button"
-                onClick={() => setElmOpen((prev) => !prev)}
-                className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/80 hover:border-[#22d3ee]/40 hover:text-[#7ad8ff]"
-              >
-                {elmOpen ? (locale === "ar" ? "إخفاء" : "Hide") : (locale === "ar" ? "عرض" : "Show")}
-              </button>
-            </div>
+              <ChevronDown
+                className={`h-5 w-5 text-white/70 transition-transform duration-300 ${elmOpen ? "rotate-180 text-[#7ad8ff]" : ""}`}
+              />
+            </button>
 
             <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 transition-all duration-500 ${elmOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"}`}>
               {elmCards.map((card) => {
@@ -301,7 +297,7 @@ export default function ServicesSection() {
                           {card.features.map((feat) => (
                             <li key={feat} className="flex items-start gap-2">
                               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
-                              <span>{feat}</span>
+                              <span>{feat.trim()}</span>
                             </li>
                           ))}
                         </ul>
