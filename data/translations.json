@@ -91,18 +91,6 @@
             "الفائدة: تنظيم مالي أفضل وتحسين الرقابة ودعم اتخاذ القرار"
           ]
         },
-        "bundle": {
-          "title": "الحل الشامل لإدارة الأعمال",
-          "description": "باقة متكاملة تجمع المحاسبة والموارد البشرية والتسويق ومركز الاتصال ضمن منظومة تشغيل واحدة.",
-          "features": [
-            "الخدمات المحاسبية والمالية",
-            "إدارة الموارد البشرية",
-            "إدارة حسابات التواصل والتسويق",
-            "خدمات مركز الاتصال وخدمة العملاء",
-            "توفير الأنظمة التقنية المساندة",
-            "الفائدة: تقليل التكاليف وتنظيم العمليات ورفع الكفاءة"
-          ]
-        },
         "sme": {
           "title": "عرض خاص للمنشآت الصغيرة والمتوسطة",
           "description": "خصم خاص عبر منصة منشآت للحصول على حلول تشغيل متكاملة بتكلفة مناسبة.",
@@ -184,6 +172,19 @@
       "title": "حلول إسناد الأعمال",
       "subtitle": "حلول إسناد أعمال متكاملة",
       "items": [
+        {
+          "title": "الحل الشامل لإدارة الأعمال",
+          "description": "باقة متكاملة تجمع المحاسبة، الموارد البشرية، التسويق، ومركز الاتصال ضمن منظومة تشغيل واحدة.",
+          "pill": "تشغيل متكامل",
+          "features": [
+            "الخدمات المحاسبية والمالية",
+            "إدارة الموارد البشرية",
+            "إدارة حسابات التواصل والتسويق",
+            "خدمات مركز الاتصال وخدمة العملاء",
+            "توفير الأنظمة التقنية المساندة",
+            "الفائدة: تقليل التكاليف وتنظيم العمليات ورفع الكفاءة"
+          ]
+        },
         {
           "title": "رخص العمل عن بُعد",
           "description": "احصل على رخصة العمل عن بُعد لتقليل تكاليف الموارد البشرية وزيادة التوطين بدعم مزود خدمة معتمد (انتشار).",
@@ -533,18 +534,6 @@
             "Value: cleaner finances, stronger controls, better decisions"
           ]
         },
-        "bundle": {
-          "title": "Integrated Business Operations",
-          "description": "A unified bundle combining accounting, HR, marketing, and contact center under one operating model.",
-          "features": [
-            "Accounting and finance services",
-            "HR management",
-            "Social media and marketing management",
-            "Contact center and customer service",
-            "Supporting tech systems",
-            "Value: lower costs, organized operations, higher efficiency"
-          ]
-        },
         "sme": {
           "title": "SME Special Offer",
           "description": "Discounted packages via Monshaat platform so SMEs get pro operations at a better cost.",
@@ -626,6 +615,19 @@
       "title": "Business Outsourcing Solutions",
       "subtitle": "Comprehensive business outsourcing",
       "items": [
+        {
+          "title": "Integrated Business Operations",
+          "description": "Bundle that combines accounting, HR, marketing, and contact center under one operating model.",
+          "pill": "Integrated",
+          "features": [
+            "Accounting and finance services",
+            "HR management",
+            "Social media and marketing management",
+            "Contact center and customer service",
+            "Supporting tech systems",
+            "Value: lower costs, organized operations, higher efficiency"
+          ]
+        },
         {
           "title": "Remote Work Licenses",
           "description": "Get remote work licenses to cut HR costs and boost localization with Entishar as an authorized provider.",

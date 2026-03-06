@@ -38,19 +38,17 @@ export default function ChannelsSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <div
           ref={headerRef}
-          className={`mb-14 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-end transition-all duration-1000 ${
+          className={`mb-14 flex flex-col items-center text-center transition-all duration-1000 ${
             headerVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
-              {t("channels.label")}
-            </div>
-            <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-[40px] text-balance">
-              {t("channels.title")}
-            </h2>
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7ad8ff]">
+            {t("channels.label")}
           </div>
-          <p className="max-w-xl text-base leading-relaxed text-white/70 lg:text-left">
+          <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-[40px] text-balance">
+            {t("channels.title")}
+          </h2>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/70">
             {t("channels.subtitle")}
           </p>
         </div>

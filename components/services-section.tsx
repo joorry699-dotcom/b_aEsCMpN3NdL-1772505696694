@@ -5,7 +5,6 @@ import type { LucideIcon } from "lucide-react"
 import {
   Cloud,
   Megaphone,
-  Briefcase,
   ShieldCheck,
   ChevronDown,
   IdCard,
@@ -15,18 +14,18 @@ import {
   PhoneCall,
   Calculator,
   Users,
-  Layers,
-  BadgePercent,
 } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { useLanguage } from "./language-provider"
 
 export default function ServicesSection() {
-  const { t } = useLanguage()
+  const { t, locale } = useLanguage()
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal()
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
   const [openService, setOpenService] = useState<string | null>("contact")
+  const [elmOpen, setElmOpen] = useState(true)
+  const [openElmCard, setOpenElmCard] = useState<string | null>(null)
   const [showElmForm, setShowElmForm] = useState(false)
   const [formService, setFormService] = useState<"muqeem" | "masarat" | "tamm" | "nabaa">("muqeem")
   const [submitted, setSubmitted] = useState(false)
@@ -56,9 +55,6 @@ export default function ServicesSection() {
     hr: Users,
     marketing: Megaphone,
     accounting: Calculator,
-    bundle: Layers,
-    sme: BadgePercent,
-    elm: ShieldCheck,
   }
 
   const elmIconMap: Record<"muqeem" | "masarat" | "tamm" | "nabaa", LucideIcon> = {
@@ -71,7 +67,7 @@ export default function ServicesSection() {
   const services = (() => {
     if (!servicesItems || typeof servicesItems !== "object") return []
 
-    const orderedKeys = Object.keys(iconMap)
+    const orderedKeys = ["contact", "hr", "marketing", "accounting"]
     const ordered = orderedKeys
       .filter((key) => servicesItems[key])
       .map((key) => ({
@@ -179,7 +175,7 @@ export default function ServicesSection() {
                         ))}
                       </ul>
                     ) : null}
-                    {['bpo', 'cloud', 'marketing'].includes(service.key) ? (
+                    {['contact', 'hr', 'marketing', 'accounting'].includes(service.key) ? (
                       <div className="pt-2 text-left">
                         <a
                           href="#contact"
@@ -197,6 +193,37 @@ export default function ServicesSection() {
           ))}
         </div>
 
+        {servicesItems && typeof servicesItems === "object" && servicesItems.sme ? (
+          <div className="mt-6 overflow-hidden rounded-2xl border border-dashed border-[#22d3ee]/50 bg-white/[0.04] p-6 text-right shadow-[0_20px_60px_-32px_rgba(0,0,0,0.7)]">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-xs font-semibold text-[#7ad8ff]">{t("services.items.sme.title")}</p>
+                <h3 className="text-lg font-bold text-white leading-tight">{t("services.items.sme.description")}</h3>
+                {Array.isArray((servicesItems as any).sme?.features) ? (
+                  <ul className="mt-2 grid grid-cols-1 gap-1 text-sm text-white/75 sm:grid-cols-2">
+                    {(servicesItems as any).sme.features.map((feat: string) => (
+                      <li key={feat} className="flex items-start gap-2">
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="rounded-full bg-[#22d3ee]/15 px-3 py-1 text-xs font-semibold text-[#7ad8ff]">{t("nav.contact")}</span>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
+                >
+                  {t("channels.cta")}
+                  <span className="text-base leading-none">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        ) : null}
+
         <div
           id="elm-services"
           ref={elmRef}
@@ -212,17 +239,21 @@ export default function ServicesSection() {
                 <span>{t("elm.heading")}</span>
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-white">{t("services.items.construction.title")}</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold leading-tight text-white">{t("elm.heading")}</h3>
                 <p className="text-sm sm:text-base text-white/70 leading-relaxed">
-                  {t("services.items.construction.description")}
-                </p>
-                <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
                   {t("elm.subheading") as string}
                 </p>
               </div>
+              <button
+                type="button"
+                onClick={() => setElmOpen((prev) => !prev)}
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/80 hover:border-[#22d3ee]/40 hover:text-[#7ad8ff]"
+              >
+                {elmOpen ? (locale === "ar" ? "إخفاء" : "Hide") : (locale === "ar" ? "عرض" : "Show")}
+              </button>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 transition-all duration-500 ${elmOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"}`}>
               {elmCards.map((card) => {
                 const Icon = card.icon
                 return (
@@ -249,11 +280,24 @@ export default function ServicesSection() {
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <h4 className="text-lg font-semibold text-white">{card.title}</h4>
+                        <button
+                          type="button"
+                          onClick={() => setOpenElmCard((prev) => (prev === card.key ? null : card.key))}
+                          className="group/elm flex w-full items-center justify-between text-left"
+                        >
+                          <div className="text-lg font-semibold text-white">{card.title}</div>
+                          <ChevronDown
+                            className={`h-5 w-5 text-white/60 transition-transform duration-300 ${openElmCard === card.key ? "rotate-180 text-[#7ad8ff]" : ""}`}
+                          />
+                        </button>
                         <p className="text-sm text-white/75 leading-relaxed">{card.description}</p>
                       </div>
                       {card.features?.length ? (
-                        <ul className="space-y-2 text-sm text-white/75 leading-relaxed">
+                        <ul
+                          className={`space-y-2 text-sm text-white/75 leading-relaxed transition-all duration-300 ${
+                            openElmCard === card.key ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
+                          }`}
+                        >
                           {card.features.map((feat) => (
                             <li key={feat} className="flex items-start gap-2">
                               <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
