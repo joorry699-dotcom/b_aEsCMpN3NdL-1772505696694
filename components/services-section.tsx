@@ -235,7 +235,7 @@ export default function ServicesSection() {
             elmVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 lg:p-7 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.65)] space-y-5">
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 lg:p-6 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] space-y-5">
             <button
               type="button"
               onClick={() => setElmOpen((prev) => !prev)}
