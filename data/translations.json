@@ -7,7 +7,7 @@
       "solutions": "حلول إسناد الأعمال",
       "channels": "القنوات",
       "benefits": "المزايا",
-      "strategies": "استراتيجياتنا",
+      "strategies": "منهجيتنا",
       "clients": "عملاؤنا",
       "blog": "المدونة",
       "contact": "تواصل معنا",
@@ -15,72 +15,102 @@
       "careers": "الوظائف"
     },
     "hero": {
-      "title": "انتشار لتعهيد الأعمال",
-      "subtitle": "شريك أعمالك الاستراتيجي في تعهيد وإسناد الأعمال بخبرة تتجاوز 15 عاماً وفريق سعودي متخصص.",
-          "about": {
-            "title": "من نحن",
-            "subtitle": "شريك أعمالك الاستراتيجي بخبرة تتجاوز خمسة عشر عاماً في تقديم خدمات تعهيد وإسناد الأعمال المخصصة لتلبية احتياجاتك المتغيرة.",
-            "points": [
-              "نقدم حلول تقنية واقتصادية لتطوير مراكز الاتصال والموارد البشرية بطاقم سعودي متخصص بمعايير عالية الجودة.",
-              "نساعدك على بناء قيمة تنافسية عبر حوكمة واضحة، تقارير شفافة، ونماذج تشغيل متكاملة.",
-              "نرافقك من التخطيط إلى التشغيل: تعريف الاحتياجات، تصميم التجربة، وإدارة الأداء المستمر."
-            ]
-          },
+      "title": "انتشار لتعهيد وإسناد الأعمال",
+      "subtitle": "تشغيل متكامل لمراكز الاتصال ودعم الأعمال بخبرة موحدة.",
+      "about": {
+        "title": "من نحن",
+        "subtitle": "شريكك لتشغيل مراكز الاتصال وتعهيد الأعمال بخبرة تتجاوز 15 عاماً.",
+        "points": [
+          "خبرة تشغيلية في مراكز الاتصال متعددة القنوات وخدمة العملاء",
+          "شراكات مع القطاعين الحكومي والخاص مع تقارير شفافة",
+          "إنجازات تشمل إدارة أكثر من 1M تفاعل وفِرق تتجاوز 500 موظف"
+        ]
+      },
       "ctaPrimary": "احصل على الخدمة",
-      "ctaSecondary": "استكشف خدماتنا",
+      "ctaSecondary": "استعرض الخدمات",
       "features": {
-        "channels": "نستقبل تواصل عملائك عبر جميع القنوات",
-        "partner": "شريك أعمالك الاستراتيجي في التواصل",
-        "reports": "الشفافية في التقارير والتحليلات"
+        "channels": "إدارة تواصل العملاء عبر كل القنوات",
+        "partner": "شريكك الاستراتيجي في التواصل",
+        "reports": "تقارير وتحليلات شفافة"
       }
     },
     "services": {
       "title": "خدماتنا",
-      "subtitle": "نغطي مركز الاتصال، الموارد البشرية، العمل عن بُعد، ومنصة علم",
+      "subtitle": "حلول تشغيل متكاملة للمنشآت الصغيرة والمتوسطة",
       "items": {
-        "bpo": {
-          "title": "خدمة مركز الاتصال",
-          "description": "إدارة وتشغيل مركز التواصل، استضافة الأرقام الموحدة، إدارة التواصل في مختلف المنصات، وبناء مركز الاتصال من الصفر."
-        },
-        "cloud": {
-          "title": "خدمة الموارد البشرية",
-          "description": "نظام إدارة الموارد البشرية، تقييم الأداء، الرواتب، ملفات الموظفين، التأمين الصحي، الحضور والانصراف، الإجراءات الداخلية، والمنصات الحكومية.",
+        "contact": {
+          "title": "خدمة مركز الاتصال وخدمة العملاء",
+          "description": "حلول مركز اتصال متكاملة لإدارة تواصل العملاء بكفاءة دون الحاجة لإنشاء مركز داخلي.",
           "features": [
-            "نظام إدارة الموارد البشرية",
-            "إدارة تقييم الأداء",
-            "إدارة ومتابعة الرواتب",
-            "إدارة ملفات الموظفين",
-            "إدارة ومتابعة التأمين الصحي",
-            "إدارة الحضور والانصراف",
-            "إدارة الإجراءات الداخلية",
-            "إدارة المنصات الحكومية",
-            "إدارة لكافة التزامات الموارد البشرية ورفع الإنتاجية",
-            "100% ضمان سرية بيانات الموظفين",
-            "تجهيز العروض الوظيفية والعقود",
-            "تسجيل الكادر في الأنظمة الحكومية",
-            "نظام سحابي للتواصل والاطلاع",
-            "متابعة الأداء بتقارير شهرية شاملة",
-            "تحديد معايير الجودة المستهدفة",
-            "تقارير شاملة لمتابعة الأداء",
-            "زيادة الإنتاجية ومتابعة سير العمل"
+            "توفير رقم اتصال مخصص للمنشأة",
+            "استقبال مكالمات العملاء والاستفسارات",
+            "الرد على استفسارات المنتجات والخدمات",
+            "تسجيل الطلبات والشكاوى ومتابعتها",
+            "نظام إدارة تذاكر الدعم",
+            "تقارير دورية عن المكالمات ومستوى الخدمة",
+            "الفائدة: تحسين التجربة ورفع رضا العملاء مع خفض تكاليف إنشاء مركز داخلي"
+          ]
+        },
+        "hr": {
+          "title": "خدمة إدارة الموارد البشرية",
+          "description": "حلول متكاملة لإدارة شؤون الموظفين والعمليات الإدارية وفق الأنظمة واللوائح.",
+          "features": [
+            "إعداد وإدارة عقود الموظفين",
+            "إعداد مسيرات الرواتب",
+            "متابعة الحضور والانصراف",
+            "إدارة الإجازات",
+            "إعداد التقارير الدورية للموارد البشرية",
+            "تنظيم ملفات الموظفين",
+            "الفائدة: تنظيم إدارة الموظفين وتقليل الأخطاء والالتزام بالأنظمة"
           ]
         },
         "marketing": {
-          "title": "خدمة العمل عن بُعد",
-          "description": "تسجيل الموظفين كعمل عن بُعد كمزود خدمة معتمد، ومتابعة المهام والطلبات بأنظمة مخصصة لصاحب العمل لمراقبة الإنجاز باحترافية.",
+          "title": "خدمة التسويق الرقمي",
+          "description": "بناء حضور رقمي احترافي وإدارة قنوات التواصل لزيادة الوعي وتحسين التواصل ورفع المبيعات.",
           "features": [
-            "احصل على رخصة العمل عن بُعد لتقليل التكاليف وزيادة التوطين",
-            "انتشار مزود خدمة معتمد من وزارة العمل والتنمية الاجتماعية",
-            "تسجيل الموظفين في بوابة العمل عن بُعد كمزود خدمة معتمد",
-            "أنظمة ولوحات لصاحب العمل وممثليه لتحديد المهام والطلبات ومراقبة الإنجاز",
-            "حلول قابلة للتخصيص بتكاليف اقتصادية وقيمة تنافسية",
-            "دعم أوقات عمل مرنة وزيادة السعودة مع تدريب مهارات التواصل",
-            "خدمات العمل عن بُعد: تسجيل، علاقات عملاء، كول سنتر، موارد بشرية وخدمات إدارية"
+            "إعداد خطة تسويق رقمي مناسبة للنشاط",
+            "إدارة حسابات التواصل الاجتماعي",
+            "تصميم المحتوى والمنشورات",
+            "جدولة وتنظيم النشر",
+            "الرد على استفسارات العملاء عبر المنصات",
+            "إدارة الحملات الإعلانية الرقمية",
+            "إعداد تقارير الأداء وتحليل النتائج",
+            "الفائدة: زيادة الظهور والوصول لعملاء جدد وتحسين التواصل"
           ]
         },
-        "construction": {
-          "title": "خدمة منصة علم",
-          "description": "تشغيل خدمات مقيم، مسارات، تم، ونبأ عبر منصة علم بإدارة موحدة وتنبيهات صيانة وتتبع فوري."
+        "accounting": {
+          "title": "خدمة المحاسبة والمالية",
+          "description": "خدمات محاسبية ومالية متكاملة لتنظيم العمليات والالتزام بالمتطلبات الزكوية والضريبية.",
+          "features": [
+            "مسك الدفاتر المحاسبية",
+            "تسجيل العمليات المالية",
+            "إعداد القوائم المالية",
+            "إعداد التقارير المالية الدورية",
+            "إعداد الإقرارات الزكوية والضريبية",
+            "تنظيم العمليات المالية والرقابية",
+            "الفائدة: تنظيم مالي أفضل وتحسين الرقابة ودعم اتخاذ القرار"
+          ]
+        },
+        "bundle": {
+          "title": "الحل الشامل لإدارة الأعمال",
+          "description": "باقة متكاملة تجمع المحاسبة والموارد البشرية والتسويق ومركز الاتصال ضمن منظومة تشغيل واحدة.",
+          "features": [
+            "الخدمات المحاسبية والمالية",
+            "إدارة الموارد البشرية",
+            "إدارة حسابات التواصل والتسويق",
+            "خدمات مركز الاتصال وخدمة العملاء",
+            "توفير الأنظمة التقنية المساندة",
+            "الفائدة: تقليل التكاليف وتنظيم العمليات ورفع الكفاءة"
+          ]
+        },
+        "sme": {
+          "title": "عرض خاص للمنشآت الصغيرة والمتوسطة",
+          "description": "خصم خاص عبر منصة منشآت للحصول على حلول تشغيل متكاملة بتكلفة مناسبة.",
+          "features": [
+            "خصم مخصص لدعم نمو المنشآت الصغيرة والمتوسطة",
+            "الاستفادة من حلول تشغيل احترافية بتكلفة أقل",
+            "مقارنة بتوظيف فرق داخلية"
+          ]
         }
       }
     },
@@ -305,12 +335,13 @@
         },
         "serviceOptions": {
           "placeholder": "اختر الخدمة (الاستشارة مجانية)",
-          "bpo": "تشغيل وإدارة مراكز الاتصال",
-          "cloud": "خدمة الموارد البشرية",
-          "remote": "خدمة العمل عن بُعد",
+          "contact": "مركز الاتصال وخدمة العملاء",
+          "hr": "إدارة الموارد البشرية",
+          "marketing": "التسويق الرقمي",
+          "accounting": "المحاسبة والمالية",
+          "bundle": "الحل الشامل لإدارة الأعمال",
+          "sme": "عرض المنشآت الصغيرة والمتوسطة",
           "elm": "منصة علم (مقيم/مسارات/تم/نبأ)",
-          "it": "حلول تقنية المعلومات وتطوير المنصات",
-          "security": "حلول الأمان والمنزل الذكي",
           "other": "أخرى"
         },
         "slotsLabel": "حدد تاريخ ووقت الاستشارة",
@@ -447,51 +478,81 @@
     },
     "services": {
       "title": "Our Services",
-      "subtitle": "Contact center, HR, remote work, and Elm platform under one roof",
+      "subtitle": "Integrated operating solutions for SMEs",
       "items": {
-        "bpo": {
-          "title": "Contact Center Service",
-          "description": "Operate and run your contact center, host unified numbers, manage all channels, and build the center end-to-end."
-        },
-        "cloud": {
-          "title": "HR Service",
-          "description": "HR system, performance reviews, payroll, employee files, health insurance, attendance, internal workflows, and government platforms.",
+        "contact": {
+          "title": "Contact Center & Customer Service",
+          "description": "End-to-end contact center operations so you handle customers professionally without building an in-house center.",
           "features": [
-            "HR management system",
-            "Performance review management",
-            "Payroll management",
-            "Employee files management",
-            "Health insurance tracking",
-            "Attendance and time management",
-            "Internal workflow management",
-            "Government platforms management",
-            "End-to-end HR obligations with productivity uplift",
-            "100% data confidentiality for your employees",
-            "Offer letter and contract preparation",
-            "Register workforce on government systems",
-            "Cloud portal for visibility and collaboration",
-            "Performance tracking with monthly reports",
-            "Define target quality standards",
-            "Comprehensive performance reporting",
-            "Higher productivity and smoother operations"
+            "Dedicated number for your business",
+            "Inbound call handling and inquiries",
+            "Product/service Q&A support",
+            "Log and follow up on orders and complaints",
+            "Support ticketing system",
+            "Periodic call and service-level reports",
+            "Value: better CX, higher satisfaction, lower in-house setup cost"
+          ]
+        },
+        "hr": {
+          "title": "HR Management Service",
+          "description": "Full-scope HR operations to manage employees and admin processes in line with regulations.",
+          "features": [
+            "Prepare and manage employee contracts",
+            "Process payroll",
+            "Track attendance and time",
+            "Manage vacations",
+            "Issue periodic HR reports",
+            "Organize employee files",
+            "Value: organized workforce management, fewer errors, regulatory compliance"
           ]
         },
         "marketing": {
-          "title": "Remote Work Service",
-          "description": "Register employees as remote workers (authorized provider) and track tasks/requests with employer-focused dashboards.",
+          "title": "Digital Marketing Service",
+          "description": "Build a strong digital presence and manage social channels to grow awareness, engagement, and sales.",
           "features": [
-            "Get remote work licenses to cut costs and boost localization",
-            "Authorized provider by Ministry of Labor",
-            "Register staff on the remote work portal as an approved provider",
-            "Dashboards for employers to assign tasks/requests and track completion",
-            "Highly customizable, cost-efficient solutions for competitive value",
-            "Flexible hours, higher Saudization, and communication skills training",
-            "Remote work services: registration, CRM, contact center, HR and admin support"
+            "Digital marketing plan tailored to your business",
+            "Social media account management",
+            "Content and creative design",
+            "Scheduling and publishing",
+            "Respond to customer inquiries across platforms",
+            "Manage digital ad campaigns",
+            "Performance reporting and analytics",
+            "Value: more visibility, new customers, better engagement"
           ]
         },
-        "construction": {
-          "title": "Elm Platform Service",
-          "description": "Run Muqeem, Masarat, Tamm, and Nabaa via Elm with unified management, maintenance alerts, and live tracking."
+        "accounting": {
+          "title": "Accounting & Finance Service",
+          "description": "Comprehensive accounting and finance support to keep operations organized and compliant.",
+          "features": [
+            "Bookkeeping",
+            "Record financial transactions",
+            "Prepare financial statements",
+            "Periodic financial reports",
+            "Zakat and tax filings",
+            "Financial controls and process organization",
+            "Value: cleaner finances, stronger controls, better decisions"
+          ]
+        },
+        "bundle": {
+          "title": "Integrated Business Operations",
+          "description": "A unified bundle combining accounting, HR, marketing, and contact center under one operating model.",
+          "features": [
+            "Accounting and finance services",
+            "HR management",
+            "Social media and marketing management",
+            "Contact center and customer service",
+            "Supporting tech systems",
+            "Value: lower costs, organized operations, higher efficiency"
+          ]
+        },
+        "sme": {
+          "title": "SME Special Offer",
+          "description": "Discounted packages via Monshaat platform so SMEs get pro operations at a better cost.",
+          "features": [
+            "Dedicated discount for SME growth",
+            "Access to integrated operations at lower cost",
+            "Savings versus hiring internal teams"
+          ]
         }
       }
     },
@@ -716,12 +777,13 @@
         },
         "serviceOptions": {
           "placeholder": "Select a service (consultation is free)",
-          "bpo": "Contact center operations",
-          "cloud": "HR service",
-          "remote": "Remote work service",
+          "contact": "Contact center & customer service",
+          "hr": "HR management",
+          "marketing": "Digital marketing",
+          "accounting": "Accounting & finance",
+          "bundle": "Integrated business operations",
+          "sme": "SME special offer",
           "elm": "Elm platform (Muqeem / Masarat / Tamm / Nabaa)",
-          "it": "IT solutions & platform development",
-          "security": "Security & smart home solutions",
           "other": "Other"
         },
         "slotsLabel": "Select consultation date & time",

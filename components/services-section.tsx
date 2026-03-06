@@ -2,7 +2,22 @@
 
 import { useMemo, useState } from "react"
 import type { LucideIcon } from "lucide-react"
-import { Cloud, Megaphone, Briefcase, ShieldCheck, ChevronDown, IdCard, Route, FileSearch, MessageCircle } from "lucide-react"
+import {
+  Cloud,
+  Megaphone,
+  Briefcase,
+  ShieldCheck,
+  ChevronDown,
+  IdCard,
+  Route,
+  FileSearch,
+  MessageCircle,
+  PhoneCall,
+  Calculator,
+  Users,
+  Layers,
+  BadgePercent,
+} from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { useLanguage } from "./language-provider"
 
@@ -11,7 +26,7 @@ export default function ServicesSection() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal()
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
-  const [openService, setOpenService] = useState<string | null>("bpo")
+  const [openService, setOpenService] = useState<string | null>("contact")
   const [showElmForm, setShowElmForm] = useState(false)
   const [formService, setFormService] = useState<"muqeem" | "masarat" | "tamm" | "nabaa">("muqeem")
   const [submitted, setSubmitted] = useState(false)
@@ -37,10 +52,13 @@ export default function ServicesSection() {
     "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-[#22d3ee] focus:ring-1 focus:ring-[#22d3ee]/40"
 
   const iconMap: Record<string, LucideIcon> = {
-    bpo: Briefcase,
-    cloud: Cloud,
+    contact: PhoneCall,
+    hr: Users,
     marketing: Megaphone,
-    smart: ShieldCheck,
+    accounting: Calculator,
+    bundle: Layers,
+    sme: BadgePercent,
+    elm: ShieldCheck,
   }
 
   const elmIconMap: Record<"muqeem" | "masarat" | "tamm" | "nabaa", LucideIcon> = {
