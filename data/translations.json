@@ -36,7 +36,7 @@
     },
     "services": {
       "title": "خدماتنا",
-      "subtitle": "حلول تشغيل متكاملة للمنشآت الصغيرة والمتوسطة",
+      "subtitle": "تشغيل متكامل يغطي الاتصال والموارد والتسويق والمحاسبة",
       "items": {
         "contact": {
           "title": "خدمة مركز الاتصال وخدمة العملاء",
@@ -479,7 +479,7 @@
     },
     "services": {
       "title": "Our Services",
-      "subtitle": "Integrated operating solutions for SMEs",
+      "subtitle": "Integrated ops covering contact center, HR, marketing, and accounting",
       "items": {
         "contact": {
           "title": "Contact Center & Customer Service",

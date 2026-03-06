@@ -227,15 +227,14 @@ export default function ServicesSection() {
             elmVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-6 lg:p-8 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] backdrop-blur-xl space-y-6 relative overflow-hidden">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.08),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(8,145,178,0.12),transparent_30%)]" />
+          <div className="rounded-3xl border border-white/10 bg-white/[0.06] p-6 lg:p-7 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.65)] space-y-5">
             <button
               type="button"
               onClick={() => setElmOpen((prev) => !prev)}
-              className="flex w-full items-center justify-between gap-3 text-right rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white hover:border-[#22d3ee]/40 hover:bg-white/[0.08]"
+              className="group flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 text-right transition hover:border-[#22d3ee]/40 hover:bg-white/[0.12]"
             >
               <div className="flex flex-col gap-2 text-right">
-                <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold text-[#7ad8ff] w-fit">
+                <div className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-semibold text-[#7ad8ff] w-fit">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
                   <span>{t("elm.heading")}</span>
                 </div>
@@ -245,7 +244,7 @@ export default function ServicesSection() {
                 </p>
               </div>
               <ChevronDown
-                className={`h-5 w-5 text-white/70 transition-transform duration-300 ${elmOpen ? "rotate-180 text-[#7ad8ff]" : ""}`}
+                className={`h-5 w-5 text-white/70 transition-transform duration-300 group-hover:text-[#7ad8ff] ${elmOpen ? "rotate-180 text-[#7ad8ff]" : ""}`}
               />
             </button>
 
@@ -255,11 +254,9 @@ export default function ServicesSection() {
                 return (
                   <div
                     key={card.key}
-                    className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-right shadow-[0_20px_60px_-32px_rgba(34,211,238,0.7)] transition-all duration-500 hover:-translate-y-1 hover:border-[#22d3ee]/40 hover:bg-white/[0.06]"
+                    className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-5 text-right shadow-[0_20px_60px_-32px_rgba(34,211,238,0.7)] transition-all duration-500 hover:-translate-y-1 hover:border-[#22d3ee]/40 hover:bg-white/[0.08]"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/10 via-transparent to-transparent" />
-                    <div className="absolute -left-12 -top-12 h-24 w-24 rounded-full bg-[#22d3ee]/10 blur-2xl" />
-                    <div className="absolute -right-10 -bottom-12 h-24 w-24 rounded-full bg-[#0891b2]/10 blur-2xl" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/8 via-transparent to-transparent" />
                     <div className="relative space-y-3">
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex items-center gap-3">
