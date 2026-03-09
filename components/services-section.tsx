@@ -168,11 +168,18 @@ export default function ServicesSection() {
           className={`stagger-children grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${gridVisible ? "visible" : ""}`}
         >
           {services.map((service) => (
-            <button
-              type="button"
+            <div
+              role="button"
+              tabIndex={0}
               key={service.key}
               onClick={() => setOpenService((prev) => (prev === service.key ? null : service.key))}
-              className="group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-left shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.08]"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault()
+                  setOpenService((prev) => (prev === service.key ? null : service.key))
+                }
+              }}
+              className="group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-left shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.08] focus:outline-none focus:ring-2 focus:ring-[#22d3ee]/50"
               aria-expanded={openService === service.key}
             >
               <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle at 20% 20%, rgba(34,211,238,0.12), transparent 40%)" }} />
@@ -235,7 +242,7 @@ export default function ServicesSection() {
                   </div>
                 </div>
               </div>
-            </button>
+            </div>
           ))}
         </div>
 
