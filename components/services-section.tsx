@@ -219,12 +219,20 @@ export default function ServicesSection() {
                       </ul>
                     ) : null}
                     {service.key === "hr" ? (
-                      <div className="pt-4">
+                      <div
+                        className="pt-4"
+                        onClick={(e) => e.stopPropagation()}
+                        onKeyDown={(e) => e.stopPropagation()}
+                      >
                         <VideoSection variant="hr" hideCopy />
                       </div>
                     ) : null}
                     {service.key === "contact" ? (
-                      <div className="pt-4">
+                      <div
+                        className="pt-4"
+                        onClick={(e) => e.stopPropagation()}
+                        onKeyDown={(e) => e.stopPropagation()}
+                      >
                         <VideoSection variant="call-center" hideCopy />
                       </div>
                     ) : null}

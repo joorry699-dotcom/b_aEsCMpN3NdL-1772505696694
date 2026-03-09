@@ -39,6 +39,7 @@ const videoConfigs: Record<VideoVariant, { src: string; poster: string; copy: { 
 export default function VideoSection({ variant = "hr", hideCopy = false }: VideoSectionProps) {
   const { locale } = useLanguage()
   const [open, setOpen] = useState(false)
+  const handleOpen = (next: boolean) => setOpen(next)
 
   const config = videoConfigs[variant]
 
@@ -79,7 +80,10 @@ export default function VideoSection({ variant = "hr", hideCopy = false }: Video
             <p className="text-base text-white/70 md:text-lg">{subtitle}</p>
             <button
               type="button"
-              onClick={() => setOpen(true)}
+              onClick={(e) => {
+                e.stopPropagation()
+                handleOpen(true)
+              }}
               className="group inline-flex items-center gap-3 rounded-full bg-[#06b6d4] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#06b6d4]/20 transition-all hover:bg-[#0891b2] hover:shadow-[#0891b2]/30"
             >
               <Play className="h-4 w-4 transition-transform group-hover:scale-110" />
@@ -95,7 +99,10 @@ export default function VideoSection({ variant = "hr", hideCopy = false }: Video
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
               <button
                 type="button"
-                onClick={() => setOpen(true)}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleOpen(true)
+                }}
                 className="absolute inset-0 flex items-center justify-center text-white transition-all duration-300"
               >
                 <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm ring-1 ring-white/30 transition-all duration-300 group-hover:scale-105">
@@ -107,11 +114,14 @@ export default function VideoSection({ variant = "hr", hideCopy = false }: Video
         </div>
       </div>
 
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog open={open} onOpenChange={handleOpen}>
         <DialogContent className="max-w-4xl border-white/10 bg-[#0c1e3c]/95 p-0 shadow-2xl">
           <div className="flex items-center justify-between px-4 py-3 text-white">
             <span className="text-sm font-semibold">{locale === "ar" ? "المقطع التعريفي" : "Explainer"}</span>
-            <button onClick={() => setOpen(false)} className="rounded-full p-1 text-white/70 hover:bg-white/10">
+            <button
+              onClick={() => handleOpen(false)}
+              className="rounded-full p-1 text-white/70 hover:bg-white/10"
+            >
               <X className="h-5 w-5" />
             </button>
           </div>
