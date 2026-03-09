@@ -5,10 +5,10 @@ import { CheckCircle2, Users, Briefcase, Handshake } from "lucide-react"
 import { useLanguage } from "./language-provider"
 
 const iconMap = {
-  operations: CheckCircle2,
-  employees: Users,
+  experience: CheckCircle2,
+  partners: Handshake,
+  saudiTeam: Users,
   services: Briefcase,
-  clients: Handshake,
 }
 
 type StatKey = keyof typeof iconMap

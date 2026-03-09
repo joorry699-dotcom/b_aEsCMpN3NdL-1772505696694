@@ -16,7 +16,7 @@ export default function PostClient({ post }: PostClientProps) {
   const title = locale === "ar" ? post.title_ar : post.title_en
   const content = locale === "ar" ? post.content_ar : post.content_en
   const isHrPost = post.slug.startsWith("hr-")
-  const showVideo = isHrPost
+  const showVideo = false
 
   return (
     <>
@@ -61,11 +61,7 @@ export default function PostClient({ post }: PostClientProps) {
           </div>
         </article>
 
-        {showVideo ? (
-          <div className="mt-16 lg:mt-20">
-            <VideoSection variant="hr" hideCopy />
-          </div>
-        ) : null}
+        {showVideo ? null : null}
       </main>
       <Footer />
     </>

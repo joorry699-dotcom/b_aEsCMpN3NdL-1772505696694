@@ -294,9 +294,9 @@
       "title": "بعض الإنجازات التي حققناها",
       "subtitle": "نفخر بنتائج عملياتنا المدارة وشراكاتنا، ونعكسها بشفافية عبر أرقام واضحة.",
       "stats": {
-        "experience": { "value": "+15", "label": "سنة خبرة في المجال" },
-        "partners": { "value": "+20", "label": "شركة كبرى شركاء النجاح" },
-        "saudiTeam": { "value": "%100", "label": "فريق سعودي متخصص" },
+        "experience": { "value": "+15", "label": "سنة خبرة في القطاع" },
+        "partners": { "value": "+20", "label": "شراكات استراتيجية مع كبرى الشركات" },
+        "saudiTeam": { "value": "100%", "label": "فريق سعودي متخصص" },
         "services": { "value": "6", "label": "خدمات رئيسية نقدمها" }
       }
     },
@@ -686,10 +686,10 @@
       "title": "Key wins we are proud of",
       "subtitle": "Transparent numbers that reflect our managed operations and trusted partnerships.",
       "stats": {
-        "experience": { "value": "+15", "label": "Years of experience" },
-        "partners": { "value": "+20", "label": "Enterprise partners" },
+        "experience": { "value": "+15", "label": "Years in the field" },
+        "partners": { "value": "+20", "label": "Strategic enterprise partners" },
         "saudiTeam": { "value": "100%", "label": "Saudi specialized team" },
-        "services": { "value": "6", "label": "Core services delivered" }
+        "services": { "value": "6", "label": "Core services we deliver" }
       }
     },
     "channels": {

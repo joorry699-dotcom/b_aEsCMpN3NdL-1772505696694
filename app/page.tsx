@@ -12,7 +12,6 @@ import ClientsSection from "@/components/clients-section"
 import { BlogList } from "@/components/blog-list"
 import { FAQSection } from "@/components/faq-section"
 import { CareersSection } from "@/components/careers-section"
-import VideoSection from "@/components/video-section"
 import Footer from "@/components/footer"
 import FloatingActions from "@/components/floating-actions"
 
@@ -24,7 +23,6 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <SolutionsSection />
-      <VideoSection variant="call-center" hideCopy />
       <ChannelsSection />
       <BenefitsSection />
       <StrategiesSection />

@@ -218,24 +218,6 @@ export default function ServicesSection() {
                         })}
                       </ul>
                     ) : null}
-                    {service.key === "hr" ? (
-                      <div
-                        className="pt-4"
-                        onClick={(e) => e.stopPropagation()}
-                        onKeyDown={(e) => e.stopPropagation()}
-                      >
-                        <VideoSection variant="hr" hideCopy />
-                      </div>
-                    ) : null}
-                    {service.key === "contact" ? (
-                      <div
-                        className="pt-4"
-                        onClick={(e) => e.stopPropagation()}
-                        onKeyDown={(e) => e.stopPropagation()}
-                      >
-                        <VideoSection variant="call-center" hideCopy />
-                      </div>
-                    ) : null}
                     {['contact', 'hr', 'marketing', 'accounting'].includes(service.key) ? (
                       <div className="pt-2 text-left">
                         <a
@@ -249,6 +231,24 @@ export default function ServicesSection() {
                     ) : null}
                   </div>
                 </div>
+                {service.key === "hr" ? (
+                  <div
+                    className="pt-4"
+                    onClick={(e) => e.stopPropagation()}
+                    onKeyDown={(e) => e.stopPropagation()}
+                  >
+                    <VideoSection variant="hr" hideCopy embedded />
+                  </div>
+                ) : null}
+                {service.key === "contact" ? (
+                  <div
+                    className="pt-4"
+                    onClick={(e) => e.stopPropagation()}
+                    onKeyDown={(e) => e.stopPropagation()}
+                  >
+                    <VideoSection variant="call-center" hideCopy embedded />
+                  </div>
+                ) : null}
               </div>
             </div>
           ))}

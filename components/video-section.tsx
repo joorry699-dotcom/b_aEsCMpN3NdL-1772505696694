@@ -11,6 +11,7 @@ type VideoVariant = "hr" | "call-center"
 interface VideoSectionProps {
   variant?: VideoVariant
   hideCopy?: boolean
+  embedded?: boolean
 }
 
 const videoConfigs: Record<VideoVariant, { src: string; poster: string; copy: { pill: string; title: string; subtitle: string; cta: string } }> = {
@@ -36,7 +37,7 @@ const videoConfigs: Record<VideoVariant, { src: string; poster: string; copy: { 
   },
 }
 
-export default function VideoSection({ variant = "hr", hideCopy = false }: VideoSectionProps) {
+export default function VideoSection({ variant = "hr", hideCopy = false, embedded = false }: VideoSectionProps) {
   const { locale } = useLanguage()
   const [open, setOpen] = useState(false)
   const handleOpen = (next: boolean) => setOpen(next)
@@ -63,6 +64,54 @@ export default function VideoSection({ variant = "hr", hideCopy = false }: Video
 
   const cta = locale === "ar" ? config.copy.cta : variant === "call-center" ? "Watch the solution" : "Watch the video"
   const pill = locale === "ar" ? config.copy.pill : variant === "call-center" ? "Contact Center Showreel" : "Showreel"
+
+  if (embedded) {
+    return (
+      <div className="relative w-full">
+        <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[0_20px_50px_-30px_rgba(0,0,0,0.6)]">
+          <div className="relative aspect-video w-full">
+            <Image src={config.poster} alt={title} fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/25 to-transparent" />
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation()
+                handleOpen(true)
+              }}
+              className="absolute inset-0 flex items-center justify-center text-white transition-all duration-300"
+            >
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm ring-1 ring-white/30 transition-all duration-300 group-hover:scale-105">
+                <Play className="h-6 w-6" />
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <Dialog open={open} onOpenChange={handleOpen}>
+          <DialogContent className="max-w-4xl border-white/10 bg-[#0c1e3c]/95 p-0 shadow-2xl">
+            <div className="flex items-center justify-between px-4 py-3 text-white">
+              <span className="text-sm font-semibold">{locale === "ar" ? "المقطع التعريفي" : "Explainer"}</span>
+              <button
+                onClick={() => handleOpen(false)}
+                className="rounded-full p-1 text-white/70 hover:bg-white/10"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="relative aspect-video w-full overflow-hidden">
+              <video
+                src={config.src}
+                controls
+                poster={config.poster}
+                className="h-full w-full object-cover"
+                playsInline
+              />
+            </div>
+          </DialogContent>
+        </Dialog>
+      </div>
+    )
+  }
 
   return (
     <section id="about-video" className="relative overflow-hidden bg-[#0c1e3c] py-20">
