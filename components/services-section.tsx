@@ -232,20 +232,12 @@ export default function ServicesSection() {
                   </div>
                 </div>
                 {service.key === "hr" ? (
-                  <div
-                    className="pt-4"
-                    onClick={(e) => e.stopPropagation()}
-                    onKeyDown={(e) => e.stopPropagation()}
-                  >
+                  <div className="pt-4">
                     <VideoSection variant="hr" hideCopy embedded />
                   </div>
                 ) : null}
                 {service.key === "contact" ? (
-                  <div
-                    className="pt-4"
-                    onClick={(e) => e.stopPropagation()}
-                    onKeyDown={(e) => e.stopPropagation()}
-                  >
+                  <div className="pt-4">
                     <VideoSection variant="call-center" hideCopy embedded />
                   </div>
                 ) : null}
@@ -282,13 +274,13 @@ export default function ServicesSection() {
               />
             </button>
 
-            <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 transition-all duration-500 ${elmOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"}`}>
+            <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 transition-all duration-500 ${elmOpen ? "max-h-[2200px] opacity-100" : "max-h-0 opacity-0"}`}>
               {elmCards.map((card) => {
                 const Icon = card.icon
                 return (
                   <div
                     key={card.key}
-                    className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-5 text-right shadow-[0_20px_60px_-32px_rgba(34,211,238,0.7)] transition-all duration-500 hover:-translate-y-1 hover:border-[#22d3ee]/40 hover:bg-white/[0.08]"
+                    className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-right shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.08]"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/8 via-transparent to-transparent" />
                     <div className="relative space-y-3">
