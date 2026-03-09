@@ -10,6 +10,7 @@ type VideoVariant = "hr" | "call-center"
 
 interface VideoSectionProps {
   variant?: VideoVariant
+  hideCopy?: boolean
 }
 
 const videoConfigs: Record<VideoVariant, { src: string; poster: string; copy: { pill: string; title: string; subtitle: string; cta: string } }> = {
@@ -35,7 +36,7 @@ const videoConfigs: Record<VideoVariant, { src: string; poster: string; copy: { 
   },
 }
 
-export default function VideoSection({ variant = "hr" }: VideoSectionProps) {
+export default function VideoSection({ variant = "hr", hideCopy = false }: VideoSectionProps) {
   const { locale } = useLanguage()
   const [open, setOpen] = useState(false)
 
@@ -69,23 +70,25 @@ export default function VideoSection({ variant = "hr" }: VideoSectionProps) {
       <div className="absolute -right-10 bottom-10 h-64 w-64 rounded-full bg-[#0891b2]/10 blur-3xl" />
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 lg:flex-row lg:items-center lg:gap-14">
-        <div className="flex-1 space-y-6 text-white">
-          <p className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#06b6d4]">
-            {pill}
-          </p>
-          <h2 className="text-3xl font-extrabold leading-tight md:text-4xl lg:text-5xl">{title}</h2>
-          <p className="text-base text-white/70 md:text-lg">{subtitle}</p>
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            className="group inline-flex items-center gap-3 rounded-full bg-[#06b6d4] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#06b6d4]/20 transition-all hover:bg-[#0891b2] hover:shadow-[#0891b2]/30"
-          >
-            <Play className="h-4 w-4 transition-transform group-hover:scale-110" />
-            {cta}
-          </button>
-        </div>
+        {hideCopy ? null : (
+          <div className="flex-1 space-y-6 text-white">
+            <p className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#06b6d4]">
+              {pill}
+            </p>
+            <h2 className="text-3xl font-extrabold leading-tight md:text-4xl lg:text-5xl">{title}</h2>
+            <p className="text-base text-white/70 md:text-lg">{subtitle}</p>
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="group inline-flex items-center gap-3 rounded-full bg-[#06b6d4] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#06b6d4]/20 transition-all hover:bg-[#0891b2] hover:shadow-[#0891b2]/30"
+            >
+              <Play className="h-4 w-4 transition-transform group-hover:scale-110" />
+              {cta}
+            </button>
+          </div>
+        )}
 
-        <div className="relative flex-1">
+        <div className={`relative flex-1 ${hideCopy ? "mx-auto max-w-3xl" : ""}`}>
           <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl shadow-[#06b6d4]/10">
             <div className="relative aspect-video w-full">
               <Image src={config.poster} alt={title} fill className="object-cover" />

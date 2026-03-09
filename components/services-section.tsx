@@ -213,7 +213,12 @@ export default function ServicesSection() {
                     ) : null}
                     {service.key === "hr" ? (
                       <div className="pt-4">
-                        <VideoSection variant="hr" />
+                        <VideoSection variant="hr" hideCopy />
+                      </div>
+                    ) : null}
+                    {service.key === "contact" ? (
+                      <div className="pt-4">
+                        <VideoSection variant="call-center" hideCopy />
                       </div>
                     ) : null}
                     {['contact', 'hr', 'marketing', 'accounting'].includes(service.key) ? (

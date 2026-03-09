@@ -16,9 +16,7 @@ export default function PostClient({ post }: PostClientProps) {
   const title = locale === "ar" ? post.title_ar : post.title_en
   const content = locale === "ar" ? post.content_ar : post.content_en
   const isHrPost = post.slug.startsWith("hr-")
-  const isCallCenterPost = post.slug.includes("call-center")
-  const showVideo = isHrPost || isCallCenterPost
-  const videoVariant = isCallCenterPost ? "call-center" : "hr"
+  const showVideo = isHrPost
 
   return (
     <>
@@ -65,7 +63,7 @@ export default function PostClient({ post }: PostClientProps) {
 
         {showVideo ? (
           <div className="mt-16 lg:mt-20">
-            <VideoSection variant={videoVariant} />
+            <VideoSection variant="hr" hideCopy />
           </div>
         ) : null}
       </main>
