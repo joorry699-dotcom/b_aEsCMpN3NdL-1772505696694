@@ -24,7 +24,7 @@ const videoConfigs: Record<VideoVariant, { src: string; poster: string; copy: { 
     },
   },
   "call-center": {
-    src: "https://www.dropbox.com/scl/fo/5u1z8cz217vwuedz7x07l/h/New%20Files/Videos/Call%20Center/Horizontal/انتشار02.mp4?dl=1",
+    src: "/videos/call-center.mp4",
     poster: "/images/partners/Elmam_inf_saudi_men_in_call_center_office_photography_canon_wea_1c2e2dc9-39d1-4eb1-a1ff-2467c78a6a1d.png",
     copy: {
       pill: "حلول مراكز الاتصال",
