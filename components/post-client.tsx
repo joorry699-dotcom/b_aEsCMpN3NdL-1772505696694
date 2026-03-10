@@ -5,6 +5,7 @@ import { BlogPost } from "@/lib/blog"
 import { useLanguage } from "./language-provider"
 import Navbar from "./navbar"
 import Footer from "./footer"
+import VideoSection from "./video-section"
 
 interface PostClientProps {
   post: BlogPost
@@ -14,6 +15,10 @@ export default function PostClient({ post }: PostClientProps) {
   const { locale } = useLanguage()
   const title = locale === "ar" ? post.title_ar : post.title_en
   const content = locale === "ar" ? post.content_ar : post.content_en
+  const isHrPost = post.slug.startsWith("hr-")
+  const isCallCenterPost = post.slug.includes("call-center")
+  const showVideo = isHrPost || isCallCenterPost
+  const videoVariant = isCallCenterPost ? "call-center" : "hr"
 
   return (
     <>
@@ -57,6 +62,12 @@ export default function PostClient({ post }: PostClientProps) {
             </button>
           </div>
         </article>
+
+        {showVideo ? (
+          <div className="mt-16 lg:mt-20">
+            <VideoSection variant={videoVariant} />
+          </div>
+        ) : null}
       </main>
       <Footer />
     </>

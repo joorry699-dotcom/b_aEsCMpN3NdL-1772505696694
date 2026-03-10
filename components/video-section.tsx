@@ -6,20 +6,61 @@ import { Play, X } from "lucide-react"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { useLanguage } from "./language-provider"
 
-// Use local asset to avoid remote playback issues/CORS in production
-const videoSrc = "/videos/hr-showreel.mp4"
-const posterSrc = "/images/partners/Elmam_inf_saudi_man_presenting_white_board_leading_a_meeting_Th_3fa926c9-bd44-4c4d-865b-916ff67c687c.jpg"
+type VideoVariant = "hr" | "call-center"
 
-export default function VideoSection() {
+interface VideoSectionProps {
+  variant?: VideoVariant
+}
+
+const videoConfigs: Record<VideoVariant, { src: string; poster: string; copy: { pill: string; title: string; subtitle: string; cta: string } }> = {
+  hr: {
+    src: "/videos/hr-showreel.mp4",
+    poster: "/images/partners/Elmam_inf_saudi_man_presenting_white_board_leading_a_meeting_Th_3fa926c9-bd44-4c4d-865b-916ff67c687c.jpg",
+    copy: {
+      pill: "فيديو تعريفي",
+      title: "شاهد كيف نُدير التجربة الكاملة",
+      subtitle: "مقطع تعريفي سريع يوضح أسلوب انتشار في تشغيل مراكز الاتصال وإدارة تجربة العميل عبر كل القنوات.",
+      cta: "شاهد الفيديو",
+    },
+  },
+  "call-center": {
+    src: "https://www.dropbox.com/scl/fo/5u1z8cz217vwuedz7x07l/h/New%20Files/Videos/Call%20Center/Horizontal/انتشار02.mp4?dl=1",
+    poster: "/images/partners/Elmam_inf_saudi_men_in_call_center_office_photography_canon_wea_1c2e2dc9-39d1-4eb1-a1ff-2467c78a6a1d.png",
+    copy: {
+      pill: "حلول مراكز الاتصال",
+      title: "تشغيل ذكي لمراكز الاتصال متعددة القنوات",
+      subtitle: "لقطة سريعة تشرح كيف ندير المكالمة، الدردشة، والبريد مع مراقبة لحظية وتدريب داخل المكالمة لرفع الحل من أول محاولة.",
+      cta: "شاهد الحل",
+    },
+  },
+}
+
+export default function VideoSection({ variant = "hr" }: VideoSectionProps) {
   const { locale } = useLanguage()
   const [open, setOpen] = useState(false)
 
-  const title = locale === "ar" ? "شاهد كيف نُدير التجربة الكاملة" : "See How We Run the Full Experience"
+  const config = videoConfigs[variant]
+
+  const title =
+    variant === "call-center"
+      ? locale === "ar"
+        ? config.copy.title
+        : "Smarter omnichannel contact center ops"
+      : locale === "ar"
+        ? config.copy.title
+        : "See how we run the full experience"
+
   const subtitle =
-    locale === "ar"
-      ? "مقطع تعريفي سريع يوضح أسلوب انتشار في تشغيل مراكز الاتصال وإدارة تجربة العميل عبر كل القنوات."
-      : "A quick explainer showing Entishar’s modern way of running contact centers and CX across every channel."
-  const cta = locale === "ar" ? "شاهد الفيديو" : "Watch the video"
+    variant === "call-center"
+      ? locale === "ar"
+        ? config.copy.subtitle
+        : "A quick reel on how we manage calls, chat, and email with live QA and in-call coaching to lift first-call resolution."
+      : locale === "ar"
+        ? config.copy.subtitle
+        : "A quick explainer showing Entishar’s modern way of running contact centers and CX across every channel."
+
+  const cta = locale === "ar" ? config.copy.cta : variant === "call-center" ? "Watch the solution" : "Watch the video"
+  const pill = locale === "ar" ? config.copy.pill : variant === "call-center" ? "Contact Center Showreel" : "Showreel"
 
   return (
     <section id="about-video" className="relative overflow-hidden bg-[#0c1e3c] py-20">
@@ -30,7 +71,7 @@ export default function VideoSection() {
       <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 lg:flex-row lg:items-center lg:gap-14">
         <div className="flex-1 space-y-6 text-white">
           <p className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#06b6d4]">
-            {locale === "ar" ? "فيديو تعريفي" : "Showreel"}
+            {pill}
           </p>
           <h2 className="text-3xl font-extrabold leading-tight md:text-4xl lg:text-5xl">{title}</h2>
           <p className="text-base text-white/70 md:text-lg">{subtitle}</p>
@@ -47,7 +88,7 @@ export default function VideoSection() {
         <div className="relative flex-1">
           <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl shadow-[#06b6d4]/10">
             <div className="relative aspect-video w-full">
-              <Image src={posterSrc} alt={title} fill className="object-cover" />
+              <Image src={config.poster} alt={title} fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
               <button
                 type="button"
@@ -73,9 +114,9 @@ export default function VideoSection() {
           </div>
           <div className="relative aspect-video w-full overflow-hidden">
             <video
-              src={videoSrc}
+              src={config.src}
               controls
-              poster={posterSrc}
+              poster={config.poster}
               className="h-full w-full object-cover"
               playsInline
             />
