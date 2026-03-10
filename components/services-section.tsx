@@ -276,7 +276,7 @@ export default function ServicesSection() {
                 return (
                   <div
                     key={card.key}
-                    className="group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-right shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.08]"
+                    className="group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-left shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.08]"
                   >
                     <div
                       className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -284,8 +284,8 @@ export default function ServicesSection() {
                     />
                     <div className="relative z-10 space-y-3">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
-                          <Icon className="h-5 w-5" />
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff]">
+                          <Icon className="h-6 w-6" />
                         </div>
                         <div className="flex flex-col">
                           <span className="text-[11px] uppercase tracking-[0.18em] text-white/60">Elm</span>
