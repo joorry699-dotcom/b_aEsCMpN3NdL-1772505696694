@@ -3,9 +3,7 @@
 import { useMemo, useState } from "react"
 import type { LucideIcon } from "lucide-react"
 import {
-  Cloud,
   Megaphone,
-  ShieldCheck,
   ChevronDown,
   IdCard,
   Route,
@@ -20,7 +18,7 @@ import { useLanguage } from "./language-provider"
 import VideoSection from "./video-section"
 
 export default function ServicesSection() {
-  const { t, locale } = useLanguage()
+  const { t } = useLanguage()
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal()
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal()
   const { ref: elmRef, isVisible: elmVisible } = useScrollReveal()
@@ -69,17 +67,15 @@ export default function ServicesSection() {
     if (!servicesItems || typeof servicesItems !== "object") return []
 
     const orderedKeys = ["contact", "hr", "marketing", "accounting"]
-    const ordered = orderedKeys
-      .filter((key) => servicesItems[key])
+    return orderedKeys
+      .filter((key) => (servicesItems as any)[key])
       .map((key) => ({
         key,
         icon: iconMap[key],
-        title: servicesItems[key].title,
-        description: servicesItems[key].description,
-        features: servicesItems[key].features ?? [],
+        title: (servicesItems as any)[key].title,
+        description: (servicesItems as any)[key].description,
+        features: (servicesItems as any)[key].features ?? [],
       }))
-
-    return ordered
   })()
 
   const elmCards = useMemo(
@@ -195,7 +191,7 @@ export default function ServicesSection() {
                 <h3 className="text-lg font-semibold text-white">{service.title}</h3>
                 <div
                   className={`overflow-hidden text-sm text-white/70 transition-all duration-400 ${
-                    openService === service.key ? "max-h-[1200px] opacity-100" : "max-h-0 opacity-0"
+                    openService === service.key ? "max-h-[1400px] opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="space-y-3 leading-relaxed">
@@ -218,7 +214,7 @@ export default function ServicesSection() {
                         })}
                       </ul>
                     ) : null}
-                    {['contact', 'hr', 'marketing', 'accounting'].includes(service.key) ? (
+                    {["contact", "hr", "marketing", "accounting"].includes(service.key) ? (
                       <div className="pt-2 text-left">
                         <a
                           href="#contact"
@@ -229,18 +225,18 @@ export default function ServicesSection() {
                         </a>
                       </div>
                     ) : null}
+                    {service.key === "hr" ? (
+                      <div className="pt-4">
+                        <VideoSection variant="hr" hideCopy embedded />
+                      </div>
+                    ) : null}
+                    {service.key === "contact" ? (
+                      <div className="pt-4">
+                        <VideoSection variant="call-center" hideCopy embedded />
+                      </div>
+                    ) : null}
                   </div>
                 </div>
-                {service.key === "hr" ? (
-                  <div className="pt-4">
-                    <VideoSection variant="hr" hideCopy embedded />
-                  </div>
-                ) : null}
-                {service.key === "contact" ? (
-                  <div className="pt-4">
-                    <VideoSection variant="call-center" hideCopy embedded />
-                  </div>
-                ) : null}
               </div>
             </div>
           ))}
@@ -280,9 +276,8 @@ export default function ServicesSection() {
                 return (
                   <div
                     key={card.key}
-                    className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] p-6 text-right shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.08]"
+                    className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.07] p-6 text-right shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#22d3ee]/50 hover:bg-white/[0.1]"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#22d3ee]/8 via-transparent to-transparent" />
                     <div className="relative space-y-3">
                       <div className="flex items-center gap-3">
                         <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#22d3ee]/15 text-[#7ad8ff] ring-1 ring-white/10">
@@ -394,13 +389,12 @@ export default function ServicesSection() {
                   <label className="space-y-1 text-sm text-white/80">
                     <span className="font-semibold text-white">{elmForm?.email}</span>
                     <input
-                      required
                       type="email"
+                      required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className={inputClass}
-                      placeholder="email@example.com"
-                      dir="ltr"
+                      placeholder={elmForm?.email}
                     />
                   </label>
                   <label className="space-y-1 text-sm text-white/80">
@@ -413,38 +407,37 @@ export default function ServicesSection() {
                       placeholder={elmForm?.company}
                     />
                   </label>
-                  <label className="space-y-1 text-sm text-white/80 md:col-span-2">
+                  <label className="space-y-1 text-sm text-white/80">
                     <span className="font-semibold text-white">{elmForm?.account}</span>
                     <input
-                      required
                       value={formData.account}
                       onChange={(e) => setFormData({ ...formData, account: e.target.value })}
                       className={inputClass}
                       placeholder={elmForm?.account}
+                      dir="ltr"
                     />
                   </label>
-                  <label className="space-y-1 text-sm text-white/80 md:col-span-2">
+                  <label className="space-y-1 text-sm text-white/80">
                     <span className="font-semibold text-white">{elmForm?.notes}</span>
-                    <textarea
+                    <input
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      className={`${inputClass} min-h-[120px] resize-none`}
+                      className={inputClass}
                       placeholder={elmForm?.notes}
                     />
                   </label>
                 </div>
 
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <div className="flex items-center justify-between gap-3 pt-2">
+                  <p className="text-xs text-white/60">{t("elm.form.success")}</p>
                   <button
                     type="submit"
                     disabled={submitted}
-                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-6 py-3 text-sm font-semibold text-[#0b182f] transition hover:shadow-[0_18px_40px_-28px_rgba(34,211,238,0.8)] disabled:opacity-70"
+                    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-5 py-2 text-sm font-semibold text-[#0b182f] shadow-[0_14px_36px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_16px_40px_-20px_rgba(34,211,238,1)] disabled:opacity-50"
                   >
-                    {submitted ? "✓" : "→"} {elmForm?.submit}
+                    {submitted ? t("contact.form.submitted") : t("elm.form.submit")}
+                    <span className="text-base leading-none">→</span>
                   </button>
-                  {submitted && (
-                    <span className="text-sm font-semibold text-[#6ee7b7]">{elmForm?.success}</span>
-                  )}
                 </div>
               </form>
             </div>
