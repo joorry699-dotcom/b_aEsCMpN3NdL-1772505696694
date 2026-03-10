@@ -17,6 +17,7 @@ import {
 } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { useLanguage } from "./language-provider"
+import VideoSection from "./video-section"
 
 export default function ServicesSection() {
   const { t, locale } = useLanguage()
@@ -209,6 +210,11 @@ export default function ServicesSection() {
                           )
                         })}
                       </ul>
+                    ) : null}
+                    {service.key === "hr" ? (
+                      <div className="pt-4">
+                        <VideoSection variant="hr" />
+                      </div>
                     ) : null}
                     {['contact', 'hr', 'marketing', 'accounting'].includes(service.key) ? (
                       <div className="pt-2 text-left">
