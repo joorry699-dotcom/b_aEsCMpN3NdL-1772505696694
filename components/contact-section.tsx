@@ -18,6 +18,8 @@ export default function ContactSection() {
     slotTime: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [submitError, setSubmitError] = useState("")
   const [detailsError, setDetailsError] = useState("")
   const { ref: sectionRef, isVisible } = useScrollReveal()
   const serviceOptionsDict = t("contact.form.serviceOptions") as Record<string, string>
@@ -29,7 +31,7 @@ export default function ContactSection() {
   const minDate = useMemo(() => new Date().toISOString().split("T")[0], [])
   const timeSlots = ["10:00", "12:00", "14:30", "16:00", "18:30", "20:00"]
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (formData.details.length < 25) {
       setDetailsError(t("contact.form.detailsError"))
@@ -40,9 +42,29 @@ export default function ContactSection() {
       return
     }
     setDetailsError("")
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 4000)
-    setFormData({ name: "", phone: "", email: "", company: "", service: "", details: "", slotDate: "", slotTime: "" })
+    setSubmitError("")
+    setSending(true)
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData }),
+      })
+
+      if (!res.ok) {
+        throw new Error("Request failed")
+      }
+
+      setSubmitted(true)
+      setFormData({ name: "", phone: "", email: "", company: "", service: "", details: "", slotDate: "", slotTime: "" })
+      setTimeout(() => setSubmitted(false), 4000)
+    } catch (err) {
+      console.error(err)
+      setSubmitError((t("contact.form.submitError") as string) || "تعذر إرسال الطلب، حاول لاحقا")
+    } finally {
+      setSending(false)
+    }
   }
 
   const inputClass =
@@ -243,10 +265,15 @@ export default function ContactSection() {
 
               <button
                 type="submit"
-                disabled={submitted}
+                disabled={sending}
                 className="mt-8 flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-8 py-4 text-base font-semibold text-[#0b182f] transition-all duration-300 hover:shadow-[0_18px_40px_-28px_rgba(34,211,238,0.8)] disabled:opacity-70 sm:w-auto"
               >
-                {submitted ? (
+                {sending ? (
+                  <>
+                    <Send className="h-5 w-5 animate-pulse" />
+                    {t("contact.form.submit")}
+                  </>
+                ) : submitted ? (
                   <>
                     <CheckCircle2 className="h-5 w-5" />
                     {t("contact.form.submitted")}
@@ -258,6 +285,9 @@ export default function ContactSection() {
                   </>
                 )}
               </button>
+              {submitError ? (
+                <p className="mt-3 text-sm text-red-400">{submitError}</p>
+              ) : null}
             </form>
           </div>
         </div>

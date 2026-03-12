@@ -1,6 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
+import Link from "next/link"
 import type { LucideIcon } from "lucide-react"
 import {
   Megaphone,
@@ -216,13 +217,22 @@ export default function ServicesSection() {
                     ) : null}
                     {["contact", "hr", "marketing", "accounting"].includes(service.key) ? (
                       <div className="pt-2 text-left">
-                        <a
-                          href="#contact"
-                          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
-                        >
-                          {t("nav.contact")}
-                          <span className="text-base leading-none">→</span>
-                        </a>
+                        <div className="flex flex-wrap gap-2">
+                          <a
+                            href="#contact"
+                            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
+                          >
+                            {t("nav.contact")}
+                            <span className="text-base leading-none">→</span>
+                          </a>
+                          <Link
+                            href={`/services/${service.key}`}
+                            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition hover:border-[#22d3ee]/50 hover:text-[#7ad8ff]"
+                          >
+                            {t("hero.ctaSecondary") ?? t("nav.services")}
+                            <span className="text-base leading-none">→</span>
+                          </Link>
+                        </div>
                       </div>
                     ) : null}
                     {service.key === "hr" ? (
