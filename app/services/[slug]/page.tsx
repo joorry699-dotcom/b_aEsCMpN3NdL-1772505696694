@@ -14,7 +14,7 @@ const iconMap: Record<string, LucideIcon> = {
 type ServiceKeys = "contact" | "hr" | "marketing" | "accounting"
 
 export default function ServiceDetailsPage({ params }: { params: { slug: string } }) {
-  const { t, lang } = useLanguage()
+  const { t, locale } = useLanguage()
   const key = (params.slug ?? "").toLowerCase() as ServiceKeys
 
   const servicesItems = t("services.items") as
@@ -47,7 +47,7 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
             href="/#services"
             className="inline-flex items-center gap-2 text-sm text-white/70 transition hover:text-white"
           >
-            <span className={lang === "ar" ? "rotate-180" : ""}>←</span>
+            <span className={locale === "ar" ? "rotate-180" : ""}>←</span>
             {t("nav.services")}
           </Link>
           <Link

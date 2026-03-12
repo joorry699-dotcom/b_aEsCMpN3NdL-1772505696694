@@ -199,7 +199,7 @@ export default function ServicesSection() {
                     <p>{service.description}</p>
                     {service.features?.length ? (
                       <ul className="space-y-2">
-                        {service.features.map((feat) => {
+                        {service.features.map((feat: string) => {
                           const clean = feat.trim()
                           const isBenefit = clean.startsWith("الفائدة") || clean.toLowerCase().startsWith("benefit")
                           return isBenefit ? (
