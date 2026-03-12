@@ -1,8 +1,9 @@
 "use client"
 import Link from "next/link"
-import { ChevronRight, Megaphone, PhoneCall, Calculator, Users } from "lucide-react"
+import { ChevronRight, Megaphone, PhoneCall, Calculator, Users, Mail, Phone } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
+import VideoSection from "@/components/video-section"
 
 const iconMap: Record<string, LucideIcon> = {
   contact: PhoneCall,
@@ -33,6 +34,10 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
       </main>
     )
   }
+
+  const contactEmail = (t("contact.info.email.value") as string) || "info@entshaar.com"
+  const contactPhone = (t("contact.info.phone.value") as string) || "920026002"
+  const videoVariant = key === "hr" ? "hr" : key === "contact" ? "call-center" : null
 
   return (
     <main className="relative min-h-screen bg-[#0b182f] text-white">
@@ -88,17 +93,46 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
               </Link>
             </div>
           </div>
-
-          {service.features?.length ? (
-            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {service.features.map((feat: string) => (
-                <div key={feat} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-white/80">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
-                  <p className="leading-relaxed">{feat.trim()}</p>
+          <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
+            <div className="lg:col-span-2 space-y-4">
+              {service.features?.length ? (
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {service.features.map((feat: string) => (
+                    <div key={feat} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-white/80">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#22d3ee]" />
+                      <p className="leading-relaxed">{feat.trim()}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              ) : null}
+
+              {videoVariant ? (
+                <div className="mt-2 rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <VideoSection variant={videoVariant} hideCopy embedded />
+                </div>
+              ) : null}
             </div>
-          ) : null}
+
+            <div className="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-5 text-white/80">
+              <h3 className="text-lg font-semibold text-white">{t("contact.label")}</h3>
+              <p className="text-sm text-white/70 leading-relaxed">{t("contact.subtitle")}</p>
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-[#22d3ee]" />
+                <a href={`mailto:${contactEmail}`} className="text-white hover:text-[#7ad8ff] transition">{contactEmail}</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-[#22d3ee]" />
+                <a href={`tel:${contactPhone}`} className="text-white hover:text-[#7ad8ff] transition">{contactPhone}</a>
+              </div>
+              <Link
+                href="/#contact"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-l from-[#22d3ee] to-[#0891b2] px-4 py-2 text-xs font-semibold text-[#0b182f] shadow-[0_12px_30px_-20px_rgba(34,211,238,0.9)] transition hover:shadow-[0_14px_34px_-20px_rgba(34,211,238,1)]"
+              >
+                {t("nav.contact")}
+                <span className="text-base leading-none">→</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </main>
