@@ -185,9 +185,19 @@ export default function ServicesSection() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#22d3ee]/15 text-[#7ad8ff]">
                     <service.icon className="h-6 w-6" />
                   </div>
-                  <ChevronDown
-                    className={`h-5 w-5 text-white/60 transition-transform duration-300 ${openService === service.key ? "rotate-180 text-[#7ad8ff]" : ""}`}
-                  />
+                  <div className="flex items-center gap-3">
+                    <Link
+                      href={`/services/${service.key}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white transition hover:border-[#22d3ee]/50 hover:text-[#7ad8ff]"
+                    >
+                      {t("hero.ctaSecondary") ?? t("nav.services")}
+                      <span className="text-sm leading-none">→</span>
+                    </Link>
+                    <ChevronDown
+                      className={`h-5 w-5 text-white/60 transition-transform duration-300 ${openService === service.key ? "rotate-180 text-[#7ad8ff]" : ""}`}
+                    />
+                  </div>
                 </div>
                 <h3 className="text-lg font-semibold text-white">{service.title}</h3>
                 <div
