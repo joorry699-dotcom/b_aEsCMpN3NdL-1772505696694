@@ -19,11 +19,18 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
   const key = (params.slug ?? "").toLowerCase() as ServiceKeys
 
   const servicesItems = t("services.items") as
-    | Record<string, { title: string; description: string; features?: string[] }>
+    | Record<ServiceKeys, { title: string; description: string; features?: string[] }>
     | string
 
   const service = servicesItems && typeof servicesItems === "object" ? (servicesItems as any)[key] : null
   const Icon = iconMap[key]
+
+  const otherServices = servicesItems && typeof servicesItems === "object"
+    ? (Object.entries(servicesItems as Record<ServiceKeys, { title: string; description: string; features?: string[] }>)
+        .filter(([k]) => k !== key)
+        .map(([k, v]) => ({ key: k as ServiceKeys, title: v?.title ?? "", description: v?.description ?? "", icon: iconMap[k] }))
+      )
+    : []
 
   if (!service || !Icon) {
     return (
@@ -64,7 +71,7 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
           </Link>
         </div>
 
-        <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.06] p-8 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)]">
+        <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.06] p-8 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] space-y-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#22d3ee]/15 text-[#7ad8ff]">
@@ -74,6 +81,7 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
                 <p className="text-xs uppercase tracking-[0.18em] text-white/60">{t("nav.services")}</p>
                 <h1 className="text-2xl font-bold sm:text-3xl">{service.title}</h1>
                 <p className="mt-2 text-white/70 leading-relaxed">{service.description}</p>
+                <p className="mt-3 text-sm text-white/60">{t("services.subtitle") as string}</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -93,7 +101,7 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
               </Link>
             </div>
           </div>
-          <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-4">
               {service.features?.length ? (
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -133,6 +141,31 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
               </Link>
             </div>
           </div>
+          {otherServices.length ? (
+            <div className="pt-4 border-t border-white/10">
+              <h3 className="mb-3 text-lg font-semibold text-white">{t("services.title")}</h3>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {otherServices.map((item) => {
+                  const ItemIcon = item.icon
+                  return (
+                    <Link
+                      key={item.key}
+                      href={`/services/${item.key}`}
+                      className="group flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-[#22d3ee]/40 hover:bg-white/10"
+                    >
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#22d3ee]/12 text-[#7ad8ff]">
+                        {ItemIcon ? <ItemIcon className="h-5 w-5" /> : null}
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-white group-hover:text-[#7ad8ff]">{item.title}</div>
+                        <p className="text-xs text-white/60 leading-relaxed line-clamp-2">{item.description}</p>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </main>
