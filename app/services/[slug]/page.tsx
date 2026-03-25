@@ -19,22 +19,17 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
   const { t, locale } = useLanguage()
   const key = (params.slug ?? "").toLowerCase() as ServiceKeys
 
-  const servicesItems = t("services.items") as
-    | Record<string, { title: string; description: string; features?: string[] }>
-    | string
+  const servicesObj = ((translations as any)?.[locale]?.services?.items || (translations as any)?.ar?.services?.items || {}) as Record<
+    string,
+    { title: string; description: string; features?: string[] }
+  >
 
-  const fallbackServices = (translations as any)?.[locale]?.services?.items || (translations as any)?.ar?.services?.items || {}
-  const servicesObj = servicesItems && typeof servicesItems === "object" ? servicesItems : fallbackServices
-
-  const service = servicesObj ? (servicesObj as any)[key] : null
+  const service = servicesObj[key]
   const Icon = iconMap[key]
 
-  const otherServices = servicesObj && typeof servicesObj === "object"
-    ? (Object.entries(servicesObj as Record<string, { title: string; description: string; features?: string[] }>)
-        .filter(([k]) => k !== key)
-        .map(([k, v]) => ({ key: k as ServiceKeys, title: v?.title ?? "", description: v?.description ?? "", icon: iconMap[k as ServiceKeys] }))
-      )
-    : []
+  const otherServices = Object.entries(servicesObj)
+    .filter(([k]) => k !== key)
+    .map(([k, v]) => ({ key: k as ServiceKeys, title: v?.title ?? "", description: v?.description ?? "", icon: iconMap[k as ServiceKeys] }))
 
   if (!service || !Icon) {
     return (
