@@ -4,6 +4,7 @@ import { ChevronRight, Megaphone, PhoneCall, Calculator, Users, Mail, Phone } fr
 import type { LucideIcon } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 import VideoSection from "@/components/video-section"
+import translations from "@/data/translations.json"
 
 const iconMap: Record<string, LucideIcon> = {
   contact: PhoneCall,
@@ -19,16 +20,19 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
   const key = (params.slug ?? "").toLowerCase() as ServiceKeys
 
   const servicesItems = t("services.items") as
-    | Record<ServiceKeys, { title: string; description: string; features?: string[] }>
+    | Record<string, { title: string; description: string; features?: string[] }>
     | string
 
-  const service = servicesItems && typeof servicesItems === "object" ? (servicesItems as any)[key] : null
+  const fallbackServices = (translations as any)?.[locale]?.services?.items || (translations as any)?.ar?.services?.items || {}
+  const servicesObj = servicesItems && typeof servicesItems === "object" ? servicesItems : fallbackServices
+
+  const service = servicesObj ? (servicesObj as any)[key] : null
   const Icon = iconMap[key]
 
-  const otherServices = servicesItems && typeof servicesItems === "object"
-    ? (Object.entries(servicesItems as Record<ServiceKeys, { title: string; description: string; features?: string[] }>)
+  const otherServices = servicesObj && typeof servicesObj === "object"
+    ? (Object.entries(servicesObj as Record<string, { title: string; description: string; features?: string[] }>)
         .filter(([k]) => k !== key)
-        .map(([k, v]) => ({ key: k as ServiceKeys, title: v?.title ?? "", description: v?.description ?? "", icon: iconMap[k] }))
+        .map(([k, v]) => ({ key: k as ServiceKeys, title: v?.title ?? "", description: v?.description ?? "", icon: iconMap[k as ServiceKeys] }))
       )
     : []
 
